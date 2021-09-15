@@ -6,4 +6,4 @@ export const requestLogin = (email, password) => ({ // pure function side effect
     email,
     password
   }
-})
+});
