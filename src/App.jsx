@@ -1,10 +1,18 @@
-import React from 'react';
-import LoginPage from './components/LoginPage';
+import React, { useState } from 'react';
+import Editor from './components/Editor';
+import Header from './components/partials/Header';
+import './index.css';
 
 function App() {
+  const [layoutItems, setLayoutItems] = useState([]);
+
   return (
     <div className="App" >
-      <LoginPage />
+      <Header />
+      <Editor
+        layoutItems={layoutItems}
+        setLayoutItems={setLayoutItems}
+      />
     </div>
   );
 }
