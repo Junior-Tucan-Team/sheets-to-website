@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-export const login = (email, password) => axios.get(`https://api.jotform.com/user/login?username=${email}&password=${password}`)
-    .then((res) => {
-        console.log(res);
-    }).catch((e) => console.log(e));
+export const login = (payload) => axios.post(`https://api.jotform.com/user/login?username=${payload.email}&password=${payload.password}`,
+    {
+        ...payload,
+        appName: 'sheets2website',
+        access: 'full',
+    })
+    .then(response => response).catch((e) => e);

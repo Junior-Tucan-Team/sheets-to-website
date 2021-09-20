@@ -5,12 +5,11 @@ import { login } from '../lib/api';
 function* loginRequest(action) {
   try {
     const { email, password } = action.payload;
-    const { responseCode, content } = yield call(login, email, password);
-    console.log(content, responseCode);
-    if (responseCode === 200) {
+    const userData = yield call(login, { email, password });
+    if (userData.data.responseCode === 200) {
       yield put({
         type: LOGIN_SUCCESS,
-        payload: content
+        payload: userData.data.content
       });
     } else {
       yield put({ type: LOGIN_FAILURE });

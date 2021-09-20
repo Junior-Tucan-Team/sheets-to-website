@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import Editor from './components/Editor';
-import Header from './components/partials/Header';
+import LoginPage from './components/LoginPage';
 import './index.css';
 
 function App() {
-  const [layoutItems, setLayoutItems] = useState([]);
+  // const [layoutItems, setLayoutItems] = useState([]);
 
   return (
     <div className="App" >
-      <Header />
+      {/* <Header />
       <Editor
         layoutItems={layoutItems}
         setLayoutItems={setLayoutItems}
-      />
+      /> */}
+      <LoginPage />
     </div>
   );
 }
