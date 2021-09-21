@@ -1,8 +1,12 @@
 import React from 'react';
-import { shape, string, arrayOf } from 'prop-types';
+import { shape, string, arrayOf, func } from 'prop-types';
 
-const Component = ({ submissions, info }) => (
-  <section className="text-gray-600 body-font">
+const Component = ({ item, submissions, info, onClick }) => (
+  <section
+    className="text-gray-600 body-font"
+    data-element-id={item.id}
+    onClick={onClick}
+  >
     <div className="container px-5 py-24 mx-auto">
       <div className="w-full mb-20">
         <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
@@ -12,9 +16,9 @@ const Component = ({ submissions, info }) => (
         <p className="lg:w-1/2 w-full leading-relaxed text-gray-500"> {info.menuDescription}</p>
       </div>
       {submissions.map(submission =>
-        <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+        <div className="flex submissionss-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
           <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex
-          items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0"
+          submissionss-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0"
           >
             <img className="h-40 rounded w-full object-cover object-center mb-6" src={submission.image} alt="content"/>
           </div>
@@ -38,7 +42,12 @@ Component.propTypes = {
   info: shape({
       header: string,
       menuDescription: string
+  }),
+  onClick: func,
+  item: shape({
+    id: string
   })
+
 };
 
 Component.defaultProps = {
@@ -59,11 +68,13 @@ Component.defaultProps = {
     info: {
         header: 'OUR MENU',
         menuDescription: 'This is our menu(optional to write)'
-    }
+    },
+    onClick: () => {},
+    item: string,
 };
 
 const title = 'Product List';
-const name = 'productlist';
+const type = 'productlist';
 
 const settings = {
   title: {
@@ -84,5 +95,5 @@ export default {
   title,
   Component,
   settings,
-  name
+  type
 };

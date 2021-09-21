@@ -1,14 +1,15 @@
 import React from 'react';
 import { arrayOf, func, shape } from 'prop-types';
+import { v4 as uuidv4 } from 'uuid';
 import * as Elements from './Elements';
 
-const ElementList = ({ layoutItems, setLayoutItems }) => {
+const ElementList = ({ addLayoutItem }) => {
   const onElementClick = (e) => {
     const elementName = e.target.getAttribute('data-element-name');
     const element = Elements[elementName];
     const newElement = Object.keys(element.settings).reduce((acc, curr) =>
     ({ ...acc, [curr]: element.settings[curr].default }), {});
-    setLayoutItems([...layoutItems, { ...newElement, name: elementName }]);
+    addLayoutItem({ ...newElement, type: elementName, id: uuidv4() });
   };
 
   return (
@@ -17,7 +18,7 @@ const ElementList = ({ layoutItems, setLayoutItems }) => {
         {Object.keys(Elements).map(element =>
           <li
             key={element}
-            data-element-name={Elements[element].name}
+            data-element-name={Elements[element].type}
             onClick={onElementClick}
           >
             {Elements[element].title}
@@ -28,13 +29,11 @@ const ElementList = ({ layoutItems, setLayoutItems }) => {
 };
 
 ElementList.propTypes = {
-  layoutItems: arrayOf(shape),
-  setLayoutItems: func
+  addLayoutItem: func
 };
 
 ElementList.defaultProps = {
-  layoutItems: [],
-  setLayoutItems: () => {}
+  addLayoutItem: () => {}
 };
 
 export default ElementList;

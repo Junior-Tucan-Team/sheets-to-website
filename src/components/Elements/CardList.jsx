@@ -1,8 +1,12 @@
 import React from 'react';
-import { shape, string, arrayOf } from 'prop-types';
+import { shape, string, arrayOf, func } from 'prop-types';
 
-const Component = ({ submissions, info }) => (
-  <section className="text-gray-600 body-font">
+const Component = ({ submissons, item, info, onClick }) => (
+  <section
+    className="text-gray-600 body-font"
+    data-element-id={item.id}
+    onClick={onClick}
+  >
     <div className="container px-5 py-24 mx-auto">
       <div className="w-full mb-8">
         <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
@@ -13,7 +17,7 @@ const Component = ({ submissions, info }) => (
       </div>
       <div className="flex flex-wrap -m-4">
         {
-              submissions.map(submission =>
+              submissons.map(submission =>
                 <div key={submission.title} className="xl:w-1/4 md:w-1/2 p-4">
                   <div className="bg-gray-100 p-6 rounded-lg">
                     <img className="h-40 rounded w-full object-cover object-center mb-6" src={submission.image} alt="content"/>
@@ -30,7 +34,7 @@ const Component = ({ submissions, info }) => (
     );
 
 Component.propTypes = {
-  submissions: arrayOf(shape({
+  submissons: arrayOf(shape({
     title: string,
     description: string,
     image: string,
@@ -39,11 +43,15 @@ Component.propTypes = {
   info: shape({
       header: string,
       menuDescription: string
+  }),
+  onClick: func,
+  item: shape({
+    id: string
   })
 };
 
 Component.defaultProps = {
-    submissions: [
+    submissons: [
         {
             title: 'Pizza',
             description: 'Pepperoni',
@@ -55,16 +63,18 @@ Component.defaultProps = {
             description: 'Cheese',
             image: 'https://dummyimage.com/720x600',
             price: '20$'
-        }
+        },
     ],
     info: {
         header: 'OUR MENU',
         menuDescription: 'This is our menu(optional to write)'
-    }
+    },
+    onClick: () => {},
+    item: string
 };
 
 const title = 'Card List';
-const name = 'cardlist';
+const type = 'cardlist';
 
 const settings = {
   title: {
@@ -85,5 +95,5 @@ export default {
   title,
   Component,
   settings,
-  name
+  type
 };
