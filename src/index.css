@@ -27,10 +27,51 @@ code {
   flex: 1;
 }
 
+.layout .deleteButton {
+  display: inline-block;
+  padding: 7px 10px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #e60404;
+  border: none;
+  border-radius: 15px;
+  
+}
+
+.layout .deleteButton:hover {
+  background-color: #3e8e41
+}
+
+.layout .deleteButton:active {
+  background-color: #d0d3d0;
+  transform: translateY(4px); 
+}
+
 .elements {
+  display: table;
   width: 250px;
+  
+}
+
+.elements span{
+  padding: 2px 15px;
+  background-color: rgb(185, 197, 207);
+}
+
+.elements li{
+  display: block;
+  text-align: center;
+}
+
+.elements p{
+  text-align: center;
 }
 
 .settings {
   width: 250px; 
 }
+

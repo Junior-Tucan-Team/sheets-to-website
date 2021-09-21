@@ -21,6 +21,7 @@ const ElementList = ({ addLayoutItem }) => {
 
   return (
     <div className="elements">
+      <p>Add Elements</p>
       <span onClick={onCategoryClick} name="header">Header</span>
       <span onClick={onCategoryClick} name="content">Content</span>
       <span onClick={onCategoryClick} name="footer">Footer</span>

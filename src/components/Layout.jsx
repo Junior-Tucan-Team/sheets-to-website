@@ -35,6 +35,7 @@ function Layout({
                 item={layoutItem}
               />
               <button
+                className="deleteButton"
                 onClick={removeSelectedItem}
               >delete
               </button>
