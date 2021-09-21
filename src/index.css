@@ -14,8 +14,22 @@ code {
 }
 
 .header {
-  height: 70px;
-  background-color: red;
+  
+}
+
+.secondaryHeader{
+  display: flex;
+  justify-content: center;
+  gap:20px;
+  background-color: #70c473;
+}
+.secondaryHeader span{
+  background-color: #a0dfa2;
+  align-items: center; 
+  padding:3px;
+}
+.secondaryHeader span:hover{
+  background-color: #2aa52e;
 }
 
 .editor {
@@ -52,23 +66,28 @@ code {
 }
 
 .elements {
-  display: table;
   width: 250px;
-  
 }
 
 .elements span{
+  cursor: pointer;
   padding: 2px 15px;
   background-color: rgb(185, 197, 207);
 }
 
-.elements li{
-  display: block;
-  text-align: center;
+.elements span:hover{
+  background-color: rgb(50, 142, 218);
 }
 
-.elements p{
+.elements li{
+  cursor: pointer;
+  display: block;
   text-align: center;
+  background-color: rgb(211, 229, 243);
+}
+
+.elements li:hover{
+  background-color: rgb(138, 195, 238);
 }
 
 .settings {

@@ -1,0 +1,1466 @@
+@font-face {
+  font-family: "Circular Std";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local("circular-pro Regular"), local("circular-pro-Regular"), url("https://cdn.jotfor.ms/fonts/circular/fonts/latin-extended/circular-pro-book.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Circular Std";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: local("circular-pro Medium"), local("circular-pro-Medium"), url("https://cdn.jotfor.ms/fonts/circular/fonts/latin-extended/circular-pro-medium.woff2") format("woff2");
+}
+.alignCenter {
+  text-align: center;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+.iBlock {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.jNewHeader-rightWrapper .jNewHeader-buttonNew {
+  background: transparent !important;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.jNewHeader-rightWrapper .jNewHeader-buttonNew.modal-toggle {
+  border-color: transparent !important;
+}
+.jNewHeader-buttonNew {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+  font-family: inherit;
+}
+.jNewHeader-buttonNew.isAppSelectorDisabled {
+  cursor: unset;
+}
+.jNewHeader-buttonNew.lineButton {
+  position: relative;
+  border: 1px solid #dee0e7;
+  border-radius: 30px;
+  padding: 10px;
+  color: #737d97;
+  z-index: 1;
+}
+.jNewHeader-buttonNew.lineButton svg {
+  max-width: 20px;
+  max-height: 20px;
+  fill: #737d97;
+  transition: 0.2s all;
+}
+.jNewHeader-buttonNew.lineButton:hover {
+  color: #192731;
+  border-color: #192731;
+}
+.jNewHeader-buttonNew.lineButton:hover svg {
+  fill: #192731;
+}
+.jNewHeader-buttonNew.withIconLeft .jNewHeader-icon {
+  display: inline-block;
+  margin-right: 8px;
+}
+.jNewHeader-buttonNew.withIconRight .jNewHeader-icon {
+  display: inline-block;
+  margin-left: 8px;
+}
+.jNewHeader-buttonNew:focus {
+  outline: none;
+}
+.jNewHeader .jSheetButton,
+.jNewHeader .switch-to-old-button {
+  margin-right: 15px;
+}
+.jNewHeader .jfButton.forSwitchToOld {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  padding: 7.5px 15px 7.5px 36px;
+  color: #ffffff;
+  font-size: 15px;
+  margin-right: 15px;
+  vertical-align: middle;
+}
+.jNewHeader .jfButton.forSwitchToOld .jfButton-icon {
+  left: 14px;
+}
+.jNewHeader .jfButton.forSwitchToOld svg {
+  width: 11px;
+  height: 11px;
+  fill: #ffffff;
+  transition: 0.2s all;
+}
+.jNewHeader .jfButton.forSwitchToOld:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+.jNewHeader .jfButton.forSwitchToOld:hover svg {
+  fill: #ffffff;
+}
+
+.jNewHeader-col svg {
+  fill: #192731;
+}
+.jNewHeader-icon svg {
+  display: block;
+}
+.jNewHeader-selectorIcon svg {
+  width: 8px;
+  height: 4px;
+}
+.jNewHeader-titleArrow svg {
+  width: 8px;
+  height: 5px;
+}
+.jNewHeader-switch svg {
+  width: 10px;
+  height: 10px;
+}
+.jNewHeader-revision svg {
+  width: 14px;
+  height: 12px;
+}
+.jNewHeader-collaborators svg {
+  width: 24px;
+  height: 24px;
+}
+.jNewHeader-appBox .appItem[data-icon=forForm] svg {
+  width: 16px;
+  height: 18px;
+}
+.jNewHeader-appBox .appItem[data-icon=forInbox] svg {
+  width: 18px;
+  height: 14px;
+}
+.jNewHeader-appBox .appItem[data-icon=forBuilder] svg,
+.jNewHeader-appBox .appItem[data-icon=forSheets] svg,
+.jNewHeader-appBox .appItem[data-icon=forCards] svg,
+.jNewHeader-appBox .appItem[data-icon=forUploads] svg,
+.jNewHeader-appBox .appItem[data-icon=forMyApps] svg,
+.jNewHeader-appBox .appItem[data-icon=forPortal] svg,
+.jNewHeader-appBox .appItem[data-icon=forMyForms] svg {
+  width: 16px;
+  height: 16px;
+}
+.jNewHeader-appBox .appItem[data-icon=forPdfEditor] svg,
+.jNewHeader-appBox .appItem[data-icon=forAnalytics] svg {
+  width: 14px;
+  height: 18px;
+}
+.jNewHeader-appBox .appItem[data-icon=forReports] svg {
+  width: 18px;
+  height: 18px;
+}
+.jNewHeader-appBox .appItem[data-icon=forSign] svg {
+  width: 20px;
+  height: 14px;
+}
+.jNewHeader-appBox .appItem[data-icon=forApprovals] svg {
+  width: 18px;
+  height: 20px;
+  transform: translateX(1px);
+}
+.jNewHeader-appBox .toMyForms svg {
+  width: 8px;
+  height: 8px;
+  fill: #b3b5c6;
+}
+.jNewHeader-arrowRight svg {
+  width: 16px;
+  height: 18px;
+}
+.jNewHeader-search svg {
+  width: 16px;
+  height: 16px;
+}
+.jNewHeader-close svg {
+  width: 13px;
+  height: 13px;
+  fill: #192731;
+}
+
+.jNewHeader {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  padding: 0 15px;
+  background-color: #ffffff;
+  color: #2b3245;
+  z-index: 1001;
+  transition: 0.3s height;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+.jNewHeader-col:not(.jNewHeader-titleWrapper) {
+  min-width: 340px;
+  transition: 0.2s ease-in;
+}
+@media (min-width: 769px) and (max-width: 960px) {
+  .jNewHeader-col:not(.jNewHeader-titleWrapper) {
+    min-width: 220px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .jNewHeader-col:not(.jNewHeader-titleWrapper).jNewHeader-navigationWrapper {
+    min-width: 150px;
+    border-right: solid 1px rgba(0, 0, 0, 0.1);
+  }
+  .jNewHeader-col:not(.jNewHeader-titleWrapper).jNewHeader-rightWrapper {
+    min-width: 120px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .jNewHeader-col:not(.jNewHeader-titleWrapper).jNewHeader-navigationWrapper {
+    min-width: 91px;
+  }
+}
+.jNewHeader-col:not(.jNewHeader-titleWrapper).isHipaa {
+  min-width: 480px;
+  white-space: nowrap;
+}
+@media (min-width: 769px) and (max-width: 960px) {
+  .jNewHeader-col:not(.jNewHeader-titleWrapper).isHipaa {
+    min-width: 360px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .jNewHeader-col:not(.jNewHeader-titleWrapper).isHipaa {
+    min-width: 180px;
+  }
+  .jNewHeader-col:not(.jNewHeader-titleWrapper).isHipaa .jNewHeader-hipaa {
+    padding-left: 12px;
+  }
+  .jNewHeader-col:not(.jNewHeader-titleWrapper).isHipaa .jNewHeader-hipaa span:last-child {
+    display: none;
+  }
+  .jNewHeader-col:not(.jNewHeader-titleWrapper).isHipaa .jNewHeader-appSelector {
+    margin: 0 12px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .jNewHeader-col:not(.jNewHeader-titleWrapper).isHipaa {
+    min-width: 150px;
+  }
+}
+.jNewHeader-titleWrapper {
+  max-width: calc(100% - 720px);
+}
+@media (min-width: 769px) and (max-width: 960px) {
+  .jNewHeader-titleWrapper {
+    max-width: calc(100% - 440px);
+  }
+}
+@media screen and (max-width: 768px) {
+  .jNewHeader-titleWrapper {
+    max-width: calc(100% - 324px);
+    text-align: left;
+    padding-left: 15px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .jNewHeader-titleWrapper {
+    max-width: calc(100% - 210px);
+  }
+}
+.jNewHeader-col.isHipaa + .jNewHeader-titleWrapper {
+  max-width: calc(100% - 820px);
+}
+@media (min-width: 769px) and (max-width: 960px) {
+  .jNewHeader-col.isHipaa + .jNewHeader-titleWrapper {
+    max-width: calc(100% - 580px);
+  }
+}
+@media screen and (max-width: 768px) {
+  .jNewHeader-col.isHipaa + .jNewHeader-titleWrapper {
+    max-width: calc(100% - 384px);
+  }
+}
+@media screen and (max-width: 640px) {
+  .jNewHeader-col.isHipaa + .jNewHeader-titleWrapper {
+    max-width: calc(100% - 300px);
+  }
+}
+.jNewHeader-logo {
+  max-width: 156px;
+}
+.jNewHeader-logo img {
+  max-width: 100%;
+  max-height: 42px;
+  display: block;
+}
+@media screen and (max-width: 960px) {
+  .jNewHeader-logo {
+    max-width: 36px;
+    overflow: hidden;
+  }
+  .jNewHeader-logo .jfLogo {
+    max-width: 156px;
+  }
+}
+.jNewHeader-hipaa {
+  height: 70px;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  padding-left: 10px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  margin-left: 15px;
+  font-family: "Circular Std Medium";
+  font-weight: 500;
+  line-height: 16px;
+}
+.jNewHeader-hipaa span {
+  display: inline-block;
+  vertical-align: middle;
+}
+.jNewHeader-hipaaLogo svg {
+  height: 34px;
+  width: 34px;
+  display: block;
+}
+.jNewHeader-hipaa span:last-child {
+  margin-left: 5px;
+}
+.jNewHeader-appSelector {
+  margin: 0 12px;
+  border-left: solid 1px rgba(0, 0, 0, 0.1);
+}
+.jNewHeader-appSelector .currentApp {
+  font-size: 16px;
+  max-width: 110px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+@media (min-width: 640px) and (max-width: 768px) {
+  .jNewHeader-appSelector .currentApp {
+    font-size: 14px;
+    line-height: 14px;
+    max-width: 70px;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: pre-wrap;
+    overflow: hidden;
+  }
+}
+@media screen and (max-width: 640px) {
+  .jNewHeader-appSelector .currentApp {
+    display: none;
+  }
+}
+.jNewHeader-appSelector .jNewHeader-buttonNew {
+  position: relative;
+}
+.jNewHeader-appSelector .iBlock {
+  margin-left: 12px;
+}
+.jNewHeader-appSelector .jNewHeader-selectorIcon {
+  width: 14px;
+  height: 14px;
+  padding: 5px 3px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  transition: 0.3s ease-in;
+}
+@media screen and (max-width: 960px) {
+  .jNewHeader-appSelector {
+    height: 70px;
+    display: inline-flex;
+    margin: 0 12px 0 15px;
+  }
+  .jNewHeader-appSelector .jNewHeader-appBoxArrow {
+    top: calc(100% - 25px);
+  }
+  .jNewHeader-appSelector .jNewHeader-appBox {
+    top: calc(100% - 5px);
+    left: 0;
+  }
+}
+.jNewHeader-titleWrapper {
+  width: 100%;
+}
+.jNewHeader-title {
+  font-size: 21px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 24px);
+  cursor: pointer;
+  margin: 0;
+  font-weight: 400;
+}
+@media screen and (max-width: 768px) {
+  .jNewHeader-title {
+    font-size: 18px;
+  }
+}
+.jNewHeader-titleIcon {
+  width: 16px;
+  height: 16px;
+  padding: 6px 4px;
+  margin-left: 8px;
+  background: #e2e2e2;
+  border-radius: 50%;
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+.jNewHeader-revisionDate {
+  display: block;
+  font-size: 12px;
+  color: #5caa40;
+}
+.jNewHeader-revisionDate .revisionIcon {
+  display: inline-block;
+  vertical-align: top;
+  margin: 1px 0 0 3px;
+}
+.jNewHeader-rightWrapper .jNewHeader-buttonNew {
+  display: inline-flex;
+  align-items: center;
+}
+.jNewHeader-rightWrapper .jNewHeader-buttonNew + .jNewHeader-buttonNew {
+  margin-right: 10px;
+}
+.jNewHeader-rightWrapper .jNewHeader-buttonNew:first-child {
+  margin-left: 10px;
+}
+.jNewHeader-rightWrapper .forSwitchToOld:hover svg {
+  transform: rotateY(180deg);
+}
+.jNewHeader-rightWrapper .modal {
+  display: inline-block;
+}
+@media screen and (max-width: 960px) {
+  .jNewHeader-rightWrapper .lineButton .jNewHeader-icon {
+    margin-right: 0;
+  }
+  .jNewHeader-rightWrapper .lineButton span:not(.jNewHeader-icon) {
+    display: none;
+  }
+}
+.jNewHeader-appBoxArrow {
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: 100%;
+  right: 15px;
+  pointer-events: none;
+  z-index: 4;
+  user-select: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s ease-in;
+}
+.jNewHeader-appBoxArrow:after, .jNewHeader-appBoxArrow:before {
+  position: absolute;
+  bottom: -20px;
+  border: solid transparent;
+  content: " ";
+}
+.jNewHeader-appBoxArrow:after {
+  left: 0;
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #fff;
+  border-width: 8px;
+}
+.jNewHeader-appBoxArrow:before {
+  left: -2px;
+  border-color: rgba(222, 222, 222, 0);
+  border-bottom-color: rgba(222, 222, 222, 0.4);
+  border-width: 10px;
+}
+.jNewHeader-appBox {
+  position: absolute;
+  top: calc(100% - 6px);
+  left: 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  max-width: 332px;
+  background: #ffffff;
+  padding: 7px;
+  border-radius: 0 3px 3px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 3;
+  font-size: 12px;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s ease-in;
+  text-align: center;
+}
+.jNewHeader-appBox.isShort {
+  left: 167px;
+}
+.jNewHeader-appBox .appItem {
+  position: relative;
+  width: 100px;
+  height: 78px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 3px;
+  margin: 3px;
+  font-size: 12px;
+  border: solid 1px #f4f6f8;
+  color: #5e676e;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.jNewHeader-appBox .appItem .appIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}
+.jNewHeader-appBox .appItem[data-icon=forForm] .appIcon {
+  background-color: #4034b4;
+}
+.jNewHeader-appBox .appItem[data-icon=forBuilder] .appIcon {
+  background-color: #f38a41;
+}
+.jNewHeader-appBox .appItem[data-icon=forPdfEditor] .appIcon {
+  background-color: #254db3;
+}
+.jNewHeader-appBox .appItem[data-icon=forSheets] .appIcon {
+  background-color: #037b38;
+}
+.jNewHeader-appBox .appItem[data-icon=forCards] .appIcon {
+  background-color: #2e5dff;
+}
+.jNewHeader-appBox .appItem[data-icon=forUploads] .appIcon {
+  background-color: #ea6041;
+}
+.jNewHeader-appBox .appItem[data-icon=forInbox] .appIcon {
+  background-color: #9a38d2;
+}
+.jNewHeader-appBox .appItem[data-icon=forAnalytics] .appIcon {
+  background-color: #008d9b;
+}
+.jNewHeader-appBox .appItem[data-icon=forReports] .appIcon {
+  background-color: #a22250;
+}
+.jNewHeader-appBox .appItem[data-icon=forSheetReports] .appIcon {
+  background-color: #f38a41;
+}
+.jNewHeader-appBox .appItem[data-icon=forEnterpriseAdmin] .appIcon {
+  background-color: #30336a;
+}
+.jNewHeader-appBox .appItem .appName {
+  margin-top: 3px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  transition: 0.3s ease-in;
+}
+.jNewHeader-appBox .appItem:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: #f4f6f8;
+  z-index: -1;
+  transition: 0.3s ease-in;
+  pointer-events: none;
+}
+.jNewHeader-appBox .appItem:hover {
+  color: #192731;
+}
+.jNewHeader-appBox .appItem:hover:before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+}
+@media screen and (max-width: 360px) {
+  .jNewHeader-appBox .appItem {
+    width: calc(33.3% - 6px);
+  }
+}
+.jNewHeader-appBox .toMyForms {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-shrink: 1;
+  line-height: 12px;
+  padding: 8px;
+  text-decoration: none;
+  color: #192731;
+  background: #f4f6f8;
+  margin: 3px;
+  border-radius: 3px;
+  transition: 0.3s ease-in-out;
+}
+.jNewHeader-appBox .toMyForms .appIcon {
+  padding: 4px;
+  margin-left: 5px;
+  background: rgba(20, 29, 70, 0.1);
+  border-radius: 50%;
+  transition: 0.3s ease-in;
+  flex-shrink: 0;
+}
+.jNewHeader-appBox .toMyForms .appIcon svg {
+  display: block;
+  transition: 0.3s fill;
+}
+.jNewHeader-appBox .toMyForms:hover {
+  background: #e8edee;
+}
+.jNewHeader-appBox .toMyForms:hover .appIcon {
+  transform: translateX(3px);
+}
+.jNewHeader-appBox .toMyForms:hover .appIcon svg {
+  fill: #192731;
+}
+@media screen and (max-width: 360px) {
+  .jNewHeader-appBox {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+.jNewHeader.appBoxOpened .jNewHeader-appBoxArrow {
+  pointer-events: all;
+  opacity: 1;
+  visibility: visible;
+}
+.jNewHeader.appBoxOpened .jNewHeader-appBox {
+  pointer-events: all;
+  opacity: 1;
+  visibility: visible;
+}
+.jNewHeader.appBoxOpened .jNewHeader-selectorIcon {
+  transform: rotateX(-180deg);
+}
+.jNewHeader.formListOpened .jNewHeader-titleIcon {
+  transform: rotateX(-180deg);
+}
+.jNewHeader-avatar {
+  padding-left: 15px;
+  margin-left: 15px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  vertical-align: middle;
+}
+.jNewHeader-avatarContainer {
+  display: flex;
+  align-items: center;
+  height: 70px;
+}
+.jNewHeader-profile {
+  width: 44px;
+  height: 44px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.hideHeader .jNewHeader {
+  height: 0;
+  pointer-events: none;
+}
+.hideHeader .jNewHeader-col {
+  opacity: 0;
+}
+
+.isLight.jNewHeader .jNewHeader-col:not(.jNewHeader-rightWrapper) {
+  color: #ffffff;
+}
+@media screen and (max-width: 768px) {
+  .isLight.jNewHeader .jNewHeader-col:not(.jNewHeader-rightWrapper).jNewHeader-navigationWrapper {
+    border-right-color: rgba(255, 255, 255, 0.1);
+  }
+  .isLight.jNewHeader .jNewHeader-col:not(.jNewHeader-rightWrapper).jNewHeader-rightWrapper {
+    border-left-color: rgba(255, 255, 255, 0.1);
+  }
+}
+.isLight.jNewHeader .jNewHeader-appSelector {
+  border-left-color: rgba(255, 255, 255, 0.1);
+}
+.isLight.jNewHeader .jNewHeader-appSelector .jNewHeader-selectorIcon {
+  background: rgba(255, 255, 255, 0.25);
+}
+.isLight.jNewHeader .jNewHeader-appSelector .jNewHeader-selectorIcon svg {
+  fill: #ffffff;
+}
+.isLight.jNewHeader .jNewHeader-appSelector .currentApp {
+  color: #ffffff;
+}
+.isLight.jNewHeader .jNewHeader-avatar {
+  border-left-color: rgba(255, 255, 255, 0.1);
+}
+.isLight.jNewHeader .jNewHeader-titleIcon {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+.isLight.jNewHeader .jNewHeader-titleIcon svg {
+  fill: #ffffff;
+}
+.isLight.jNewHeader .jNewHeader-titleLink {
+  color: #737d97;
+}
+.isLight.jNewHeader .jNewHeader-revisionDate {
+  fill: #737d97;
+  color: #737d97;
+  display: inline-block;
+}
+.isLight.jNewHeader .jNewHeader-appBoxArrow:before {
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+}
+.isLight.jNewHeader .jNewHeader-subMenuBox:before {
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+}
+.isLight.jNewHeader .jNewHeader-buttonNew.lineButton:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+.isLight.jNewHeader .jNewHeader-buttonNew.lineButton:hover svg {
+  fill: #ffffff;
+}
+.isLight.jNewHeader .jNewHeader-rightWrapper .jNewHeader-buttonNew {
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.isLight.jNewHeader .jNewHeader-rightWrapper .jNewHeader-buttonNew svg {
+  fill: #ffffff;
+}
+.isLight.jNewHeader .jNewHeader-rightWrapper .jNewHeader-buttonNew:hover {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.jNewHeader-appMenu {
+  display: inline-block;
+  position: relative;
+}
+
+.jNewHeader-rightWrapper .headerButton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #0a1551;
+  font-size: 15px;
+  font-weight: 500;
+  height: 34px;
+  margin-left: 8px;
+  border-radius: 84px;
+  cursor: pointer;
+  padding: 0 11px;
+}
+.jNewHeader-rightWrapper .headerButton:not(.headerButton-light) {
+  background-color: #e3e5f5;
+  border: none;
+}
+.jNewHeader-rightWrapper .headerButton.headerButton-light {
+  background-color: transparent;
+  border: 1px solid #c8ceed;
+}
+.jNewHeader-rightWrapper .headerButton:focus {
+  box-shadow: none;
+}
+.jNewHeader-rightWrapper .headerButton svg,
+.jNewHeader-rightWrapper .headerButton path {
+  fill: #141e46;
+}
+.jNewHeader-rightWrapper .headerButton svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+@media screen and (max-width: 1020px) {
+  .jNewHeader-rightWrapper .headerButton {
+    width: 34px;
+    border-radius: 50%;
+    padding: 0;
+  }
+  .jNewHeader-rightWrapper .headerButton svg {
+    margin-right: 0;
+  }
+}
+
+.jNewHeader.branding21,
+.jfHeader.branding21 {
+  padding: 0 20px !important;
+}
+.jNewHeader.branding21 .jNewHeader-logo,
+.jfHeader.branding21 .jNewHeader-logo {
+  max-width: 167px;
+  flex-shrink: 0;
+}
+.jNewHeader.branding21 .jNewHeader-logo .jfLogo,
+.jfHeader.branding21 .jNewHeader-logo .jfLogo {
+  height: 30px;
+}
+.jNewHeader.branding21 .jNewHeader-logoWrapper,
+.jfHeader.branding21 .jNewHeader-logoWrapper {
+  margin: 0;
+}
+.jNewHeader.branding21 .jNewHeader-hipaa,
+.jfHeader.branding21 .jNewHeader-hipaa {
+  border-color: #d3d6ec;
+}
+.jNewHeader.branding21 .jNewHeader-hipaa + .jNewHeader-appSelector,
+.jfHeader.branding21 .jNewHeader-hipaa + .jNewHeader-appSelector {
+  margin: 0 15px;
+}
+.jNewHeader.branding21 .jNewHeader-hipaa + .jNewHeader-appSelector .iBlock:not(.jNewHeader-icon),
+.jfHeader.branding21 .jNewHeader-hipaa + .jNewHeader-appSelector .iBlock:not(.jNewHeader-icon) {
+  margin-left: 15px;
+}
+.jNewHeader.branding21 .jNewHeader-hipaa + .jNewHeader-appSelector .jNewHeader-appBox,
+.jfHeader.branding21 .jNewHeader-hipaa + .jNewHeader-appSelector .jNewHeader-appBox {
+  left: 140px;
+}
+.jNewHeader.branding21 .currentApp,
+.jfHeader.branding21 .currentApp {
+  color: #0a1551;
+}
+.jNewHeader.branding21 .jNewHeader-selectorIcon,
+.jfHeader.branding21 .jNewHeader-selectorIcon {
+  background-color: #e3e5f5;
+}
+.jNewHeader.branding21 .jNewHeader-col svg,
+.jfHeader.branding21 .jNewHeader-col svg {
+  fill: #0a1551;
+}
+.jNewHeader.branding21 .jNewHeader-appSelector,
+.jfHeader.branding21 .jNewHeader-appSelector {
+  margin: 0 20px;
+  border-left: none;
+}
+.jNewHeader.branding21 .jNewHeader-appSelector .appSelectorTrigger-button,
+.jfHeader.branding21 .jNewHeader-appSelector .appSelectorTrigger-button {
+  height: 70px;
+}
+.jNewHeader.branding21 .jNewHeader-appSelector .appSelectorTrigger-button:before,
+.jfHeader.branding21 .jNewHeader-appSelector .appSelectorTrigger-button:before {
+  content: "";
+  height: 34px;
+  border-left: 1px solid #d3d6ec;
+}
+.jNewHeader.branding21 .jNewHeader-appSelector .iBlock:not(.jNewHeader-icon),
+.jfHeader.branding21 .jNewHeader-appSelector .iBlock:not(.jNewHeader-icon) {
+  margin-left: 20px;
+}
+.jNewHeader.branding21 .jNewHeader-appSelector .jNewHeader-icon,
+.jfHeader.branding21 .jNewHeader-appSelector .jNewHeader-icon {
+  width: 16px;
+  height: 16px;
+  padding: 6px 4px;
+  margin-left: 10px;
+}
+.jNewHeader.branding21 .jNewHeader-appSelector .jNewHeader-selectorIcon svg,
+.jfHeader.branding21 .jNewHeader-appSelector .jNewHeader-selectorIcon svg {
+  height: 5px;
+}
+.jNewHeader.branding21 div.appContainer.isPDFImporter #app .jNewHeader-appSelector .jNewHeader-buttonNew .currentApp,
+.jfHeader.branding21 div.appContainer.isPDFImporter #app .jNewHeader-appSelector .jNewHeader-buttonNew .currentApp {
+  max-width: 110px;
+}
+.jNewHeader.branding21 .jNewHeader-col .currentApp:after,
+.jfHeader.branding21 .jNewHeader-col .currentApp:after {
+  padding: 2px 5px;
+  font-size: 11px;
+  border-radius: 10px;
+  margin-left: 5px;
+  color: #fff;
+  background-color: #78bb07;
+}
+.jNewHeader.branding21.isDark.jNewHeader .jNewHeader-appSelector .currentApp,
+.jfHeader.branding21.isDark.jNewHeader .jNewHeader-appSelector .currentApp {
+  font-size: 16px;
+}
+.jNewHeader.branding21 .jNewHeader-title,
+.jfHeader.branding21 .jNewHeader-title {
+  color: #0a1551;
+  font-family: "Circular Std";
+  font-size: 20px;
+  font-weight: 500;
+}
+.jNewHeader.branding21 .jNewHeader-titleIcon,
+.jfHeader.branding21 .jNewHeader-titleIcon {
+  background-color: #e3e5f5;
+}
+.jNewHeader.branding21.isDark .jNewHeader-revisionDate,
+.jNewHeader.branding21 .jNewHeader-revisionDate,
+.jfHeader.branding21.isDark .jNewHeader-revisionDate,
+.jfHeader.branding21 .jNewHeader-revisionDate {
+  color: #78bb07;
+  line-height: 18px;
+}
+.jNewHeader.branding21.isDark .jNewHeader-revisionDate a,
+.jNewHeader.branding21.isDark .jNewHeader-revisionDate div,
+.jNewHeader.branding21 .jNewHeader-revisionDate a,
+.jNewHeader.branding21 .jNewHeader-revisionDate div,
+.jfHeader.branding21.isDark .jNewHeader-revisionDate a,
+.jfHeader.branding21.isDark .jNewHeader-revisionDate div,
+.jfHeader.branding21 .jNewHeader-revisionDate a,
+.jfHeader.branding21 .jNewHeader-revisionDate div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #78bb07;
+  white-space: nowrap;
+  opacity: 1;
+  padding: 0;
+}
+.jNewHeader.branding21 .jNewHeader-revisionDate span,
+.jfHeader.branding21 .jNewHeader-revisionDate span {
+  background-color: transparent;
+}
+.jNewHeader.branding21 .jNewHeader-avatar,
+.jfHeader.branding21 .jNewHeader-avatar {
+  margin-left: 20px;
+  padding-left: 20px;
+  border-color: #d3d6ec;
+}
+.jNewHeader.branding21 .jNewHeader-rightWrapper,
+.jfHeader.branding21 .jNewHeader-rightWrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.jNewHeader.branding21.isInbox .jNewHeader-rightWrapper button,
+.jfHeader.branding21.isInbox .jNewHeader-rightWrapper button {
+  text-transform: none;
+}
+.jNewHeader.branding21.isInbox .jNewHeader-rightWrapper button path:first-child,
+.jfHeader.branding21.isInbox .jNewHeader-rightWrapper button path:first-child {
+  fill: none;
+}
+.jNewHeader.branding21 .jNewHeader-rightWrapper .jfButton,
+.jNewHeader.branding21 .jNewHeader-switch,
+.jNewHeader.branding21 .jfContextMenu-button,
+.jNewHeader.branding21 .jfSign_header-inviteButton,
+.jNewHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser,
+.jfHeader.branding21 .jNewHeader-rightWrapper .jfButton,
+.jfHeader.branding21 .jNewHeader-switch,
+.jfHeader.branding21 .jfContextMenu-button,
+.jfHeader.branding21 .jfSign_header-inviteButton,
+.jfHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser {
+  display: flex !important;
+  justify-content: center !important;
+  color: #0a1551 !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  height: 34px !important;
+  margin-left: 8px !important;
+  border-radius: 84px !important;
+  cursor: pointer !important;
+  padding: 0 11px !important;
+  background-color: #e3e5f5 !important;
+  border: none !important;
+  transition: none !important;
+  opacity: 1 !important;
+  text-transform: none !important;
+  transition: none !important;
+}
+.jNewHeader.branding21 .jNewHeader-rightWrapper .jfButton svg,
+.jNewHeader.branding21 .jNewHeader-switch svg,
+.jNewHeader.branding21 .jfContextMenu-button svg,
+.jNewHeader.branding21 .jfSign_header-inviteButton svg,
+.jNewHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser svg,
+.jfHeader.branding21 .jNewHeader-rightWrapper .jfButton svg,
+.jfHeader.branding21 .jNewHeader-switch svg,
+.jfHeader.branding21 .jfContextMenu-button svg,
+.jfHeader.branding21 .jfSign_header-inviteButton svg,
+.jfHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser svg {
+  fill: #192731 !important;
+  flex-shrink: 0;
+}
+.jNewHeader.branding21 .jNewHeader-rightWrapper .jfButton svg:not([name=invite_icon]),
+.jNewHeader.branding21 .jNewHeader-rightWrapper .jfButton svg:not(.ji-svg),
+.jNewHeader.branding21 .jNewHeader-switch svg:not([name=invite_icon]),
+.jNewHeader.branding21 .jNewHeader-switch svg:not(.ji-svg),
+.jNewHeader.branding21 .jfContextMenu-button svg:not([name=invite_icon]),
+.jNewHeader.branding21 .jfContextMenu-button svg:not(.ji-svg),
+.jNewHeader.branding21 .jfSign_header-inviteButton svg:not([name=invite_icon]),
+.jNewHeader.branding21 .jfSign_header-inviteButton svg:not(.ji-svg),
+.jNewHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser svg:not([name=invite_icon]),
+.jNewHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser svg:not(.ji-svg),
+.jfHeader.branding21 .jNewHeader-rightWrapper .jfButton svg:not([name=invite_icon]),
+.jfHeader.branding21 .jNewHeader-rightWrapper .jfButton svg:not(.ji-svg),
+.jfHeader.branding21 .jNewHeader-switch svg:not([name=invite_icon]),
+.jfHeader.branding21 .jNewHeader-switch svg:not(.ji-svg),
+.jfHeader.branding21 .jfContextMenu-button svg:not([name=invite_icon]),
+.jfHeader.branding21 .jfContextMenu-button svg:not(.ji-svg),
+.jfHeader.branding21 .jfSign_header-inviteButton svg:not([name=invite_icon]),
+.jfHeader.branding21 .jfSign_header-inviteButton svg:not(.ji-svg),
+.jfHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser svg:not([name=invite_icon]),
+.jfHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser svg:not(.ji-svg) {
+  width: 16px;
+  height: 16px;
+}
+.jNewHeader.branding21 .jNewHeader-rightWrapper .jfButton .ji-svg,
+.jNewHeader.branding21 .jNewHeader-switch .ji-svg,
+.jNewHeader.branding21 .jfContextMenu-button .ji-svg,
+.jNewHeader.branding21 .jfSign_header-inviteButton .ji-svg,
+.jNewHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser .ji-svg,
+.jfHeader.branding21 .jNewHeader-rightWrapper .jfButton .ji-svg,
+.jfHeader.branding21 .jNewHeader-switch .ji-svg,
+.jfHeader.branding21 .jfContextMenu-button .ji-svg,
+.jfHeader.branding21 .jfSign_header-inviteButton .ji-svg,
+.jfHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser .ji-svg {
+  fill: #192731 !important;
+  height: 34px !important;
+}
+.jNewHeader.branding21 .jNewHeader-rightWrapper .jfButton .jfContextMenu-button-svg[fill],
+.jNewHeader.branding21 .jNewHeader-switch .jfContextMenu-button-svg[fill],
+.jNewHeader.branding21 .jfContextMenu-button .jfContextMenu-button-svg[fill],
+.jNewHeader.branding21 .jfSign_header-inviteButton .jfContextMenu-button-svg[fill],
+.jNewHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser .jfContextMenu-button-svg[fill],
+.jfHeader.branding21 .jNewHeader-rightWrapper .jfButton .jfContextMenu-button-svg[fill],
+.jfHeader.branding21 .jNewHeader-switch .jfContextMenu-button-svg[fill],
+.jfHeader.branding21 .jfContextMenu-button .jfContextMenu-button-svg[fill],
+.jfHeader.branding21 .jfSign_header-inviteButton .jfContextMenu-button-svg[fill],
+.jfHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser .jfContextMenu-button-svg[fill] {
+  fill: #192731 !important;
+}
+.jNewHeader.branding21 .jNewHeader-appSelector,
+.jfHeader.branding21 .jNewHeader-appSelector {
+  height: 70px;
+}
+.jNewHeader.branding21 .jNewHeader-appBoxArrow,
+.jfHeader.branding21 .jNewHeader-appBoxArrow {
+  width: 15px;
+  height: 6px;
+  overflow: hidden;
+  display: flex;
+  top: unset;
+  right: 0;
+  bottom: 5px;
+}
+.jNewHeader.branding21 .jNewHeader-appBoxArrow:before, .jNewHeader.branding21 .jNewHeader-appBoxArrow:after,
+.jfHeader.branding21 .jNewHeader-appBoxArrow:before,
+.jfHeader.branding21 .jNewHeader-appBoxArrow:after {
+  bottom: -12px;
+  border-radius: 3px;
+}
+.jNewHeader.branding21 .jNewHeader-appBoxArrow:before,
+.jfHeader.branding21 .jNewHeader-appBoxArrow:before {
+  border-width: 9px;
+  border-bottom-color: rgba(111, 118, 167, 0.35);
+  display: none;
+}
+.jNewHeader.branding21 .jNewHeader-appBoxArrow:after,
+.jfHeader.branding21 .jNewHeader-appBoxArrow:after {
+  height: 14px;
+  background-color: #fff;
+  transform: rotate(-135deg);
+  bottom: unset;
+  flex: 1;
+  width: 14px;
+  top: 2px;
+  border: 1px solid rgba(111, 118, 167, 0.35);
+}
+.jNewHeader.branding21 .jNewHeader-appBox,
+.jfHeader.branding21 .jNewHeader-appBox {
+  width: 367px;
+  max-width: none;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 4px 9px 0 rgba(92, 103, 142, 0.2);
+  border: 1px solid rgba(111, 118, 167, 0.35);
+  left: 10px;
+}
+.jNewHeader.branding21 .jNewHeader-appBox .appItem,
+.jfHeader.branding21 .jNewHeader-appBox .appItem {
+  width: 108px;
+  height: 84px;
+  margin: 4px;
+  padding: 4px;
+  border-radius: 5px;
+  font-size: 13px;
+  color: #6f76a7;
+  border-color: #e3e5f5;
+  transition: 0.3s ease-in-out;
+}
+.jNewHeader.branding21 .jNewHeader-appBox .appItem:before,
+.jfHeader.branding21 .jNewHeader-appBox .appItem:before {
+  display: none;
+}
+.jNewHeader.branding21 .jNewHeader-appBox .appItem:hover,
+.jfHeader.branding21 .jNewHeader-appBox .appItem:hover {
+  background-color: #f3f3fe;
+  border-color: #c8ceed;
+}
+.jNewHeader.branding21 .jNewHeader-appBox .appItem[data-icon] .appIcon,
+.jfHeader.branding21 .jNewHeader-appBox .appItem[data-icon] .appIcon {
+  width: 100%;
+  height: calc(100% - 26px);
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border-radius: unset;
+}
+.jNewHeader.branding21 .jNewHeader-appBox .appItem .appName,
+.jfHeader.branding21 .jNewHeader-appBox .appItem .appName {
+  margin-top: 0;
+}
+.jNewHeader.branding21 .jNewHeader-appBox .appItem[data-icon] svg,
+.jfHeader.branding21 .jNewHeader-appBox .appItem[data-icon] svg {
+  width: 26px;
+  height: 32px;
+}
+.jNewHeader.branding21 .jNewHeader-appBox .appItem[data-icon=forSheets] svg,
+.jNewHeader.branding21 .jNewHeader-appBox .appItem[data-icon=forAnalytics] svg,
+.jNewHeader.branding21 .jNewHeader-appBox .appItem[data-icon=forAppBuilder] svg,
+.jNewHeader.branding21 .jNewHeader-appBox .appItem[data-icon=forPortal] svg,
+.jfHeader.branding21 .jNewHeader-appBox .appItem[data-icon=forSheets] svg,
+.jfHeader.branding21 .jNewHeader-appBox .appItem[data-icon=forAnalytics] svg,
+.jfHeader.branding21 .jNewHeader-appBox .appItem[data-icon=forAppBuilder] svg,
+.jfHeader.branding21 .jNewHeader-appBox .appItem[data-icon=forPortal] svg {
+  width: 30px;
+  height: 30px;
+}
+.jNewHeader.branding21 .jNewHeader-appBox .appItem[data-icon=forForm] .appIcon,
+.jfHeader.branding21 .jNewHeader-appBox .appItem[data-icon=forForm] .appIcon {
+  margin-top: 4px;
+  height: calc(100% - 30px);
+}
+.jNewHeader.branding21 .jNewHeader-appBox .appItem[data-icon=forForm] svg,
+.jfHeader.branding21 .jNewHeader-appBox .appItem[data-icon=forForm] svg {
+  width: 28px;
+  height: 36px;
+}
+.jNewHeader.branding21 .jNewHeader-appBox .toMyForms,
+.jfHeader.branding21 .jNewHeader-appBox .toMyForms {
+  background-color: #f3f3fe;
+  font-size: 13px;
+  border-radius: 5px;
+  color: #0a1551;
+}
+.jNewHeader.branding21 .jNewHeader-appBox .toMyForms .appIcon,
+.jfHeader.branding21 .jNewHeader-appBox .toMyForms .appIcon {
+  background-color: #c8ceed;
+}
+.jNewHeader.branding21 .jNewHeader-appBox .toMyForms:hover,
+.jfHeader.branding21 .jNewHeader-appBox .toMyForms:hover {
+  background-color: #e3e5f5;
+}
+.jNewHeader.branding21 .jNewHeader-appBox .toMyForms svg,
+.jfHeader.branding21 .jNewHeader-appBox .toMyForms svg {
+  fill: #6f76a7;
+}
+.jNewHeader.branding21 .jNewHeader-profile.empty,
+.jfHeader.branding21 .jNewHeader-profile.empty {
+  background-color: #ff6100;
+}
+.jNewHeader.branding21 div.svg-wrapper svg.switch-to-old-icon,
+.jfHeader.branding21 div.svg-wrapper svg.switch-to-old-icon {
+  padding: 0;
+}
+.jNewHeader.branding21.isBuilder .jNewHeader-title,
+.jfHeader.branding21.isBuilder .jNewHeader-title {
+  max-width: 100% !important;
+}
+.jNewHeader.branding21.isBuilder .primaryHeader-collabUsers,
+.jfHeader.branding21.isBuilder .primaryHeader-collabUsers {
+  right: 95px !important;
+}
+@media screen and (max-width: 1020px) {
+  .jNewHeader.branding21.isBuilder .primaryHeader-collabUsers,
+.jfHeader.branding21.isBuilder .primaryHeader-collabUsers {
+    right: 85px !important;
+  }
+}
+.jNewHeader.branding21.isBuilder .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser:hover svg,
+.jfHeader.branding21.isBuilder .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser:hover svg {
+  fill: #0a1551 !important;
+}
+@media screen and (max-width: 1020px) {
+  .jNewHeader.branding21 .jNewHeader-logo .jfLogo,
+.jfHeader.branding21 .jNewHeader-logo .jfLogo {
+    max-width: none;
+  }
+  .jNewHeader.branding21 .jNewHeader-col:not(.jNewHeader-titleWrapper),
+.jfHeader.branding21 .jNewHeader-col:not(.jNewHeader-titleWrapper) {
+    min-width: 220px;
+    width: 220px;
+  }
+  .jNewHeader.branding21 .jNewHeader-col.jNewHeader-titleWrapper,
+.jfHeader.branding21 .jNewHeader-col.jNewHeader-titleWrapper {
+    width: auto;
+    max-width: calc(100% - 440px);
+  }
+  .jNewHeader.branding21 .jNewHeader-col.isHipaa.jNewHeader-navigationWrapper .jNewHeader-hipaa + .jNewHeader-appSelector,
+.jfHeader.branding21 .jNewHeader-col.isHipaa.jNewHeader-navigationWrapper .jNewHeader-hipaa + .jNewHeader-appSelector {
+    margin-left: 10px;
+  }
+  .jNewHeader.branding21 .jNewHeader-col.isHipaa.jNewHeader-navigationWrapper .jNewHeader-hipaa + .jNewHeader-appSelector .jNewHeader-appBox,
+.jfHeader.branding21 .jNewHeader-col.isHipaa.jNewHeader-navigationWrapper .jNewHeader-hipaa + .jNewHeader-appSelector .jNewHeader-appBox {
+    left: 10px;
+  }
+  .jNewHeader.branding21 .jNewHeader-col.isHipaa.jNewHeader-navigationWrapper .jNewHeader-hipaa span:last-child,
+.jfHeader.branding21 .jNewHeader-col.isHipaa.jNewHeader-navigationWrapper .jNewHeader-hipaa span:last-child {
+    display: none;
+  }
+  .jNewHeader.branding21 .jNewHeader-appSelector .jNewHeader-appBox,
+.jfHeader.branding21 .jNewHeader-appSelector .jNewHeader-appBox {
+    left: 10px;
+  }
+  .jNewHeader.branding21 .jNewHeader-appSelector .appSelectorTrigger-button:before,
+.jfHeader.branding21 .jNewHeader-appSelector .appSelectorTrigger-button:before {
+    height: 70px;
+  }
+  .jNewHeader.branding21 .jNewHeader-rightWrapper .headerButton,
+.jNewHeader.branding21 .jNewHeader-rightWrapper .jfButton,
+.jNewHeader.branding21 .jNewHeader-switch,
+.jNewHeader.branding21 .jNewHeader-rightWrapper .jfContextMenu-button,
+.jNewHeader.branding21 .jfSign_header-inviteButton,
+.jNewHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser,
+.jfHeader.branding21 .jNewHeader-rightWrapper .headerButton,
+.jfHeader.branding21 .jNewHeader-rightWrapper .jfButton,
+.jfHeader.branding21 .jNewHeader-switch,
+.jfHeader.branding21 .jNewHeader-rightWrapper .jfContextMenu-button,
+.jfHeader.branding21 .jfSign_header-inviteButton,
+.jfHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser {
+    width: 34px !important;
+    border-radius: 50% !important;
+    padding: 0 !important;
+  }
+  .jNewHeader.branding21 .jNewHeader-rightWrapper .headerButton.forAccess,
+.jNewHeader.branding21 .jNewHeader-rightWrapper .jfButton.forAccess,
+.jNewHeader.branding21 .jNewHeader-switch.forAccess,
+.jNewHeader.branding21 .jNewHeader-rightWrapper .jfContextMenu-button.forAccess,
+.jNewHeader.branding21 .jfSign_header-inviteButton.forAccess,
+.jNewHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser.forAccess,
+.jfHeader.branding21 .jNewHeader-rightWrapper .headerButton.forAccess,
+.jfHeader.branding21 .jNewHeader-rightWrapper .jfButton.forAccess,
+.jfHeader.branding21 .jNewHeader-switch.forAccess,
+.jfHeader.branding21 .jNewHeader-rightWrapper .jfContextMenu-button.forAccess,
+.jfHeader.branding21 .jfSign_header-inviteButton.forAccess,
+.jfHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser.forAccess {
+    margin-right: 0;
+  }
+  .jNewHeader.branding21 .jNewHeader-rightWrapper .headerButton.forAccess svg,
+.jNewHeader.branding21 .jNewHeader-rightWrapper .jfButton.forAccess svg,
+.jNewHeader.branding21 .jNewHeader-switch.forAccess svg,
+.jNewHeader.branding21 .jNewHeader-rightWrapper .jfContextMenu-button.forAccess svg,
+.jNewHeader.branding21 .jfSign_header-inviteButton.forAccess svg,
+.jNewHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser.forAccess svg,
+.jfHeader.branding21 .jNewHeader-rightWrapper .headerButton.forAccess svg,
+.jfHeader.branding21 .jNewHeader-rightWrapper .jfButton.forAccess svg,
+.jfHeader.branding21 .jNewHeader-switch.forAccess svg,
+.jfHeader.branding21 .jNewHeader-rightWrapper .jfContextMenu-button.forAccess svg,
+.jfHeader.branding21 .jfSign_header-inviteButton.forAccess svg,
+.jfHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser.forAccess svg {
+    margin: 0;
+  }
+  .jNewHeader.branding21 .jNewHeader-rightWrapper .headerButton svg,
+.jNewHeader.branding21 .jNewHeader-rightWrapper .jfButton svg,
+.jNewHeader.branding21 .jNewHeader-switch svg,
+.jNewHeader.branding21 .jNewHeader-rightWrapper .jfContextMenu-button svg,
+.jNewHeader.branding21 .jfSign_header-inviteButton svg,
+.jNewHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser svg,
+.jfHeader.branding21 .jNewHeader-rightWrapper .headerButton svg,
+.jfHeader.branding21 .jNewHeader-rightWrapper .jfButton svg,
+.jfHeader.branding21 .jNewHeader-switch svg,
+.jfHeader.branding21 .jNewHeader-rightWrapper .jfContextMenu-button svg,
+.jfHeader.branding21 .jfSign_header-inviteButton svg,
+.jfHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser svg {
+    margin-right: 0 !important;
+  }
+  .jNewHeader.branding21 .jNewHeader-rightWrapper .headerButton span:not(.jNewHeader-icon),
+.jNewHeader.branding21 .jNewHeader-rightWrapper .jfButton span:not(.jNewHeader-icon),
+.jNewHeader.branding21 .jNewHeader-switch span:not(.jNewHeader-icon),
+.jNewHeader.branding21 .jNewHeader-rightWrapper .jfContextMenu-button span:not(.jNewHeader-icon),
+.jNewHeader.branding21 .jfSign_header-inviteButton span:not(.jNewHeader-icon),
+.jNewHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser span:not(.jNewHeader-icon),
+.jfHeader.branding21 .jNewHeader-rightWrapper .headerButton span:not(.jNewHeader-icon),
+.jfHeader.branding21 .jNewHeader-rightWrapper .jfButton span:not(.jNewHeader-icon),
+.jfHeader.branding21 .jNewHeader-switch span:not(.jNewHeader-icon),
+.jfHeader.branding21 .jNewHeader-rightWrapper .jfContextMenu-button span:not(.jNewHeader-icon),
+.jfHeader.branding21 .jfSign_header-inviteButton span:not(.jNewHeader-icon),
+.jfHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser span:not(.jNewHeader-icon) {
+    display: none !important;
+  }
+  .jNewHeader.branding21 .jNewHeader-rightWrapper .headerButton .svg-wrapper,
+.jNewHeader.branding21 .jNewHeader-rightWrapper .jfButton .svg-wrapper,
+.jNewHeader.branding21 .jNewHeader-switch .svg-wrapper,
+.jNewHeader.branding21 .jNewHeader-rightWrapper .jfContextMenu-button .svg-wrapper,
+.jNewHeader.branding21 .jfSign_header-inviteButton .svg-wrapper,
+.jNewHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser .svg-wrapper,
+.jfHeader.branding21 .jNewHeader-rightWrapper .headerButton .svg-wrapper,
+.jfHeader.branding21 .jNewHeader-rightWrapper .jfButton .svg-wrapper,
+.jfHeader.branding21 .jNewHeader-switch .svg-wrapper,
+.jfHeader.branding21 .jNewHeader-rightWrapper .jfContextMenu-button .svg-wrapper,
+.jfHeader.branding21 .jfSign_header-inviteButton .svg-wrapper,
+.jfHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser .svg-wrapper {
+    margin-right: 0;
+  }
+  .jNewHeader.branding21 .jNewHeader-rightWrapper .headerButton .jfContextMenu-button-column.forText,
+.jNewHeader.branding21 .jNewHeader-rightWrapper .jfButton .jfContextMenu-button-column.forText,
+.jNewHeader.branding21 .jNewHeader-switch .jfContextMenu-button-column.forText,
+.jNewHeader.branding21 .jNewHeader-rightWrapper .jfContextMenu-button .jfContextMenu-button-column.forText,
+.jNewHeader.branding21 .jfSign_header-inviteButton .jfContextMenu-button-column.forText,
+.jNewHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser .jfContextMenu-button-column.forText,
+.jfHeader.branding21 .jNewHeader-rightWrapper .headerButton .jfContextMenu-button-column.forText,
+.jfHeader.branding21 .jNewHeader-rightWrapper .jfButton .jfContextMenu-button-column.forText,
+.jfHeader.branding21 .jNewHeader-switch .jfContextMenu-button-column.forText,
+.jfHeader.branding21 .jNewHeader-rightWrapper .jfContextMenu-button .jfContextMenu-button-column.forText,
+.jfHeader.branding21 .jfSign_header-inviteButton .jfContextMenu-button-column.forText,
+.jfHeader.branding21 .primaryHeader-collabUsers ul li.hasLongButton .primaryHeader-collabUser .jfContextMenu-button-column.forText {
+    display: none !important;
+  }
+  .jNewHeader.branding21 .jfSign_header-inviteButton,
+.jfHeader.branding21 .jfSign_header-inviteButton {
+    overflow: hidden;
+  }
+  .jNewHeader.branding21 .jNewHeader-logo,
+.jfHeader.branding21 .jNewHeader-logo {
+    max-width: 27px;
+    overflow: hidden;
+  }
+  .jNewHeader.branding21 .jNewHeader-appSelector .jNewHeader-appBoxArrow,
+.jfHeader.branding21 .jNewHeader-appSelector .jNewHeader-appBoxArrow {
+    top: unset;
+    bottom: 4px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .jNewHeader.branding21,
+.jfHeader.branding21 {
+    padding: 0 14px;
+  }
+  .jNewHeader.branding21 .jNewHeader-col:not(.jNewHeader-titleWrapper),
+.jfHeader.branding21 .jNewHeader-col:not(.jNewHeader-titleWrapper) {
+    width: 90px;
+    min-width: 90px;
+  }
+  .jNewHeader.branding21 .isHipaa.jNewHeader-col:not(.jNewHeader-titleWrapper),
+.jfHeader.branding21 .isHipaa.jNewHeader-col:not(.jNewHeader-titleWrapper) {
+    width: 140px;
+  }
+  .jNewHeader.branding21 .jNewHeader-col:not(.jNewHeader-titleWrapper).jNewHeader-navigationWrapper,
+.jfHeader.branding21 .jNewHeader-col:not(.jNewHeader-titleWrapper).jNewHeader-navigationWrapper {
+    border: none;
+  }
+  .jNewHeader.branding21 .jNewHeader-col.jNewHeader-titleWrapper,
+.jfHeader.branding21 .jNewHeader-col.jNewHeader-titleWrapper {
+    margin-right: unset;
+    max-width: calc(100% - 180px);
+    text-align: center;
+    padding: 0 14px;
+  }
+  .jNewHeader.branding21 .jNewHeader-col.isHipaa + .jNewHeader-col.jNewHeader-titleWrapper,
+.jfHeader.branding21 .jNewHeader-col.isHipaa + .jNewHeader-col.jNewHeader-titleWrapper {
+    max-width: calc(100% - 230px);
+  }
+  .jNewHeader.branding21 .jNewHeader-appSelector,
+.jfHeader.branding21 .jNewHeader-appSelector {
+    margin: 0 14px;
+  }
+  .jNewHeader.branding21 .jNewHeader-appSelector .currentApp,
+.jfHeader.branding21 .jNewHeader-appSelector .currentApp {
+    display: none;
+  }
+  .jNewHeader.branding21 .jNewHeader-appSelector .jNewHeader-selectorIcon,
+.jfHeader.branding21 .jNewHeader-appSelector .jNewHeader-selectorIcon {
+    width: 20px;
+    height: 20px;
+    padding: 7px 5px;
+    margin-left: 15px;
+  }
+  .jNewHeader.branding21 .jNewHeader-appSelector .jNewHeader-selectorIcon svg,
+.jfHeader.branding21 .jNewHeader-appSelector .jNewHeader-selectorIcon svg {
+    width: 10px;
+    height: 6px;
+  }
+  .jNewHeader.branding21 .jNewHeader-rightWrapper .headerButton,
+.jNewHeader.branding21 .jNewHeader-rightWrapper .jfButton,
+.jNewHeader.branding21 .jNewHeader-switch,
+.jNewHeader.branding21 .jNewHeader-rightWrapper .jfContextMenu-button,
+.jNewHeader.branding21 .jfSign_header-inviteButton,
+.jfHeader.branding21 .jNewHeader-rightWrapper .headerButton,
+.jfHeader.branding21 .jNewHeader-rightWrapper .jfButton,
+.jfHeader.branding21 .jNewHeader-switch,
+.jfHeader.branding21 .jNewHeader-rightWrapper .jfContextMenu-button,
+.jfHeader.branding21 .jfSign_header-inviteButton {
+    display: none;
+  }
+  .jNewHeader.branding21 .jNewHeader-logo,
+.jfHeader.branding21 .jNewHeader-logo {
+    max-width: 22px;
+  }
+  .jNewHeader.branding21 .jNewHeader-logo .jfLogo,
+.jfHeader.branding21 .jNewHeader-logo .jfLogo {
+    height: 24px;
+  }
+  .jNewHeader.branding21 .jNewHeader-appBoxArrow,
+.jfHeader.branding21 .jNewHeader-appBoxArrow {
+    right: 3px;
+  }
+  .jNewHeader.branding21 .jNewHeader-avatar,
+.jfHeader.branding21 .jNewHeader-avatar {
+    margin-left: 14px;
+    padding-left: 14px;
+  }
+  .jNewHeader.branding21 .jNewHeader-profile,
+.jfHeader.branding21 .jNewHeader-profile {
+    width: 36px;
+    height: 36px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .jNewHeader.branding21 .jNewHeader-appBox .appItem,
+.jfHeader.branding21 .jNewHeader-appBox .appItem {
+    width: calc(33.3% - 8px);
+  }
+}
+
+.myforms .jfHeader.branding21 .jNewHeader-appBox {
+  top: calc(100% - 6px);
+}
+
+.isDark.jNewHeader .jNewHeader-revisionDate {
+  color: #5caa40;
+}
+.isDark.jNewHeader .jNewHeader-appSelector .currentApp {
+  font-size: 15px;
+}
+
+.navigationToggleDisabled .appSelectorTrigger {
+  display: none;
+}
+.navigationToggleDisabled .appSelectorTrigger-button {
+  cursor: unset;
+}
+
+@media screen and (max-width: 850px) {
+  .jfHeader-content .jNewHeader-appSelector {
+    left: 165px;
+  }
+  .jfHeader-content .jNewHeader-appSelector .currentApp {
+    display: inline-block;
+  }
+}
+
+/*# sourceMappingURL=output.css.map */
