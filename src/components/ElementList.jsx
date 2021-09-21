@@ -6,7 +6,7 @@ import * as Elements from './Elements';
 
 const ElementList = ({ addLayoutItem }) => {
   const [currentCategory, setCategory] = useState('header');
-
+  const [isOpen, setIsOpen] = useState(false);
   const onElementClick = (e) => {
     const elementName = e.target.getAttribute('data-element-name');
     const element = Elements[elementName];
@@ -19,15 +19,20 @@ const ElementList = ({ addLayoutItem }) => {
     setCategory(e.target.getAttribute('name'));
   };
 
-  return (
-    <div className="elements">
-      <p>Add Elements</p>
-      <span onClick={onCategoryClick} name="header">Header</span>
-      <span onClick={onCategoryClick} name="content">Content</span>
-      <span onClick={onCategoryClick} name="footer">Footer</span>
+  const onAddElementClick = () => {
+    setIsOpen(!isOpen);
+  };
 
-      <ul>
-        {Object.keys(Elements).filter(element =>
+  const renderElements = () => {
+    if (isOpen) {
+      return (
+        <div>
+          <span onClick={onCategoryClick} name="header">Header</span>
+          <span onClick={onCategoryClick} name="content">Content</span>
+          <span onClick={onCategoryClick} name="footer">Footer</span>
+
+          <ul>
+            {Object.keys(Elements).filter(element =>
      Elements[element].category === currentCategory).map(element =>
        <li
          key={element}
@@ -36,8 +41,17 @@ const ElementList = ({ addLayoutItem }) => {
        >
          {Elements[element].title}
        </li>)}
-      </ul>
+          </ul>
+        </div>
+      );
+    }
+    return <></>;
+  };
 
+  return (
+    <div className="elements">
+      <span onClick={onAddElementClick} >Add Element</span>
+      {renderElements()}
     </div>
   );
 };
