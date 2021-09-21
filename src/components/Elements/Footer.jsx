@@ -1,8 +1,12 @@
 import React from 'react';
-import { shape, string } from 'prop-types';
+import { func, shape, string } from 'prop-types';
 
-const Component = ({ item }) => (
-  <footer className="footer text-gray-600 body-font">
+const Component = ({ item, onClick }) => (
+  <footer
+    className="footer text-gray-600 body-font"
+    data-element-id={item.id}
+    onClick={onClick}
+  >
     <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
       <span href="sdf" className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
@@ -49,11 +53,12 @@ Component.propTypes = {
     twitter: string.isRequired,
     instagram: string.isRequired,
     linkedin: string.isRequired
-  }).isRequired
+  }).isRequired,
+  onClick: func.isRequired
 };
 
 const title = 'Footer';
-const name = 'footer';
+const type = 'footer';
 
 const settings = {
   title: {
@@ -87,5 +92,5 @@ export default {
   title,
   Component,
   settings,
-  name
+  type
 };

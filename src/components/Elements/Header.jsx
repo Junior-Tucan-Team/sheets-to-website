@@ -1,8 +1,12 @@
 import React from 'react';
-import { shape, string } from 'prop-types';
+import { shape, string, func } from 'prop-types';
 
-const Component = ({ item }) => (
-  <section className="text-gray-600 body-font">
+const Component = ({ item, onClick }) => (
+  <section
+    className="text-gray-600 body-font"
+    data-element-id={item.id}
+    onClick={onClick}
+  >
     <div className="container px-5 py-24 mx-auto flex flex-wrap">
       <div className="lg:w-2/3 mx-auto">
         <div className="flex flex-wrap w-full bg-gray-100 py-32 px-10 relative mb-4">
@@ -23,11 +27,12 @@ Component.propTypes = {
     title: string.isRequired,
     description: string.isRequired,
     image: string.isRequired
-  }).isRequired
+  }).isRequired,
+  onClick: func.isRequired
 };
 
 const title = 'Header';
-const name = 'header';
+const type = 'header';
 
 const settings = {
   title: {
@@ -48,5 +53,5 @@ export default {
   title,
   Component,
   settings,
-  name
+  type
 };
