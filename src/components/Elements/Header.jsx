@@ -33,6 +33,7 @@ Component.propTypes = {
 
 const title = 'Header';
 const type = 'header';
+const category = 'header';
 
 const settings = {
   title: {
@@ -53,5 +54,6 @@ export default {
   title,
   Component,
   settings,
-  type
+  type,
+  category
 };

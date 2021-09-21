@@ -36,6 +36,7 @@ Component.propTypes = {
 
 const title = 'Section';
 const type = 'section';
+const category = 'content';
 
 const settings = {
   title: {
@@ -56,5 +57,6 @@ export default {
   title,
   Component,
   settings,
-  type
+  type,
+  category
 };

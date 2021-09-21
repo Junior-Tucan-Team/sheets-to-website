@@ -59,6 +59,7 @@ Component.propTypes = {
 
 const title = 'Footer';
 const type = 'footer';
+const category = 'footer';
 
 const settings = {
   title: {
@@ -92,5 +93,6 @@ export default {
   title,
   Component,
   settings,
-  type
+  type,
+  category
 };

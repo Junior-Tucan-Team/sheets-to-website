@@ -31,6 +31,7 @@ Component.propTypes = {
 
 const title = 'About Us';
 const type = 'about';
+const category = 'content';
 
 const settings = {
   image: {
@@ -47,5 +48,6 @@ export default {
   title,
   Component,
   settings,
-  type
+  type,
+  category
 };

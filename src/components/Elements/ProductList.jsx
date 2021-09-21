@@ -75,6 +75,7 @@ Component.defaultProps = {
 
 const title = 'Product List';
 const type = 'productlist';
+const category = 'content';
 
 const settings = {
   title: {
@@ -95,5 +96,6 @@ export default {
   title,
   Component,
   settings,
-  type
+  type,
+  category
 };
