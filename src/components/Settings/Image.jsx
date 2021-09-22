@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { arrayOf, func, shape, string } from 'prop-types';
 
-const Image = ({ value, onBlur, name }) => {
-  const [currentCategory, setCategory] = useState('upload');
+const Image = ({ value, onBlur, name, updateField, settingsKey: key }) => {
+  const [currentCategory, setCategory] = useState('url');
+  const [imageUrl, setUrl] = useState('');
+  const handleImageInput = (e) => {
+    updateField(imageUrl, key);
+  };
   const renderBackground = () => {
       if (currentCategory === 'upload') {
           return (
@@ -11,7 +15,7 @@ const Image = ({ value, onBlur, name }) => {
       } else if (currentCategory === 'myImage') {
          return (<p>image</p>);
       } else if (currentCategory === 'url') {
-          return (<input type="url" placeholder="image url"/>);
+          return (<input type="text" onChange={(e) => setUrl(e.target.value)} placeholder="image url" onBlur={handleImageInput} value={imageUrl}/>);
       }
       return <></>;
   };
@@ -33,7 +37,9 @@ const Image = ({ value, onBlur, name }) => {
 Image.propTypes = {
     value: string,
     onBlur: func,
-    name: string.isRequired
+    name: string.isRequired,
+    updateField: func.isRequired,
+    settingsKey: string.isRequired
       };
 
 Image.defaultProps = {

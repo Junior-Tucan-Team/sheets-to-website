@@ -16,9 +16,6 @@ const Properties = ({ selectedElement, layoutItems, updateField }) => {
 
   return (
     <div className="settings">
-      <button>Header</button>
-      <button>Background</button>
-      <button>Logo</button>
       {Object.keys(settings).map((key) => {
         const Component = settingsMap[settings[key].type] || <div>Unknown setting type</div>;
         return (

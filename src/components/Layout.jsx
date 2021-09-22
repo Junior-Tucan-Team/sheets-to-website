@@ -13,7 +13,6 @@ function Layout({
   const handleSelectItem = (e) => {
     const selectedId = e.currentTarget.getAttribute('data-element-id');
     selectLayoutItem(selectedId);
-    console.log(selectedId);
   };
 
   const removeSelectedItem = () => {
