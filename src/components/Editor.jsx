@@ -3,7 +3,7 @@ import { shape, arrayOf, func, string } from 'prop-types';
 import { connect } from 'react-redux';
 import ElementList from './ElementList';
 import Layout from './Layout';
-import Settings from './Properties';
+import Properties from './Properties';
 
 import {
    addLayoutItem as addLayoutItemAction,
@@ -30,7 +30,7 @@ const Editor = ({
       selectedElement={selectedElement}
       deleteLayoutItem={deleteLayoutItem}
     />
-    <Settings
+    <Properties
       selectedElement={selectedElement}
       layoutItems={layoutItems}
     />

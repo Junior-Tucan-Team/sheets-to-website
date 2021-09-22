@@ -4,7 +4,6 @@ import HeaderSettings from './Elements/ElementSettings/HeaderSettings/HeaderSett
 import * as settingsMap from './Settings';
 import * as Elements from './Elements';
 
-console.log(settingsMap);
 const Properties = ({ selectedElement, layoutItems }) => {
   const foundedItem = layoutItems.find(item => selectedElement === item.id);
 
@@ -16,12 +15,15 @@ const Properties = ({ selectedElement, layoutItems }) => {
 
   return (
     <div className="settings">
+      <button>Header</button>
+      <button>Background</button>
+      <button>Logo</button>
       {Object.keys(settings).map((key) => {
         const Component = settingsMap[settings[key].type] || <div>Unknown setting type</div>;
-       return (
-         <div>
-           <Component />
-         </div>
+        return (
+          <div>
+            <Component name={settings[key].subtype} />
+          </div>
         );
       })}
     </div>

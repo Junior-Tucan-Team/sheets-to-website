@@ -10,21 +10,20 @@ const Component = ({ submissons, item, info, onClick }) => (
     <div className="container px-5 py-24 mx-auto">
       <div className="w-full mb-8">
         <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
-          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">{info.header}</h1>
+          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">{info.title}</h1>
           <div className="h-1 w-20 bg-indigo-500 rounded" />
         </div>
-        <p className="lg:w-1/2 w-full leading-relaxed text-gray-500"> {info.menuDescription}</p>
+        <p className="lg:w-1/2 w-full leading-relaxed text-gray-500"> {info.description}</p>
       </div>
       <div className="flex flex-wrap -m-4">
         {
               submissons.map(submission =>
                 <div key={submission.title} className="xl:w-1/4 md:w-1/2 p-4">
                   <div className="bg-gray-100 p-6 rounded-lg">
-                    <img className="h-40 rounded w-full object-cover object-center mb-6" src={submission.image} alt="content"/>
-                    <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">{submission.title}</h3>
-                    <h2 className="text-lg text-gray-900 font-medium title-font mb-4">{submission.title}</h2>
-                    <p className="leading-relaxed text-base">{submission.description}</p>
-                    <p className="mt-1">{submission.price}</p>
+                    <img className="h-40 rounded w-full object-cover object-center mb-6" src={submission.cardImage} alt="content"/>
+                    <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">{submission.cardTitle}</h3>
+                    <h2 className="text-lg text-gray-900 font-medium title-font mb-4">{submission.cardTitle}</h2>
+                    <p className="leading-relaxed text-base">{submission.cardDescription}</p>
                   </div>
                 </div>)
           }
@@ -35,16 +34,15 @@ const Component = ({ submissons, item, info, onClick }) => (
 
 Component.propTypes = {
   submissons: arrayOf(shape({
-    title: string,
-    description: string,
-    image: string,
-    price: string
+    cardTitle: string,
+    cardDescription: string,
+    cardImage: string,
   })),
-  info: shape({
-      header: string,
-      menuDescription: string
-  }),
   onClick: func,
+  info: shape({
+    title: string,
+    description: string
+  }),
   item: shape({
     id: string
   })
@@ -53,21 +51,20 @@ Component.propTypes = {
 Component.defaultProps = {
     submissons: [
         {
-            title: 'Pizza',
-            description: 'Pepperoni',
-            image: 'https://dummyimage.com/720x600',
-            price: '10$'
+          cardTitle: 'Pizza',
+          cardDescription: 'Pepperoni',
+          cardImage: 'https://dummyimage.com/720x600'
+
         },
         {
-            title: 'Hamburger',
-            description: 'Cheese',
-            image: 'https://dummyimage.com/720x600',
-            price: '20$'
+          cardTitle: 'Hamburger',
+          cardDescription: 'Cheese',
+          cardImage: 'https://dummyimage.com/720x600'
         },
     ],
     info: {
-        header: 'OUR MENU',
-        menuDescription: 'This is our menu(optional to write)'
+      title: 'Our Menu',
+      description: 'this is our'
     },
     onClick: () => {},
     item: string
@@ -82,13 +79,9 @@ const settings = {
     default: 'Before they sold out',
     type: 'textbox'
   },
-  image: {
-    default: 'https://dummyimage.com/720x600',
-    type: 'image'
-  },
   description: {
     default: 'Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.',
-    type: 'text'
+    type: 'textbox'
   }
 };
 
