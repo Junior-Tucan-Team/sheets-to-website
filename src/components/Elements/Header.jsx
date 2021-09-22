@@ -1,7 +1,7 @@
 import React from 'react';
 import { shape, string, func } from 'prop-types';
 
-const Component = ({ item, onClick }) => (
+const Component = ({ item, onClick, update }) => (
   <section
     className="text-gray-600 body-font"
     data-element-id={item.id}
@@ -20,7 +20,7 @@ const Component = ({ item, onClick }) => (
       </div>
     </div>
   </section>
-);
+  );
 
 Component.propTypes = {
   item: shape({
@@ -28,7 +28,8 @@ Component.propTypes = {
     description: string.isRequired,
     image: string.isRequired
   }).isRequired,
-  onClick: func.isRequired
+  onClick: func.isRequired,
+  update: func.isRequired
 };
 
 const title = 'Header';

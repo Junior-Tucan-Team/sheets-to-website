@@ -7,7 +7,8 @@ function Layout({
    selectedElement,
    selectLayoutItem,
    removeSelectedLayoutItem,
-   deleteLayoutItem
+   deleteLayoutItem,
+   updateField
   }) {
   const handleSelectItem = (e) => {
     const selectedId = e.currentTarget.getAttribute('data-element-id');
@@ -33,6 +34,7 @@ function Layout({
               <ElementComponent
                 key={index.toString()}
                 item={layoutItem}
+                update={updateField}
               />
               <button
                 className="deleteButton"
@@ -63,6 +65,7 @@ Layout.propTypes = {
   selectedElement: arrayOf(shape).isRequired,
   selectLayoutItem: func.isRequired,
   removeSelectedLayoutItem: func.isRequired,
-  deleteLayoutItem: func.isRequired
+  deleteLayoutItem: func.isRequired,
+  updateField: func.isRequired
 };
 export default Layout;
