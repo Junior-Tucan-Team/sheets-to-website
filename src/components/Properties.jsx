@@ -1,11 +1,11 @@
 import React from 'react';
 import { shape, arrayOf, func } from 'prop-types';
-import HeaderSettings from './Elements/ElementSettings/HeaderSettings/HeaderSettings';
+// import HeaderSettings from './Elements/ElementSettings/HeaderSettings/HeaderSettings';
 import * as settingsMap from './Settings';
 import * as Elements from './Elements';
 
 
-const Properties = ({ selectedElement, layoutItems, updateField }) => {
+const Properties = ({ selectedElement, layoutItems, updateField, updateStyle }) => {
   const foundedItem = layoutItems.find(item => selectedElement === item.id);
 
   if (!foundedItem) {
@@ -23,6 +23,7 @@ const Properties = ({ selectedElement, layoutItems, updateField }) => {
             <Component
               name={settings[key].subtype}
               updateField={updateField}
+              updateStyle={updateStyle}
               key={key}
               settingsKey={key}
             />
@@ -36,7 +37,8 @@ const Properties = ({ selectedElement, layoutItems, updateField }) => {
 Properties.propTypes = {
   selectedElement: arrayOf(shape).isRequired,
   layoutItems: arrayOf(shape).isRequired,
-  updateField: func.isRequired
+  updateField: func.isRequired,
+  updateStyle: func.isRequired
 };
 
 export default Properties;

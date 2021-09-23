@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import { arrayOf, func, string } from 'prop-types';
 
-const TextBox = ({ value, onBlur, name, updateField, settingsKey: key }) => {
+const TextBox = ({ value, onBlur, name, updateField, updateStyle, settingsKey: key }) => {
   const [headingText, setHeadingText] = useState('');
+  const [styleParameter, setStyleParameter] = useState('');
   const handleInput = (e) => {
     updateField(headingText, key);
+  };
+  const handleStyle = (e) => {
+    updateStyle(styleParameter, key, e.target.name);
   };
   return (
     <div className="heading-text">
@@ -16,14 +20,10 @@ const TextBox = ({ value, onBlur, name, updateField, settingsKey: key }) => {
         <option value="Serif">Serif</option>
         <option value="Roboto">Roboto</option>
       </select>
-      <h4>Font Size</h4>
-      <select className="font-size">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-      </select>
       <h4>Font Color</h4>
-      <input type="color"/>
+      <input type="color" name="fntclr" onChange={(e) => setStyleParameter(e.target.value)} value={styleParameter} onBlur={handleStyle} />
+      <h4>Font Size</h4>
+      <input type="number" name="fntSz" onChange={(e) => setStyleParameter(e.target.value)} value={styleParameter} onBlur={handleStyle} />
       <hr />
     </div>
       );
@@ -34,6 +34,7 @@ TextBox.propTypes = {
     onBlur: func,
     name: string.isRequired,
     updateField: func.isRequired,
+    updateStyle: func.isRequired,
     settingsKey: string.isRequired
       };
 

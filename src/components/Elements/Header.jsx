@@ -1,7 +1,7 @@
 import React from 'react';
 import { shape, string, func } from 'prop-types';
 
-const Component = ({ item, onClick, update }) => (
+const Component = ({ item, onClick }) => (
   <section
     className="text-gray-600 body-font"
     data-element-id={item.id}
@@ -13,8 +13,8 @@ const Component = ({ item, onClick, update }) => (
           <img alt="gallery" className="w-full object-cover h-full object-center block opacity-25 absolute inset-0" src={item.image}/>
           <p>LOGO SECTION</p>
           <div className="text-center relative z-10 w-full">
-            <h2 className="text-2xl text-gray-900 font-medium title-font mb-2">{item.title}</h2>
-            <p className="leading-relaxed">{item.description}</p>
+            <h2 style={{ color: item.fntclrtitle, fontSize: item.fntSztitle }} className="text-2xl text-gray-900 font-medium title-font mb-2">{item.title}</h2>
+            <p style={{ color: item.fntclrdescription, fontSize: item.fntSzdescription }} className="leading-relaxed">{item.description}</p>
           </div>
         </div>
       </div>
@@ -29,7 +29,6 @@ Component.propTypes = {
     image: string.isRequired
   }).isRequired,
   onClick: func.isRequired,
-  update: func.isRequired
 };
 
 const title = 'Header';

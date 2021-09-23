@@ -10,7 +10,8 @@ import {
    selectLayoutItem as selectLayoutItemAction,
    removeSelectedLayoutItem as removeSelectedLayoutItemAction,
    deleteLayoutItem as deleteLayoutItemAction,
-   updateField as updateFieldAction
+   updateField as updateFieldAction,
+   updateStyle as updateStyleAction
 } from '../redux/actions';
 
 
@@ -21,7 +22,8 @@ const Editor = ({
   removeSelectedLayoutItem,
   selectedElement,
   deleteLayoutItem,
-  updateField
+  updateField,
+  updateStyle
 }) => (
   <div className="editor">
     <ElementList layoutItems={layoutItems} addLayoutItem={addLayoutItem}/>
@@ -32,11 +34,13 @@ const Editor = ({
       selectedElement={selectedElement}
       deleteLayoutItem={deleteLayoutItem}
       updateField={updateField}
+      updateStyle={updateStyle}
     />
     <Properties
       selectedElement={selectedElement}
       layoutItems={layoutItems}
       updateField={updateField}
+      updateStyle={updateStyle}
     />
   </div>);
 
@@ -47,7 +51,8 @@ Editor.propTypes = {
   removeSelectedLayoutItem: func,
   selectedElement: string,
   deleteLayoutItem: func,
-  updateField: func
+  updateField: func,
+  updateStyle: func
 };
 
 Editor.defaultProps = {
@@ -57,7 +62,8 @@ Editor.defaultProps = {
   removeSelectedLayoutItem: () => {},
   selectedElement: '',
   deleteLayoutItem: () => {},
-  updateField: () => {}
+  updateField: () => {},
+  updateStyle: () => {},
 };
 
 const mapStateToProps = (state) => ({
@@ -71,7 +77,8 @@ const mapActionToProps = {
   selectLayoutItem: selectLayoutItemAction,
   removeSelectedLayoutItem: removeSelectedLayoutItemAction,
   deleteLayoutItem: deleteLayoutItemAction,
-  updateField: updateFieldAction
+  updateField: updateFieldAction,
+  updateStyle: updateStyleAction
 };
 
 export default connect(mapStateToProps, mapActionToProps)(Editor);

@@ -15,3 +15,4 @@ export const REMOVE_SELECTED_ITEM = 'REMOVE_SELECTED_ITEM';
 
 export const UPDATE_FIELD = 'UPDATE_FIELD';
 
+export const UPDATE_STYLE = 'UPDATE_STYLE';
