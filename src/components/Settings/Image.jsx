@@ -2,32 +2,36 @@ import React, { useState } from 'react';
 import { arrayOf, func, shape, string } from 'prop-types';
 
 const Image = ({ value, onBlur, name, updateField, settingsKey: key }) => {
-  const [currentCategory, setCategory] = useState('url');
+  const [currentCategory, setCategory] = useState('upload');
   const [imageUrl, setUrl] = useState('');
-  const handleImageInput = (e) => {
-    updateField(imageUrl, key);
+  const handleImageInput = (url) => {
+      if (url !== '') {
+        updateField(url, key);
+      }
   };
-  const renderBackground = () => {
+  const renderImage = () => {
       if (currentCategory === 'upload') {
           return (
-            <><p>Image Upload</p><input type="file" onBlur={onBlur} /></>
+            <><p><input type="file" accept="image/*" name="image" id="image" style={{ display: 'none' }} onChange={(e) => handleImageInput(URL.createObjectURL(e.target.files[0]))} /></p>
+              <p><label htmlFor="image" style={{ border: 'solid 1px black', cursor: 'pointer', color: 'black', background: 'cornsilk' }}> Upload Image</label></p>
+            </>
           );
       } else if (currentCategory === 'myImage') {
          return (<p>image</p>);
       } else if (currentCategory === 'url') {
-          return (<input type="text" onChange={(e) => setUrl(e.target.value)} placeholder="image url" onBlur={handleImageInput} value={imageUrl}/>);
+          return (<input type="text" onChange={(e) => setUrl(e.target.value)} placeholder="image url" onBlur={() => handleImageInput(imageUrl)} value={imageUrl} />);
       }
       return <></>;
   };
   return (
     <>
       <h3>{name}</h3>
-      <div className="header-background">
+      <div className="image-upload">
         <span onClick={() => setCategory('upload')}>Upload</span>
         <span onClick={() => setCategory('myImage')}>My Image</span>
         <span onClick={() => setCategory('url')}>Url</span>
       </div>
-      <div>{renderBackground()}</div>
+      <div>{renderImage()}</div>
       <hr />
     </>
   );

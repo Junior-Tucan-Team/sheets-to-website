@@ -64,27 +64,33 @@ const category = 'footer';
 const settings = {
   title: {
     default: 'Company',
-    type: 'textbox'
+    type: 'textbox',
+    name: 'company name'
   },
   image: {
     default: 'https://dummyimage.com/720x600',
-    type: 'image'
+    type: 'image',
+    name: 'Logo'
   },
   facebook: {
     default: 'https://www.facebook.com/',
-    type: 'textbox'
+    type: 'textbox',
+    name: 'Facebook'
   },
   twitter: {
     default: 'https://twitter.com/',
-    type: 'textbox'
+    type: 'textbox',
+    name: 'Twitter'
   },
   instagram: {
     default: 'https://www.instagram.com/',
-    type: 'textbox'
+    type: 'textbox',
+    name: 'Instagram'
   },
   linkedin: {
     default: 'https://www.linkedin.com/',
-    type: 'textbox'
+    type: 'textbox',
+    name: 'Linkedin'
   }
 
 };

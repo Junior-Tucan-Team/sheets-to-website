@@ -1,17 +1,26 @@
 import React, { useState } from 'react';
 import { arrayOf, func, shape, string } from 'prop-types';
 
-const Logo = ({ value, onBlur, name }) => {
+const Logo = ({ name, updateField, settingsKey: key }) => {
   const [currentCategory, setCategory] = useState('upload');
+  const [imageUrl, setUrl] = useState('');
+  const handleLogoInput = (url) => {
+    updateField(url, key);
+  };
   const renderAddLogo = () => {
       if (currentCategory === 'upload') {
           return (
-            <><p>Image Upload</p><input type="file" onBlur={onBlur} /></>
+            <>
+              <p>
+                <input type="file" accept="image/*" name="logo" id="logo" style={{ display: 'none' }} onChange={(e) => handleLogoInput(URL.createObjectURL(e.target.files[0]))} />
+                <p><label htmlFor="logo" style={{ border: 'solid 1px black', cursor: 'pointer', color: 'black', background: 'cornsilk' }}> Upload Image</label></p>
+              </p>
+            </>
           );
       } else if (currentCategory === 'myImage') {
          return (<p>image</p>);
       } else if (currentCategory === 'url') {
-          return (<input type="url" placeholder="image url"/>);
+        return (<input type="text" onChange={(e) => setUrl(e.target.value)} placeholder="image url" onBlur={() => handleLogoInput(imageUrl)} value={imageUrl}/>);
       }
       return <></>;
   };
@@ -55,14 +64,11 @@ const Logo = ({ value, onBlur, name }) => {
 
 
 Logo.propTypes = {
-    value: string,
-    onBlur: func,
-    name: string.isRequired
+    name: string.isRequired,
+    updateField: func.isRequired,
+    settingsKey: string.isRequired
       };
 
-Logo.defaultProps = {
-    value: '',
-    onBlur: () => {}
-      };
+
 
 export default Logo;

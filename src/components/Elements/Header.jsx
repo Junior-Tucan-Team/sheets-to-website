@@ -11,7 +11,7 @@ const Component = ({ item, onClick }) => (
       <div className="lg:w-2/3 mx-auto">
         <div className="flex flex-wrap w-full bg-gray-100 py-32 px-10 relative mb-4">
           <img alt="gallery" className="w-full object-cover h-full object-center block opacity-25 absolute inset-0" src={item.image}/>
-          <p>LOGO SECTION</p>
+          { item.logo ? <img src={item.logo} alt="logo"/> : null}
           <div className="text-center relative z-10 w-full">
             <h2 style={{ color: item.fntclrtitle, fontSize: item.fntSztitle }} className="text-2xl text-gray-900 font-medium title-font mb-2">{item.title}</h2>
             <p style={{ color: item.fntclrdescription, fontSize: item.fntSzdescription }} className="leading-relaxed">{item.description}</p>
@@ -39,22 +39,22 @@ const settings = {
   title: {
     default: 'Before they sold out',
     type: 'textbox',
-    subtype: 'Heading Text',
+    name: 'Heading Text',
   },
   description: {
     default: 'Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.',
     type: 'textbox',
-    subtype: 'Sub-heading Text'
+    name: 'Sub-heading Text'
   },
   image: {
     default: 'https://i.picsum.photos/id/866/536/354.jpg?hmac=tGofDTV7tl2rprappPzKFiZ9vDh5MKj39oa2D--gqhA',
     type: 'image',
-    subtype: 'Header Background'
+    name: 'Header Background'
   },
   logo: {
-    default: 'https://picsum.photos/200/300',
+    default: '',
     type: 'logo',
-    subtype: 'Add Logo'
+    name: 'Add Logo'
   }
 };
 
