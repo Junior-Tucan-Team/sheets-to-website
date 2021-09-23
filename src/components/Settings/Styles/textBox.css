@@ -1,0 +1,10 @@
+.heading-text{
+    display: flex;
+    flex-direction: column;
+    
+}
+/* TODO: change */
+input , select{
+    border: 1px solid rgb(156, 139, 139);
+    border-radius: 4px;
+}

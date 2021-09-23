@@ -1463,4 +1463,30 @@
   }
 }
 
+/* Secondary Header  START*/
+.secondaryHeader{
+  display: flex;
+  justify-content: center;
+  background-color: #70c473;
+  background-image: linear-gradient(270deg, #0CDEAC 0%, #13E17E 80.7%);
+}
+.secondaryHeader button{
+  align-items: center; 
+  color:white;
+  font-size: 1.125rem;
+  padding:3.5px 20px;
+}
+
+.secondaryHeader button:hover{
+  background-color: #2aa52e;
+}
+
+.secondaryHeader button:focus{
+  background-color: #4AE7A8;
+}
+
+/* Secondary Header  END*/
+
+
+
 /*# sourceMappingURL=output.css.map */

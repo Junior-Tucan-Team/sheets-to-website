@@ -161,9 +161,9 @@ const Header = () => (
     </div>
     <div />
     <div className="secondaryHeader">
-      <span>BUILD</span>
-      <span>SETTINGS</span>
-      <span>PUBLISH</span>
+      <button>BUILD</button>
+      <button>SETTINGS</button>
+      <button>PUBLISH</button>
     </div>
   </div>
 );

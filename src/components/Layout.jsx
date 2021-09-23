@@ -38,7 +38,12 @@ function Layout({
               <button
                 className="deleteButton"
                 onClick={removeSelectedItem}
-              >delete
+              ><i className="fa fa-trash-o" aria-hidden="true" />
+              </button>
+              <button
+                className="settingsButton"
+                onClick={removeSelectedItem}
+              ><i className="fa fa-cog" aria-hidden="true"/>
               </button>
             </div>
           );

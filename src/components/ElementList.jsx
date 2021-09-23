@@ -26,12 +26,13 @@ const ElementList = ({ addLayoutItem }) => {
   const renderElements = () => {
     if (isOpen) {
       return (
-        <div>
-          <span onClick={onCategoryClick} name="header">Header</span>
-          <span onClick={onCategoryClick} name="content">Content</span>
-          <span onClick={onCategoryClick} name="footer">Footer</span>
-
-          <ul>
+        <div className="leftPanelChild">
+          <div className="leftPanelChildSpans">
+            <span onClick={onCategoryClick} name="header">Header</span>
+            <span onClick={onCategoryClick} name="content">Content</span>
+            <span onClick={onCategoryClick} name="footer">Footer</span>
+          </div>
+          <ul className="leftPanelElements">
             {Object.keys(Elements).filter(element =>
      Elements[element].category === currentCategory).map(element =>
        <li
@@ -50,7 +51,9 @@ const ElementList = ({ addLayoutItem }) => {
 
   return (
     <div className="elements">
-      <span onClick={onAddElementClick} >Add Element</span>
+      <div className="leftPanelChild">
+        <span className="addElementSpan" onClick={onAddElementClick} >Add Element</span>
+      </div>
       {renderElements()}
     </div>
   );
