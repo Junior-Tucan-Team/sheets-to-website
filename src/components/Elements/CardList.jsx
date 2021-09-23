@@ -1,7 +1,7 @@
 import React from 'react';
 import { shape, string, arrayOf, func } from 'prop-types';
 
-const Component = ({ submissons, item, info, onClick }) => (
+const Component = ({ submissons, item, onClick }) => (
   <section
     className="text-gray-600 body-font"
     data-element-id={item.id}
@@ -10,10 +10,10 @@ const Component = ({ submissons, item, info, onClick }) => (
     <div className="container px-5 py-24 mx-auto">
       <div className="w-full mb-8">
         <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
-          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">{info.title}</h1>
+          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">{item.title}</h1>
           <div className="h-1 w-20 bg-indigo-500 rounded" />
         </div>
-        <p className="lg:w-1/2 w-full leading-relaxed text-gray-500"> {info.description}</p>
+        <p className="lg:w-1/2 w-full leading-relaxed text-gray-500"> {item.description}</p>
       </div>
       <div className="flex flex-wrap -m-4">
         {
@@ -39,10 +39,6 @@ Component.propTypes = {
     cardImage: string,
   })),
   onClick: func,
-  info: shape({
-    title: string,
-    description: string
-  }),
   item: shape({
     id: string
   })
@@ -62,10 +58,6 @@ Component.defaultProps = {
           cardImage: 'https://dummyimage.com/720x600'
         },
     ],
-    info: {
-      title: 'Our Menu',
-      description: 'this is our'
-    },
     onClick: () => {},
     item: string
 };
