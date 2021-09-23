@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
 import { arrayOf, func, shape, string } from 'prop-types';
 
-const Logo = ({ value, onBlur, name }) => {
+const Logo = ({ name, updateField, settingsKey: key }) => {
   const [currentCategory, setCategory] = useState('upload');
+  const [imageUrl, setUrl] = useState('');
+  const handleImageInput = (e) => {
+    updateField(imageUrl, key);
+  };
   const renderAddLogo = () => {
       if (currentCategory === 'upload') {
           return (
-            <><p>Image Upload</p><input type="file" onBlur={onBlur} /></>
+            <><p>Image Upload</p><input type="file" onBlur="/" /></>
           );
       } else if (currentCategory === 'myImage') {
          return (<p>image</p>);
       } else if (currentCategory === 'url') {
-          return (<input type="url" placeholder="image url"/>);
+        return (<input type="text" onChange={(e) => setUrl(e.target.value)} placeholder="image url" onBlur={handleImageInput} value={imageUrl}/>);
       }
       return <></>;
   };
@@ -55,14 +59,11 @@ const Logo = ({ value, onBlur, name }) => {
 
 
 Logo.propTypes = {
-    value: string,
-    onBlur: func,
-    name: string.isRequired
+    name: string.isRequired,
+    updateField: func.isRequired,
+    settingsKey: string.isRequired
       };
 
-Logo.defaultProps = {
-    value: '',
-    onBlur: () => {}
-      };
+
 
 export default Logo;

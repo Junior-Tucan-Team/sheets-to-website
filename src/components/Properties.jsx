@@ -21,7 +21,7 @@ const Properties = ({ selectedElement, layoutItems, updateField }) => {
         return (
           <div>
             <Component
-              name={settings[key].subtype}
+              name={settings[key].name}
               updateField={updateField}
               key={key}
               settingsKey={key}

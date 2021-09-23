@@ -74,6 +74,9 @@ const settings = {
   description: {
     default: 'Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.',
     type: 'textbox'
+  },
+  table: {
+    type: 'select'
   }
 };
 
