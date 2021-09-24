@@ -37,12 +37,12 @@ const category = 'header';
 
 const settings = {
   title: {
-    default: 'Before they sold out',
+    default: 'Heading Text',
     type: 'textbox',
     name: 'Heading Text',
   },
   description: {
-    default: 'Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.',
+    default: 'Sub-heading Text',
     type: 'textbox',
     name: 'Sub-heading Text'
   },

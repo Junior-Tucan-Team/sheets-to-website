@@ -33,7 +33,7 @@ const Logo = ({ name, updateField, settingsKey: key }) => {
         <span onClick={() => setCategory('url')}>Url</span>
       </div>
       <div>{renderAddLogo()}</div>
-      <div className="logo-size">
+      {/* <div className="logo-size">
         <h4>Size</h4>
         <label>
           <input type="number"/>
@@ -55,7 +55,7 @@ const Logo = ({ name, updateField, settingsKey: key }) => {
         <span onClick={() => {}}>Right</span>
         <p>Select how this logo is aligned horizontally</p>
       </div>
-      <hr/>
+      <hr/> */}
 
 
     </>

@@ -63,9 +63,9 @@ const category = 'footer';
 
 const settings = {
   title: {
-    default: 'Company',
+    default: 'Company name',
     type: 'textbox',
-    name: 'company name'
+    name: 'Company name'
   },
   image: {
     default: 'https://dummyimage.com/720x600',

@@ -36,11 +36,13 @@ const category = 'content';
 const settings = {
   image: {
     default: 'https://cdn.galaxy.tf/thumb/sizeW1920/uploads/2s/cms_image/001/572/346/1572346076_5db818dc5a77a-thumb.jpg',
-    type: 'image'
+    type: 'image',
+    name: 'Image'
   },
   description: {
-    default: 'Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.',
-    type: 'textbox'
+    default: 'Description',
+    type: 'textbox',
+    name: 'Description'
   }
 };
 
