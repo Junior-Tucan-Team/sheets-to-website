@@ -16,7 +16,7 @@ const TextBox = ({ value, onBlur, name, updateField, updateStyle, settingsKey: k
       <h4>{name}</h4>
       <input type="text" onChange={(e) => setHeadingText(e.target.value)} value={headingText} onBlur={handleInput}/>
       <label htmlFor="fontFamiliyID">Font Family</label>
-      <select id="fontFamiliyID" className="fontFamily">
+      <select id="fontFamiliyID" className="fontFamily" name="fntfmly" onChange={(e) => setStyleParameter(e.target.value)} value={styleParameter} onBlur={handleStyle}>
         <option value="Sans">Sans</option>
         <option value="Serif">Serif</option>
         <option value="Roboto">Roboto</option>

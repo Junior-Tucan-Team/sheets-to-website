@@ -11,10 +11,10 @@ const Component = ({ item, onClick }) => (
       <div className="lg:w-2/3 mx-auto">
         <div className="flex flex-wrap w-full bg-gray-100 py-32 px-10 relative mb-4">
           <img alt="gallery" className="w-full object-cover h-full object-center block opacity-25 absolute inset-0" src={item.image}/>
-          { item.logo ? <img src={item.logo} alt="logo"/> : null}
+          { item.logo ? <img style={{ margin: item.algnmntlogo }} src={item.logo} alt="logo"/> : null}
           <div className="text-center relative z-10 w-full">
-            <h2 style={{ color: item.fntclrtitle, fontSize: item.fntSztitle }} className="text-2xl text-gray-900 font-medium title-font mb-2">{item.title}</h2>
-            <p style={{ color: item.fntclrdescription, fontSize: item.fntSzdescription }} className="leading-relaxed">{item.description}</p>
+            <h2 style={{ color: item.fntclrtitle, fontSize: item.fntSztitle, fontFamily: item.fntfmlytitle }} className="text-2xl text-gray-900 font-medium title-font mb-2">{item.title}</h2>
+            <p style={{ color: item.fntclrdescription, fontSize: item.fntSzdescription, fontFamily: item.fntfmlydescription }} className="leading-relaxed">{item.description}</p>
           </div>
         </div>
       </div>
