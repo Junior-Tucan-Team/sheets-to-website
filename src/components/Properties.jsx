@@ -1,6 +1,5 @@
 import React from 'react';
 import { shape, arrayOf, func } from 'prop-types';
-// import HeaderSettings from './Elements/ElementSettings/HeaderSettings/HeaderSettings';
 import * as settingsMap from './Settings';
 import * as Elements from './Elements';
 

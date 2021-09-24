@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { arrayOf, func, shape } from 'prop-types';
+import { func } from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import * as Elements from './Elements';
 

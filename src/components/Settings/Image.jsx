@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { arrayOf, func, shape, string } from 'prop-types';
+import { func, string } from 'prop-types';
 
-const Image = ({ value, onBlur, name, updateField, settingsKey: key }) => {
+const Image = ({ name, updateField, settingsKey: key }) => {
   const [currentCategory, setCategory] = useState('upload');
   const [imageUrl, setUrl] = useState('');
   const handleImageInput = (url) => {
@@ -39,16 +39,9 @@ const Image = ({ value, onBlur, name, updateField, settingsKey: key }) => {
 
 
 Image.propTypes = {
-    value: string,
-    onBlur: func,
     name: string.isRequired,
     updateField: func.isRequired,
     settingsKey: string.isRequired
-      };
-
-Image.defaultProps = {
-    value: '',
-    onBlur: () => {}
       };
 
 export default Image;

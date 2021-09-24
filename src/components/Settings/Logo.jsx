@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { arrayOf, func, shape, string } from 'prop-types';
+import { func, string } from 'prop-types';
 
 const Logo = ({ name, updateField, updateStyle, settingsKey: key }) => {
   const [currentCategory, setCategory] = useState('upload');
@@ -13,7 +13,6 @@ const Logo = ({ name, updateField, updateStyle, settingsKey: key }) => {
   const handleLogoInput = (url) => {
     const logoImage = new Image();
     logoImage.src = url;
-    console.log(logoImage);
     updateField(url, key);
   };
   // const handleSize = () => {
@@ -74,12 +73,9 @@ const Logo = ({ name, updateField, updateStyle, settingsKey: key }) => {
         <p>Select how this logo is aligned horizontally</p>
       </div>
       <hr/>
-
-
     </>
   );
   };
-
 
 Logo.propTypes = {
     name: string.isRequired,
@@ -87,7 +83,5 @@ Logo.propTypes = {
     updateStyle: func.isRequired,
     settingsKey: string.isRequired
       };
-
-
 
 export default Logo;

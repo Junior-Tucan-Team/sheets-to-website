@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { arrayOf, func, string } from 'prop-types';
 import './Styles/textBox.css';
 
-const TextBox = ({ value, onBlur, name, updateField, updateStyle, settingsKey: key }) => {
+const TextBox = ({ name, updateField, updateStyle, settingsKey: key }) => {
   const [headingText, setHeadingText] = useState('');
   const [styleParameter, setStyleParameter] = useState('');
   const handleInput = (e) => {
@@ -31,17 +31,10 @@ const TextBox = ({ value, onBlur, name, updateField, updateStyle, settingsKey: k
 };
 
 TextBox.propTypes = {
-    value: string,
-    onBlur: func,
     name: string.isRequired,
     updateField: func.isRequired,
     updateStyle: func.isRequired,
     settingsKey: string.isRequired
-      };
-
-TextBox.defaultProps = {
-    value: '',
-    onBlur: () => {}
       };
 
 export default TextBox;
