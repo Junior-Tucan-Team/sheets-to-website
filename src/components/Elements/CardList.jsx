@@ -10,10 +10,10 @@ const Component = ({ submissons, item, onClick }) => (
     <div className="container px-5 py-24 mx-auto">
       <div className="w-full mb-8">
         <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
-          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">{item.title}</h1>
+          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900" style={{ color: item.fntclrtitle, fontSize: item.fntSztitle, fontFamily: item.fntfmlytitle }}>{item.title}</h1>
           <div className="h-1 w-20 bg-indigo-500 rounded" />
         </div>
-        <p className="lg:w-1/2 w-full leading-relaxed text-gray-500"> {item.description}</p>
+        <p className="lg:w-1/2 w-full leading-relaxed text-gray-500" style={{ color: item.fntclrdescription, fontSize: item.fntSzdescription, fontFamily: item.fntfmlydescription }}> {item.description}</p>
       </div>
       <div className="flex flex-wrap -m-4">
         {

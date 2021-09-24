@@ -12,7 +12,7 @@ const Component = ({ item, onClick }) => (
         <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
           About Us
         </h1>
-        <p className="mb-8 leading-relaxed">{item.description}</p>
+        <p className="mb-8 leading-relaxed" style={{ color: item.fntclrdescription, fontSize: item.fntSzdescription, fontFamily: item.fntfmlydescription }}>{item.description}</p>
       </div>
       <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
         <img className="object-cover object-center rounded" alt="hero" src={item.image} />
