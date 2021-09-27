@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { arrayOf, func, shape } from 'prop-types';
+
 
 const Select = ({ columns, onChange }) => (
   <div>
@@ -9,39 +10,39 @@ const Select = ({ columns, onChange }) => (
     </label>
     <h3>IMAGE</h3>
     <select onChange={onChange}>
-      {columns.map((column) => (
+      {Object.keys(columns).map((column) => (
         <option>
-          {column}
+          {column.name}
         </option>))
     }
     </select>
     <h3>HEADER</h3>
     <select onChange={onChange}>
-      {columns.map((column) => (
+      {Object.keys(columns).map((column) => (
         <option>
-          {column}
+          {column.name}
         </option>))
     }
     </select>
     <h3>DESCRIPTION</h3>
     <select onChange={onChange}>
-      {columns.map((column) => (
+      {Object.keys(columns).map((column) => (
         <option>
-          {column}
+          {column.name}
         </option>))
     }
     </select>
   </div>
-    );
+  );
 
 Select.propTypes = {
-        columns: arrayOf(shape()),
-        onChange: func
+        onChange: func,
+        columns: arrayOf(shape)
       };
 
 Select.defaultProps = {
-        columns: ['COLUMN1', 'COLUMN2', 'COLUMN3'],
-        onChange: () => {}
+        onChange: () => {},
+        columns: []
       };
 
 export default Select;

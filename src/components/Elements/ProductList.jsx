@@ -85,6 +85,10 @@ const settings = {
   table: {
     type: 'select',
     tab: 'first'
+  },
+  source: {
+    type: 'source',
+    tab: 'first',
   }
 };
 

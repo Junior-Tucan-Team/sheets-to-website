@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { shape, arrayOf, func, string } from 'prop-types';
 import { connect } from 'react-redux';
 import ElementList from './ElementList';
@@ -11,9 +11,9 @@ import {
    removeSelectedLayoutItem as removeSelectedLayoutItemAction,
    deleteLayoutItem as deleteLayoutItemAction,
    updateField as updateFieldAction,
-   updateStyle as updateStyleAction
+   updateStyle as updateStyleAction,
+   requestGetForms as requestGetFormsAction
 } from '../redux/actions';
-
 
 const Editor = ({
   layoutItems,
@@ -23,27 +23,32 @@ const Editor = ({
   selectedElement,
   deleteLayoutItem,
   updateField,
-  updateStyle
-}) => (
-  <div className="editor">
-    <ElementList layoutItems={layoutItems} addLayoutItem={addLayoutItem}/>
-    <Layout
-      layoutItems={layoutItems}
-      selectLayoutItem={selectLayoutItem}
-      removeSelectedLayoutItem={removeSelectedLayoutItem}
-      selectedElement={selectedElement}
-      deleteLayoutItem={deleteLayoutItem}
-      updateField={updateField}
-      updateStyle={updateStyle}
-    />
-    <Properties
-      selectedElement={selectedElement}
-      layoutItems={layoutItems}
-      updateField={updateField}
-      updateStyle={updateStyle}
-    />
-  </div>);
-
+  updateStyle,
+  requestGetForms
+}) => {
+    useEffect(() => {
+      requestGetForms();
+    }, []);
+    return (
+      <div className="editor">
+        <ElementList layoutItems={layoutItems} addLayoutItem={addLayoutItem}/>
+        <Layout
+          layoutItems={layoutItems}
+          selectLayoutItem={selectLayoutItem}
+          removeSelectedLayoutItem={removeSelectedLayoutItem}
+          selectedElement={selectedElement}
+          deleteLayoutItem={deleteLayoutItem}
+          updateField={updateField}
+          updateStyle={updateStyle}
+        />
+        <Properties
+          selectedElement={selectedElement}
+          layoutItems={layoutItems}
+          updateField={updateField}
+          updateStyle={updateStyle}
+        />
+      </div>);
+  };
 Editor.propTypes = {
   layoutItems: arrayOf(shape),
   addLayoutItem: func,
@@ -52,7 +57,8 @@ Editor.propTypes = {
   selectedElement: string,
   deleteLayoutItem: func,
   updateField: func,
-  updateStyle: func
+  updateStyle: func,
+  requestGetForms: func
 };
 
 Editor.defaultProps = {
@@ -64,6 +70,7 @@ Editor.defaultProps = {
   deleteLayoutItem: () => {},
   updateField: () => {},
   updateStyle: () => {},
+  requestGetForms: () => {}
 };
 
 const mapStateToProps = (state) => ({
@@ -78,7 +85,8 @@ const mapActionToProps = {
   removeSelectedLayoutItem: removeSelectedLayoutItemAction,
   deleteLayoutItem: deleteLayoutItemAction,
   updateField: updateFieldAction,
-  updateStyle: updateStyleAction
+  updateStyle: updateStyleAction,
+  requestGetForms: requestGetFormsAction
 };
 
 export default connect(mapStateToProps, mapActionToProps)(Editor);

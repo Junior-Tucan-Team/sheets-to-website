@@ -16,3 +16,7 @@ export const REMOVE_SELECTED_ITEM = 'REMOVE_SELECTED_ITEM';
 export const UPDATE_FIELD = 'UPDATE_FIELD';
 
 export const UPDATE_STYLE = 'UPDATE_STYLE';
+
+export const FORM_REQUEST = 'FORM_REQUEST';
+export const FORM_SUCCESS = 'FORM_SUCCESS';
+export const FORM_FAILURE = 'FORM_FAILURE';

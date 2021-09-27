@@ -3,8 +3,8 @@ import { shape, arrayOf, func } from 'prop-types';
 import * as settingsMap from './Settings';
 import * as Elements from './Elements';
 
-
-const Properties = ({ selectedElement, layoutItems, updateField, updateStyle }) => {
+const Properties = ({ selectedElement, layoutItems, updateField,
+   updateStyle }) => {
   const foundedItem = layoutItems.find(item => selectedElement === item.id);
   const [tab, setTab] = useState('first');
   if (!foundedItem) {
@@ -63,7 +63,7 @@ Properties.propTypes = {
   selectedElement: arrayOf(shape).isRequired,
   layoutItems: arrayOf(shape).isRequired,
   updateField: func.isRequired,
-  updateStyle: func.isRequired
+  updateStyle: func.isRequired,
 };
 
 export default Properties;

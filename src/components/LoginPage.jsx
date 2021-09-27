@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux';
 import { requestLogin } from '../redux/actions/authActions';
 
 function LoginPage() {
-  const [email, setEmail] = useState('efe.matey@gmail.com');
-  const [password, setPassword] = useState('123456efe');
+  const [email, setEmail] = useState('labil14832@busantei.com');
+  const [password, setPassword] = useState('bumbumMe*12');
 
   const dispatch = useDispatch();
 
