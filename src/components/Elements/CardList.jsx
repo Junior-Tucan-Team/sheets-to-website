@@ -70,15 +70,18 @@ const settings = {
   title: {
     default: 'Heading Text',
     type: 'textbox',
-    name: 'Heading Text'
+    name: 'Heading Text',
+    tab: 'second'
   },
   description: {
     default: 'Description',
     type: 'textbox',
-    name: 'Description'
+    name: 'Description',
+    tab: 'second'
   },
   table: {
-    type: 'select'
+    type: 'select',
+    tab: 'first'
   }
 };
 

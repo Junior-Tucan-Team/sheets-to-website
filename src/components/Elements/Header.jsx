@@ -40,21 +40,25 @@ const settings = {
     default: 'Heading Text',
     type: 'textbox',
     name: 'Heading Text',
+    tab: 'first'
   },
   description: {
     default: 'Sub-heading Text',
     type: 'textbox',
-    name: 'Sub-heading Text'
+    name: 'Sub-heading Text',
+    tab: 'first'
   },
   image: {
     default: 'https://i.picsum.photos/id/866/536/354.jpg?hmac=tGofDTV7tl2rprappPzKFiZ9vDh5MKj39oa2D--gqhA',
     type: 'image',
-    name: 'Header Background'
+    name: 'Header Background',
+    tab: 'second'
   },
   logo: {
     default: '',
     type: 'logo',
-    name: 'Add Logo'
+    name: 'Add Logo',
+    tab: 'third'
   }
 };
 

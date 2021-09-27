@@ -37,12 +37,14 @@ const settings = {
   image: {
     default: 'https://cdn.galaxy.tf/thumb/sizeW1920/uploads/2s/cms_image/001/572/346/1572346076_5db818dc5a77a-thumb.jpg',
     type: 'image',
-    name: 'Image'
+    name: 'Image',
+    tab: 'first'
   },
   description: {
     default: 'Description',
     type: 'textbox',
-    name: 'Description'
+    name: 'Description',
+    tab: 'first'
   }
 };
 

@@ -38,17 +38,20 @@ const settings = {
   title: {
     default: 'Heading Text',
     type: 'textbox',
-    name: 'Heading Text'
+    name: 'Heading Text',
+    tab: 'first'
   },
   image: {
     default: 'https://dummyimage.com/720x600',
     type: 'image',
-    name: 'Image'
+    name: 'Image',
+    tab: 'first'
   },
   description: {
     default: 'Description',
     type: 'textbox',
-    name: 'Description'
+    name: 'Description',
+    tab: 'first'
   }
 };
 

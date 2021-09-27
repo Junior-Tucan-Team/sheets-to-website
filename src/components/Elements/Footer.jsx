@@ -65,32 +65,38 @@ const settings = {
   title: {
     default: 'Company name',
     type: 'textbox',
-    name: 'Company name'
+    name: 'Company name',
+    tab: 'first'
   },
   image: {
     default: 'https://dummyimage.com/720x600',
     type: 'image',
-    name: 'Logo'
+    name: 'Logo',
+    tab: 'first'
   },
   facebook: {
     default: '',
     type: 'textbox',
-    name: 'Facebook'
+    name: 'Facebook',
+    tab: 'first'
   },
   twitter: {
     default: '',
     type: 'textbox',
-    name: 'Twitter'
+    name: 'Twitter',
+    tab: 'first'
   },
   instagram: {
     default: '',
     type: 'textbox',
-    name: 'Instagram'
+    name: 'Instagram',
+    tab: 'first'
   },
   linkedin: {
     default: '',
     type: 'textbox',
-    name: 'Linkedin'
+    name: 'Linkedin',
+    tab: 'first'
   }
 
 };
