@@ -6,7 +6,7 @@ import './Styles/source.css';
 const Source = ({ questionsRequest }) => {
     const { forms } = store.getState().forms;
     const handleGetQuestions = (e) => {
-    questionsRequest(e.target.value);
+      questionsRequest(e.target.value);
     };
   return (
     <div className="source-handler">

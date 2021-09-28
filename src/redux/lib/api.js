@@ -11,5 +11,6 @@ export const login = (payload) => axios.post(`https://api.jotform.com/user/login
 export const getUserForms = async () => (axios.get('https://api.jotform.com/user/forms?apiKey=480339cbba3edb9e8cd1e82ee8bfafec')
 .then((res) => res.data.content));
 
-export const getFormQuestions = async (payload) => (axios.get(`https://api.jotform.com/form/${payload}/questions?apiKey=480339cbba3edb9e8cd1e82ee8bfafec`)
-.then((res) => console.log(res)));
+export const getFormSubmissions = async (payload) => (axios.get('https://api.jotform.com/user/submissions?apiKey=480339cbba3edb9e8cd1e82ee8bfafec')
+.then((res) => res.data.content)
+.then((res) => res.filter((e) => e.form_id === payload)));
