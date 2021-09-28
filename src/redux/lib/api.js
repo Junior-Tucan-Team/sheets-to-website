@@ -8,5 +8,8 @@ export const login = (payload) => axios.post(`https://api.jotform.com/user/login
     })
     .then(response => response).catch((e) => e);
 
-export const getUserForms = async () => (axios.get('https://api.jotform.com/user/forms?apiKey=d94f2beff24e95ad276a695b34b43e7d')
+export const getUserForms = async () => (axios.get('https://api.jotform.com/user/forms?apiKey=480339cbba3edb9e8cd1e82ee8bfafec')
 .then((res) => res.data.content));
+
+export const getFormQuestions = async (payload) => (axios.get(`https://api.jotform.com/form/${payload}/questions?apiKey=480339cbba3edb9e8cd1e82ee8bfafec`)
+.then((res) => console.log(res)));

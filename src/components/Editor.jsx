@@ -12,7 +12,8 @@ import {
    deleteLayoutItem as deleteLayoutItemAction,
    updateField as updateFieldAction,
    updateStyle as updateStyleAction,
-   requestGetForms as requestGetFormsAction
+   requestGetForms as requestGetFormsAction,
+   questionsRequest as questionsRequestAction
 } from '../redux/actions';
 
 const Editor = ({
@@ -24,7 +25,8 @@ const Editor = ({
   deleteLayoutItem,
   updateField,
   updateStyle,
-  requestGetForms
+  requestGetForms,
+  questionsRequest
 }) => {
     useEffect(() => {
       requestGetForms();
@@ -46,6 +48,7 @@ const Editor = ({
           layoutItems={layoutItems}
           updateField={updateField}
           updateStyle={updateStyle}
+          questionsRequest={questionsRequest}
         />
       </div>);
   };
@@ -58,7 +61,8 @@ Editor.propTypes = {
   deleteLayoutItem: func,
   updateField: func,
   updateStyle: func,
-  requestGetForms: func
+  requestGetForms: func,
+  questionsRequest: func
 };
 
 Editor.defaultProps = {
@@ -70,7 +74,8 @@ Editor.defaultProps = {
   deleteLayoutItem: () => {},
   updateField: () => {},
   updateStyle: () => {},
-  requestGetForms: () => {}
+  requestGetForms: () => {},
+  questionsRequest: () => {}
 };
 
 const mapStateToProps = (state) => ({
@@ -86,7 +91,8 @@ const mapActionToProps = {
   deleteLayoutItem: deleteLayoutItemAction,
   updateField: updateFieldAction,
   updateStyle: updateStyleAction,
-  requestGetForms: requestGetFormsAction
+  requestGetForms: requestGetFormsAction,
+  questionsRequest: questionsRequestAction
 };
 
 export default connect(mapStateToProps, mapActionToProps)(Editor);

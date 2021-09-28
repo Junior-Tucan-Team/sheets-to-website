@@ -4,7 +4,7 @@ import * as settingsMap from './Settings';
 import * as Elements from './Elements';
 
 const Properties = ({ selectedElement, layoutItems, updateField,
-   updateStyle }) => {
+   updateStyle, questionsRequest }) => {
   const foundedItem = layoutItems.find(item => selectedElement === item.id);
   const [tab, setTab] = useState('first');
   if (!foundedItem) {
@@ -49,6 +49,7 @@ const Properties = ({ selectedElement, layoutItems, updateField,
                 updateStyle={updateStyle}
                 key={key}
                 settingsKey={key}
+                questionsRequest={questionsRequest}
               />
             </div>
           );
@@ -64,6 +65,7 @@ Properties.propTypes = {
   layoutItems: arrayOf(shape).isRequired,
   updateField: func.isRequired,
   updateStyle: func.isRequired,
+  questionsRequest: func.isRequired
 };
 
 export default Properties;

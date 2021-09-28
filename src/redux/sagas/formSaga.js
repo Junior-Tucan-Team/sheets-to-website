@@ -4,10 +4,10 @@ import { getUserForms } from '../lib/api';
 
 function* getFormRequest() {
   try {
-    const userData = yield call(getUserForms);
+    const formData = yield call(getUserForms);
       yield put({
         type: FORM_SUCCESS,
-        payload: userData
+        payload: formData
       });
   } catch (e) {
     yield put({ type: FORM_FAILURE });
