@@ -78,14 +78,12 @@ const Header = () => (
                 role="button"
                 aria-haspopup="dialog"
                 aria-label="Revision history"
-                className="ml-6"
               >
                 <svg
                   viewBox="0 0 16 18"
-                  fill="currentColor"
                   xmlns="http://www.w3.org/2000/svg"
                   role="presentation"
-                  className="jSheetSVG w-12 h-12"
+                  className="jSheetSVG w-12 h-12 fixedLastUpdatedIconSVG"
                 >
                   <path
                     fillRule="evenodd"

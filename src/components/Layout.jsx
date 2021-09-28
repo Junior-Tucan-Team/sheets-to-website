@@ -23,43 +23,44 @@ function Layout({
 
   return (
     <div className="layout">
-      {
-      layoutItems.map((layoutItem, index) => {
-        const ElementComponent = Elements[layoutItem.type].Component;
-        const isSelected = selectedElement === layoutItem.id;
-        if (isSelected) {
+      <div className="webpage">
+        {
+        layoutItems.map((layoutItem, index) => {
+          const ElementComponent = Elements[layoutItem.type].Component;
+          const isSelected = selectedElement === layoutItem.id;
+          if (isSelected) {
+            return (
+              <div style={{ border: '10px solid black' }}>
+                <ElementComponent
+                  key={index.toString()}
+                  item={layoutItem}
+                  update={updateField}
+                />
+                <button
+                  className="deleteButton"
+                  onClick={removeSelectedItem}
+                ><i className="fa fa-trash-o" aria-hidden="true" />
+                </button>
+                <button
+                  className="settingsButton"
+                  onClick={removeSelectedItem}
+                ><i className="fa fa-cog" aria-hidden="true"/>
+                </button>
+              </div>
+            );
+          }
           return (
-            <div style={{ border: '10px solid black' }}>
+            <div>
               <ElementComponent
                 key={index.toString()}
                 item={layoutItem}
-                update={updateField}
+                onClick={handleSelectItem}
               />
-              <button
-                className="deleteButton"
-                onClick={removeSelectedItem}
-              ><i className="fa fa-trash-o" aria-hidden="true" />
-              </button>
-              <button
-                className="settingsButton"
-                onClick={removeSelectedItem}
-              ><i className="fa fa-cog" aria-hidden="true"/>
-              </button>
             </div>
-          );
+            );
+        })
         }
-        return (
-          <div>
-            <ElementComponent
-              key={index.toString()}
-              item={layoutItem}
-              onClick={handleSelectItem}
-            />
-          </div>
-
-          );
-      })
-    }
+      </div>
     </div>
   );
 }

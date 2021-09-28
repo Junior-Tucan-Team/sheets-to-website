@@ -1486,7 +1486,11 @@
 }
 
 /* Secondary Header  END*/
-
-
+.fixedLastUpdatedIconSVG{ 
+  width: 12px;
+  height: 12px;
+  margin-left:6px;
+  fill:#78bb07  !important;
+}
 
 /*# sourceMappingURL=output.css.map */

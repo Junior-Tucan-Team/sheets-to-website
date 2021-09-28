@@ -1,31 +1,31 @@
 import React, { useState } from 'react';
 import { arrayOf, func, shape } from 'prop-types';
-
+import './Styles/select.css';
 
 const Select = ({ columns, onChange }) => (
-  <div>
+  <div className="select-handler">
     <label>
       Content Source
       <button style={{ border: '2px solid black', background: 'green', color: 'cornsilk' }}>Select your table source</button>
     </label>
-    <h3>IMAGE</h3>
-    <select onChange={onChange}>
+    <label htmlFor="select-image">IMAGE</label>
+    <select id="select-image" onChange={onChange}>
       {Object.keys(columns).map((column) => (
         <option>
           {column.name}
         </option>))
     }
     </select>
-    <h3>HEADER</h3>
-    <select onChange={onChange}>
+    <label htmlFor="select-header">HEADER</label>
+    <select id="select-header" onChange={onChange}>
       {Object.keys(columns).map((column) => (
         <option>
           {column.name}
         </option>))
     }
     </select>
-    <h3>DESCRIPTION</h3>
-    <select onChange={onChange}>
+    <label htmlFor="select-description">DESCRIPTION</label>
+    <select id="select-description" onChange={onChange}>
       {Object.keys(columns).map((column) => (
         <option>
           {column.name}

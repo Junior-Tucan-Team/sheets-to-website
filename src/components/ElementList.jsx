@@ -50,11 +50,17 @@ const ElementList = ({ addLayoutItem }) => {
   };
 
   return (
-    <div className="elements">
-      <div className="leftPanelChild">
-        <span className="addElementSpan" onClick={onAddElementClick} >Add Element</span>
+    <div className="elements panel-wrapper">
+      <div className="left-panel-add-button">
+        <button>Add Elements</button>
+        <i className="fa fa-plus" aria-hidden="true"/>
       </div>
-      {renderElements()}
+      <div className="left-panel-open">
+        <div className="leftPanelChild">
+          <span className="addElementSpan" onClick={onAddElementClick} ><div> Add Element </div><i className="fa fa-times" aria-hidden="true"/></span>
+        </div>
+        {renderElements()}
+      </div>
     </div>
   );
 };

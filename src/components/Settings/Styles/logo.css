@@ -1,0 +1,91 @@
+.settings .logo-handler{
+    display: flex;
+    flex-direction: column;
+}
+
+.settings .logo-handler{
+    display: flex;
+    flex-direction: column;
+}
+
+.settings .logo-handler .add-logo{
+    display: flex;
+    justify-content:space-around;
+}
+
+.settings .logo-handler .add-logo button{
+    flex-grow: 1;
+    text-align: center;
+    cursor: pointer;background-color: rgb(224, 231, 236);
+}
+
+.settings .logo-handler .add-logo button:hover{
+  background-color: rgb(50, 142, 218);
+}
+
+.settings .logo-handler .add-logo button:focus{
+  border-bottom: 5px solid #0099FF;
+}
+
+.settings .logo-handler .logo-box-upload{
+    border: 5px solid red!;
+}
+
+.settings .logo-handler .logo-box-upload input{
+    background: rgb(243, 238, 222);
+    cursor:pointer;
+    border: 3px solid #9fa6ca;
+    margin-left: 10px;
+    width: 230px;
+    height: 124px;
+    text-align: center;
+}
+
+.settings .logo-handler .logo-size{
+    display: flex;
+    flex-direction: column;
+}
+
+.settings .logo-handler .logo-size .logo-size-handler {
+    display: flex; 
+}
+
+.settings .logo-handler .logo-size .logo-size-handler label{
+    display: flex;
+    flex-direction: column;
+}
+
+.settings .logo-handler .logo-size .logo-size-handler input{
+    width: 70px;
+}
+
+.settings .logo-handler .logo-size .logo-size-handler button{
+    padding: 5px;
+    color:#C8CEED;
+}
+
+.settings .logo-handler .logo-alignment {
+    display: flex;
+    flex-direction: column;
+}
+
+.settings .logo-handler .logo-alignment .logo-alignment-buttons {
+    display: flex;
+    justify-content:space-around;
+    background-color: black;
+}
+
+.settings .logo-handler .logo-alignment .logo-alignment-buttons button {
+    flex-grow: 1;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgb(224, 231, 236);
+}
+
+.settings .logo-handler .logo-alignment .logo-alignment-buttons button:hover{
+  border-bottom: 5px solid #0099FF;
+}
+
+.settings .logo-handler .logo-alignment .logo-alignment-buttons button:focus{
+  background-color: rgb(50, 142, 218);
+}

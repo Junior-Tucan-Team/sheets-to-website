@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { func, string } from 'prop-types';
+import './Styles/image.css';
 
 const Image = ({ name, updateField, settingsKey: key }) => {
   const [currentCategory, setCategory] = useState('upload');
@@ -12,8 +13,8 @@ const Image = ({ name, updateField, settingsKey: key }) => {
   const renderImage = () => {
       if (currentCategory === 'upload') {
           return (
-            <><p><input type="file" accept="image/*" name="image" id="image" style={{ display: 'none' }} onChange={(e) => handleImageInput(URL.createObjectURL(e.target.files[0]))} /></p>
-              <p><label htmlFor="image" style={{ border: 'solid 1px black', cursor: 'pointer', color: 'black', background: 'cornsilk' }}> Upload Image</label></p>
+            <><label htmlFor="image" > Upload Image</label>
+              <input type="file" accept="image/*" name="image" id="image" onChange={(e) => handleImageInput(URL.createObjectURL(e.target.files[0]))} />
             </>
           );
       } else if (currentCategory === 'myImage') {
@@ -24,16 +25,16 @@ const Image = ({ name, updateField, settingsKey: key }) => {
       return <></>;
   };
   return (
-    <>
-      <h3>{name}</h3>
+    <div className="image-handler">
+      <div>{name}</div>
       <div className="image-upload">
-        <span onClick={() => setCategory('upload')}>Upload</span>
-        <span onClick={() => setCategory('myImage')}>My Image</span>
-        <span onClick={() => setCategory('url')}>Url</span>
+        <button onClick={() => setCategory('upload')}>Upload</button>
+        <button onClick={() => setCategory('myImage')}>My Image</button>
+        <button onClick={() => setCategory('url')}>Url</button>
       </div>
-      <div>{renderImage()}</div>
+      <div className="image-box-upload">{renderImage()}</div>
       <hr />
-    </>
+    </div>
   );
   };
 

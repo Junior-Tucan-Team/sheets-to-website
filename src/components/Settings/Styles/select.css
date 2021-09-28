@@ -1,0 +1,4 @@
+.settings .select-handler{
+    display: flex;
+    flex-direction: column;
+}

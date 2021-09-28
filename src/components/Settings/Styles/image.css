@@ -1,0 +1,46 @@
+.settings .image-handler{
+    display: flex;
+    flex-direction: column;
+}
+
+.settings .image-handler .image-upload{
+    display: flex;
+    justify-content:space-around;
+}
+
+.settings .image-handler .image-upload button{
+    flex-grow: 1;
+    text-align: center;
+    cursor: pointer;background-color: rgb(224, 231, 236);
+}
+
+.settings .image-handler .image-upload button:hover{
+  background-color: rgb(50, 142, 218);
+}
+
+.settings .image-handler .image-upload button:focus{
+  border-bottom: 5px solid #0099FF;
+}
+
+
+/* style={{ border: 'solid 1px black', cursor: 'pointer', color: 'black', background: 'cornsilk' }}
+style={{ display: 'none' }} */
+
+.settings .image-handler .image-box-upload{
+    border: 5px solid red!;
+}
+
+/* .settings .image-handler .image-box-upload label{
+    text-align: center! ;
+    height: 200px;
+} */
+
+.settings .image-handler .image-box-upload input{
+    background: rgb(243, 238, 222);
+    cursor:pointer;
+    border: 3px solid #9fa6ca;
+    margin-left: 10px;
+    width: 230px;
+    height: 124px;
+    text-align: center;
+}

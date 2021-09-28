@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { func, string } from 'prop-types';
+import './Styles/logo.css';
 
 const Logo = ({ name, updateField, updateStyle, settingsKey: key }) => {
   const [currentCategory, setCategory] = useState('upload');
@@ -28,10 +29,8 @@ const Logo = ({ name, updateField, updateStyle, settingsKey: key }) => {
       if (currentCategory === 'upload') {
           return (
             <>
-              <p>
-                <input type="file" accept="image/*" name="logo" id="logo" style={{ display: 'none' }} onChange={(e) => handleLogoInput(URL.createObjectURL(e.target.files[0]))} />
-                <p><label htmlFor="logo" style={{ border: 'solid 1px black', cursor: 'pointer', color: 'black', background: 'cornsilk' }}> Upload Image</label></p>
-              </p>
+              <label htmlFor="logo"> Upload Image</label>
+              <input type="file" accept="image/*" name="logo" id="logo" onChange={(e) => handleLogoInput(URL.createObjectURL(e.target.files[0]))} />
             </>
           );
       } else if (currentCategory === 'myImage') {
@@ -42,38 +41,43 @@ const Logo = ({ name, updateField, updateStyle, settingsKey: key }) => {
       return <></>;
   };
   return (
-    <>
-      <h3>{name}</h3>
+    <div className="logo-handler">
+      <div>{name}</div>
       <div className="add-logo">
-        <span onClick={() => setCategory('upload')}>Upload</span>
-        <span onClick={() => setCategory('myImage')}>My Image</span>
-        <span onClick={() => setCategory('url')}>Url</span>
+        <button onClick={() => setCategory('upload')}>Upload</button>
+        <button onClick={() => setCategory('myImage')}>My Image</button>
+        <button onClick={() => setCategory('url')}>Url</button>
       </div>
-      <div>{renderAddLogo()}</div>
+      <div className="logo-box-upload" >{renderAddLogo()}</div>
       <div className="logo-size">
-        <h4>Size</h4>
-        <label>
-          <input type="number"/>
-          <span>PX</span>
-          Width
-        </label>
-        <button name="lock" onClick={() => setLockParameter(!lockParameter)}> LOCK </button>
-        <label>
-          <input type="number"/>
-          <span>PX</span>
-          Height
-        </label>
+        <div>Size</div>
+        <div className="logo-size-handler">
+          <label>
+            <input id="weight" type="number"/>
+            Width
+          </label>
+          <label htmlFor="weight">PX</label>
+          <button name="lock" onClick={() => setLockParameter(!lockParameter)}> - <i className="fa fa-lock" aria-hidden="true"/> -
+          </button>
+          <label>
+            <input id="height" type="number"/>
+            Height
+          </label>
+          <label htmlFor="height">PX</label>
+        </div>
       </div>
       <hr />
       <div className="logo-alignment">
-        <h4>Image Alignment</h4>
-        <button name="algnmnt" onClick={handleTextAlign} value="0">Left</button>
-        <button name="algnmnt" onClick={handleTextAlign} value="auto">Center</button>
-        <button name="algnmnt" onClick={handleTextAlign} value="auto 0 auto auto">Right</button>
-        <p>Select how this logo is aligned horizontally</p>
+        <div>Image Alignment</div>
+        <div className="logo-alignment-buttons">
+          <button name="algnmnt" onClick={handleTextAlign} value="0">Left</button>
+          <button name="algnmnt" onClick={handleTextAlign} value="auto">Center</button>
+          <button name="algnmnt" onClick={handleTextAlign} value="auto 0 auto auto">Right</button>
+        </div>
+        <div>Select how this logo is aligned horizontally</div>
       </div>
       <hr/>
-    </>
+    </div>
   );
   };
 
