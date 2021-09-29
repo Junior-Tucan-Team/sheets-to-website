@@ -13,7 +13,7 @@ import {
    updateField as updateFieldAction,
    updateStyle as updateStyleAction,
    requestGetForms as requestGetFormsAction,
-   questionsRequest as questionsRequestAction
+   submissionsRequest as submissionsRequestAction
 } from '../redux/actions';
 
 const Editor = ({
@@ -26,7 +26,7 @@ const Editor = ({
   updateField,
   updateStyle,
   requestGetForms,
-  questionsRequest
+  submissionsRequest
 }) => {
     useEffect(() => {
       requestGetForms();
@@ -48,7 +48,7 @@ const Editor = ({
           layoutItems={layoutItems}
           updateField={updateField}
           updateStyle={updateStyle}
-          questionsRequest={questionsRequest}
+          submissionsRequest={submissionsRequest}
         />
       </div>);
   };
@@ -62,7 +62,7 @@ Editor.propTypes = {
   updateField: func,
   updateStyle: func,
   requestGetForms: func,
-  questionsRequest: func
+  submissionsRequest: func
 };
 
 Editor.defaultProps = {
@@ -75,7 +75,7 @@ Editor.defaultProps = {
   updateField: () => {},
   updateStyle: () => {},
   requestGetForms: () => {},
-  questionsRequest: () => {}
+  submissionsRequest: () => {}
 };
 
 const mapStateToProps = (state) => ({
@@ -92,7 +92,7 @@ const mapActionToProps = {
   updateField: updateFieldAction,
   updateStyle: updateStyleAction,
   requestGetForms: requestGetFormsAction,
-  questionsRequest: questionsRequestAction
+  submissionsRequest: submissionsRequestAction
 };
 
 export default connect(mapStateToProps, mapActionToProps)(Editor);

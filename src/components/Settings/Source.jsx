@@ -3,16 +3,16 @@ import { func, string } from 'prop-types';
 import store from '../../redux/configureStore';
 import './Styles/source.css';
 
-const Source = ({ questionsRequest }) => {
+const Source = ({ submissionsRequest }) => {
     const { forms } = store.getState().forms;
-    const handleGetQuestions = (e) => {
-      questionsRequest(e.target.value);
+    const handleGetSubmissions = (e) => {
+      submissionsRequest(e.target.value);
     };
   return (
     <div className="source-handler">
       {forms.map((form) =>
       (
-        <button onClick={handleGetQuestions} value={form.id}>
+        <button onClick={handleGetSubmissions} value={form.id}>
           {form.title}
         </button>
         ))}
@@ -21,7 +21,7 @@ const Source = ({ questionsRequest }) => {
   };
 
 Source.propTypes = {
-    questionsRequest: func.isRequired
+    submissionsRequest: func.isRequired
       };
 
 export default Source;

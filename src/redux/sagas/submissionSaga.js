@@ -4,22 +4,18 @@ import { getFormSubmissions } from '../lib/api';
 
 function* getFormSubmissionsRequest(action) {
   try {
-    const formQuestions = yield call(getFormSubmissions, action.payload);
-    if (formQuestions.data.responseCode === 200) {
-      yield put({
-        type: SUBMISSION_SUCCESS,
-        payload: formQuestions.data.content
-      });
-    } else {
-      yield put({ type: SUBMISSION_FAILURE });
-    }
+    const formSubmissions = yield call(getFormSubmissions, action.payload);
+    yield put({
+      type: SUBMISSION_SUCCESS,
+      payload: formSubmissions
+    });
   } catch (e) {
     yield put({ type: SUBMISSION_FAILURE });
   }
 }
 
-const questionsSagas = [
+const submissionsSagas = [
   takeEvery(SUBMISSION_REQUEST, getFormSubmissionsRequest),
 ];
 
-export default questionsSagas;
+export default submissionsSagas;

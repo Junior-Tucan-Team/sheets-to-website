@@ -2,17 +2,17 @@ import { SUBMISSION_FAILURE, SUBMISSION_SUCCESS, SUBMISSION_REQUEST } from '../c
 
 const INITIAL_STATE = {
   isLoading: false,
-  questions: [],
+  submissions: [],
   error: null,
 };
 
-const questionsReducer = (state = INITIAL_STATE, { type, payload }) => {
+const submissionsReducer = (state = INITIAL_STATE, { type, payload }) => {
   switch (type) {
     case SUBMISSION_REQUEST: {
       return { ...state, isLoading: true };
   }
     case SUBMISSION_SUCCESS: {
-        return { ...state, questions: payload, isLoading: false };
+        return { ...state, submissions: payload, isLoading: false };
     }
     case SUBMISSION_FAILURE: {
       return { ...state, error: payload };
@@ -22,4 +22,4 @@ const questionsReducer = (state = INITIAL_STATE, { type, payload }) => {
 }
 };
 
-export default questionsReducer;
+export default submissionsReducer;
