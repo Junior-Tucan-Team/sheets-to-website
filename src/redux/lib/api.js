@@ -14,3 +14,6 @@ export const getUserForms = async () => (axios.get('https://api.jotform.com/user
 export const getFormSubmissions = async (payload) => (axios.get('https://api.jotform.com/user/submissions?apiKey=480339cbba3edb9e8cd1e82ee8bfafec')
 .then((res) => res.data.content)
 .then((res) => res.filter((e) => e.form_id === payload)));
+
+export const getFormQuestions = async (formID) => (axios.get(`https://api.jotform.com/form/${formID}/questions?apiKey=480339cbba3edb9e8cd1e82ee8bfafec`)
+.then((res) => res.data.content));
