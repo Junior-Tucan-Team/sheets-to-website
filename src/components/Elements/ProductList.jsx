@@ -2,23 +2,21 @@ import React from 'react';
 import { shape, string, arrayOf, func } from 'prop-types';
 import store from '../../redux/configureStore';
 
-const Component = ({ item, submissions, onClick }) => {
-  console.log(item.source.entries);
-  return (
-    <section
-      className="text-gray-600 body-font"
-      data-element-id={item.id}
-      onClick={onClick}
-    >
-      <div className="container px-5 py-24 mx-auto">
-        <div className="w-full mb-20">
-          <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
-            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900" style={{ color: item.fntclrtitle, fontSize: item.fntSztitle, fontFamily: item.fntfmlytitle }}>{item.title}</h1>
-            <div className="h-1 w-20 bg-indigo-500 rounded" />
-          </div>
-          <p className="lg:w-1/2 w-full leading-relaxed text-gray-500" style={{ color: item.fntclrdescription, fontSize: item.fntSzdescription, fontFamily: item.fntfmlydescription }}> {item.description}</p>
+const Component = ({ item, submissions, onClick }) => (
+  <section
+    className="text-gray-600 body-font"
+    data-element-id={item.id}
+    onClick={onClick}
+  >
+    <div className="container px-5 py-24 mx-auto">
+      <div className="w-full mb-20">
+        <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
+          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900" style={{ color: item.fntclrtitle, fontSize: item.fntSztitle, fontFamily: item.fntfmlytitle }}>{item.title}</h1>
+          <div className="h-1 w-20 bg-indigo-500 rounded" />
         </div>
-        {/* {item.source.entries.map(entry => {
+        <p className="lg:w-1/2 w-full leading-relaxed text-gray-500" style={{ color: item.fntclrdescription, fontSize: item.fntSzdescription, fontFamily: item.fntfmlydescription }}> {item.description}</p>
+      </div>
+      {/* {item.source.entries.map(entry => {
             console.log('');
             return (
               <div className="flex submissionss-center lg:w-3/5 mx-auto border-b pb-10 mb-10
@@ -50,10 +48,9 @@ const Component = ({ item, submissions, onClick }) => {
                 </div>
               </div>);
           })} */}
-      </div>
-    </section>
+    </div>
+  </section>
       );
-};
 
 Component.propTypes = {
   submissions: arrayOf(shape({

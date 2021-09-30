@@ -8,7 +8,7 @@ import AutoComplete from '../../utils/AutoComplete';
 import './Styles/source.css';
 
 
-const Source = ({ submissionsRequest, updateField, settingsKey: key }) => {
+const Source = ({ submissionsRequest, updateField, settingsKey: key, selectedElement }) => {
   const [autoSearchValue, setAutoSearchValue] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [source, setSource] = useState({
@@ -16,8 +16,12 @@ const Source = ({ submissionsRequest, updateField, settingsKey: key }) => {
     questions: []
   });
   const [formID, setFormID] = useState('');
+  const foundItem = useSelector((state) =>
+  state.editor.layoutItems.find((item) => item.id === state.editor.selectedElement));
+
   const forms = useSelector((state) => state.forms.forms);
-  const questions = useSelector((state) => state.questions.questions[formID]);
+  const questions = useSelector((state) =>
+    state.questions.questions[foundItem.source.formID]);
   const dispatch = useDispatch();
   const handleGetSubmissions = async (e) => {
     await submissionsRequest(e.target.value);
@@ -27,7 +31,6 @@ const Source = ({ submissionsRequest, updateField, settingsKey: key }) => {
       });
     }, 1000);
   };
-
   const searchFunction = search => forms.filter(item =>
     (item.title.toLowerCase()).startsWith(search.toLowerCase()));
 
@@ -80,7 +83,6 @@ const Source = ({ submissionsRequest, updateField, settingsKey: key }) => {
       {isOpen ? renderForms() : <></>}
       { formID ? (
         <div className="select-handler">
-
           <label htmlFor="select-image">IMAGE</label>
           <select
             id="select-image"
@@ -116,7 +118,8 @@ const Source = ({ submissionsRequest, updateField, settingsKey: key }) => {
 Source.propTypes = {
     submissionsRequest: func.isRequired,
     updateField: func.isRequired,
-    settingsKey: string.isRequired
+    settingsKey: string.isRequired,
+    selectedElement: string.isRequired
       };
 
 export default Source;

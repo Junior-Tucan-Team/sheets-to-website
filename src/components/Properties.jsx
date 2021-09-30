@@ -54,6 +54,7 @@ const Properties = ({ selectedElement, layoutItems, updateField,
                 key={key}
                 settingsKey={key}
                 submissionsRequest={submissionsRequest}
+                selectedElement={selectedElement}
               />
             </div>
           );
