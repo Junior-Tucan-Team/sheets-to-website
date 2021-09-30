@@ -1,6 +1,6 @@
 import { SUBMISSION_REQUEST } from '../constants/actionTypes';
 
-export const submissionsRequest = (payload) => ({
+export const submissionsRequest = (formID) => ({
   type: SUBMISSION_REQUEST,
-  payload
+  payload: { formID }
 });

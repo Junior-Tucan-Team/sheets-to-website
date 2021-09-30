@@ -1,36 +1,29 @@
 import React, { useState } from 'react';
 import { func, string } from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import store from '../../redux/configureStore';
-import { getQuestionsRequest } from '../../redux/actions';
+import { getQuestionsRequest, submissionsRequest } from '../../redux/actions';
 import { filterByQuestionType } from '../../utils/filterBy';
 import AutoComplete from '../../utils/AutoComplete';
 import './Styles/source.css';
 
 
-const Source = ({ submissionsRequest, updateField, settingsKey: key, selectedElement }) => {
+const Source = ({ updateField, settingsKey: key, selectedElement }) => {
   const [autoSearchValue, setAutoSearchValue] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [source, setSource] = useState({
-    entries: [],
-    questions: []
+    formID: '',
+    image: '',
+    header: '',
+    description: '',
+    price: ''
   });
   const [formID, setFormID] = useState('');
   const foundItem = useSelector((state) =>
   state.editor.layoutItems.find((item) => item.id === state.editor.selectedElement));
-
   const forms = useSelector((state) => state.forms.forms);
   const questions = useSelector((state) =>
     state.questions.questions[foundItem.source.formID]);
   const dispatch = useDispatch();
-  const handleGetSubmissions = async (e) => {
-    await submissionsRequest(e.target.value);
-    setTimeout(() => {
-      setSource({
-        ...source, entries: store.getState().submissions.submissions
-      });
-    }, 1000);
-  };
   const searchFunction = search => forms.filter(item =>
     (item.title.toLowerCase()).startsWith(search.toLowerCase()));
 
@@ -60,9 +53,9 @@ const Source = ({ submissionsRequest, updateField, settingsKey: key, selectedEle
             disabled={!formID}
             onClick={() => {
               dispatch(getQuestionsRequest(formID));
-              dispatch(updateField({
-                formID
-              }, key));
+              dispatch(submissionsRequest(formID));
+              setSource({ ...source, formID });
+              updateField({ ...source, formID }, key);
               setIsOpen(false);
             }}
           >
@@ -86,25 +79,59 @@ const Source = ({ submissionsRequest, updateField, settingsKey: key, selectedEle
           <label htmlFor="select-image">IMAGE</label>
           <select
             id="select-image"
+            onChange={(e) => {
+              setSource({ ...source, image: e.target.value });
+              updateField({ ...source, image: e.target.value }, key);
+            }}
           >
+            <option value="" selected disabled hidden>Choose here</option>
             {filterByQuestionType(['control_textbox'])(questions).map((column) => (
-              <option value={column}>
+              <option value={questions[column].qid}>
                 {questions[column].text}
               </option>))
     }
           </select>
           <label htmlFor="select-header">HEADER</label>
-          <select id="select-header">
-            {filterByQuestionType(['control_textbox'])(questions).map((column) => (
-              <option>
+          <select
+            id="select-header"
+            onChange={(e) => {
+              setSource({ ...source, header: e.target.value });
+              updateField({ ...source, header: e.target.value }, key);
+            }}
+          >
+            <option value="" selected disabled hidden>Choose here</option>
+            {filterByQuestionType(['control_textbox', 'control_fullname'])(questions).map((column) => (
+              <option value={questions[column].qid}>
                 {questions[column].text}
               </option>))
     }
           </select>
           <label htmlFor="select-description">DESCRIPTION</label>
-          <select id="select-description">
+          <select
+            id="select-description"
+            onChange={(e) => {
+            setSource({ ...source, description: e.target.value });
+            updateField({ ...source, description: e.target.value }, key);
+          }}
+          >
+            <option value="" selected disabled hidden>Choose here</option>
             {filterByQuestionType(['control_textarea', 'control_textbox'])(questions).map((column) => (
-              <option>
+              <option value={questions[column].qid}>
+                {questions[column].text}
+              </option>))
+    }
+          </select>
+          <label htmlFor="select-description">PRICE</label>
+          <select
+            id="select-description"
+            onChange={(e) => {
+            setSource({ ...source, price: e.target.value });
+            updateField({ ...source, price: e.target.value }, key);
+          }}
+          >
+            <option value="" selected disabled hidden>Choose here</option>
+            {filterByQuestionType(['control_textarea', 'control_textbox'])(questions).map((column) => (
+              <option value={questions[column].qid}>
                 {questions[column].text}
               </option>))
     }
@@ -116,7 +143,6 @@ const Source = ({ submissionsRequest, updateField, settingsKey: key, selectedEle
 
 
 Source.propTypes = {
-    submissionsRequest: func.isRequired,
     updateField: func.isRequired,
     settingsKey: string.isRequired,
     selectedElement: string.isRequired

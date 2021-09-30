@@ -2,7 +2,7 @@ import { SUBMISSION_FAILURE, SUBMISSION_SUCCESS, SUBMISSION_REQUEST } from '../c
 
 const INITIAL_STATE = {
   isLoading: false,
-  submissions: [],
+  submissions: {},
   error: null,
 };
 
@@ -12,7 +12,12 @@ const submissionsReducer = (state = INITIAL_STATE, { type, payload }) => {
       return { ...state, isLoading: true };
   }
     case SUBMISSION_SUCCESS: {
-        return { ...state, submissions: payload, isLoading: false };
+        const { formID, submissions } = payload;
+        return {
+          ...state,
+          submissions: { ...state.submissions, [formID]: submissions },
+          isLoading: false
+         };
     }
     case SUBMISSION_FAILURE: {
       return { ...state, error: payload };

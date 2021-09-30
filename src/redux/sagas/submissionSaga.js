@@ -4,10 +4,15 @@ import { getFormSubmissions } from '../lib/api';
 
 function* getFormSubmissionsRequest(action) {
   try {
-    const formSubmissions = yield call(getFormSubmissions, action.payload);
+    const { formID } = action.payload;
+    const formSubmissions = yield call(getFormSubmissions, formID);
+    // console.log(formSubmissions);
     yield put({
       type: SUBMISSION_SUCCESS,
-      payload: formSubmissions
+      payload: {
+        formID,
+        submissions: formSubmissions
+      }
     });
   } catch (e) {
     yield put({ type: SUBMISSION_FAILURE });

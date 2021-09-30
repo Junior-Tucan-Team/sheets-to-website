@@ -8,6 +8,7 @@ export default function* rootSaga() {
   yield all([
     ...auth,
     ...formSagas,
-    ...questionsSagas
+    ...questionsSagas,
+    ...submissionsSagas
   ]);
 }
