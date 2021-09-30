@@ -81,13 +81,13 @@ const Source = ({ submissionsRequest, updateField, settingsKey: key, selectedEle
         </button>
       </label>
       {isOpen ? renderForms() : <></>}
-      { formID ? (
+      { foundItem.source.formID ? (
         <div className="select-handler">
           <label htmlFor="select-image">IMAGE</label>
           <select
             id="select-image"
           >
-            {filterByQuestionType(['control_upload'])(questions).map((column) => (
+            {filterByQuestionType(['control_textbox'])(questions).map((column) => (
               <option value={column}>
                 {questions[column].text}
               </option>))
