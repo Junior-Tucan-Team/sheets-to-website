@@ -1,19 +1,16 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { func, string } from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { getQuestionsRequest } from '../redux/actions/questionActions';
 import { splitDate } from './adjustModifiedDate';
 
-const AutoComplete = ({ value, onChange, search, key, updateField, setFormID, setIsOpen }) => {
+const AutoComplete = ({ value, onChange, search, setFormID }) => {
   const [suggestions, setSuggestions] = useState();
+  const [selectedTable, setSelectedTable] = useState('');
   const handleValueChange = e => onChange(e.target.value);
   const dispatch = useDispatch();
 
   // eslint-disable-next-line consistent-return
   const findSuggestions = useCallback(newValue => {
-    if (!newValue) {
-      return setSuggestions();
-    }
     const newSuggestions = search(value);
     setSuggestions(newSuggestions);
   }, [search, value]);
@@ -24,28 +21,45 @@ const AutoComplete = ({ value, onChange, search, key, updateField, setFormID, se
 
   return (
     <div className="autoComplete">
-      <input type="text" value={value} onChange={handleValueChange} />
+      <input type="text" value={value} onChange={handleValueChange} placeholder="Search in your tables"/>
       {suggestions?.length ? (
         <div className="suggestions">
-          {suggestions.map(suggestion => (
-            <button
-              onClick={(e) => {
-                dispatch(getQuestionsRequest(suggestion.id));
-                setFormID(suggestion.id);
-                dispatch(updateField({
-                  formID: suggestion.id
-                }, key));
-                setIsOpen(false);//   Should be removed after implementation of Next Button
-              }
+          {suggestions.map(suggestion => {
+            if (suggestion.id === selectedTable) {
+              return (
+                <button
+                  style={{ border: '3px solid rgb(50, 142, 218)' }}
+                  onClick={(e) => {
+                    setFormID(suggestion.id);
+                    setSelectedTable(suggestion.id);
+                    }
+                  }
+                >
+                  {suggestion.title}
+                  <br/>
+                  <span>{suggestion.count} submissions. Modified on
+                    {splitDate(suggestion.updated_at)}
+                  </span>
+                </button>
+              );
+            } else {
+              return (
+                <button
+                  onClick={(e) => {
+                    setFormID(suggestion.id);
+                    setSelectedTable(suggestion.id);
+                  }
+                }
+                >
+                  {suggestion.title}
+                  <br/>
+                  <span>{suggestion.count} submissions. Modified on
+                    {splitDate(suggestion.updated_at)}
+                  </span>
+                </button>
+              );
             }
-            >
-              {suggestion.title}
-              <br/>
-              <span>{suggestion.count} submissions. Modified on
-                {splitDate(suggestion.updated_at)}
-              </span>
-            </button>
-          ))}
+          })}
         </div>
       ) : null}
     </div>
@@ -58,10 +72,7 @@ AutoComplete.propTypes = {
   value: string.isRequired,
   onChange: func.isRequired,
   search: func.isRequired,
-  key: string.isRequired,
-  updateField: func.isRequired,
   setFormID: func.isRequired,
-  setIsOpen: func.isRequired
 };
 
 export default AutoComplete;
