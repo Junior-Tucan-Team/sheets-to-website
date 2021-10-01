@@ -6,7 +6,6 @@ import * as Elements from './Elements';
 
 const ElementList = ({ addLayoutItem }) => {
   const [currentCategory, setCategory] = useState('header');
-  const [isOpen, setIsOpen] = useState(false);
   const onElementClick = (e) => {
     const elementName = e.target.getAttribute('data-element-name');
     const element = Elements[elementName];
@@ -20,20 +19,28 @@ const ElementList = ({ addLayoutItem }) => {
   };
 
   const onAddElementClick = () => {
-    setIsOpen(!isOpen);
+    const leftPanelOpen = document.getElementsByClassName('left-panel-open')[0];
+    const leftPanelAddButton = document.getElementsByClassName('left-panel-add-button')[0];
+    leftPanelOpen.style.display = 'block';
+    leftPanelAddButton.style.display = 'none';
   };
 
-  const renderElements = () => {
-    if (isOpen) {
-      return (
-        <div className="leftPanelChild">
-          <div className="leftPanelChildSpans">
-            <span onClick={onCategoryClick} name="header">Header</span>
-            <span onClick={onCategoryClick} name="content">Content</span>
-            <span onClick={onCategoryClick} name="footer">Footer</span>
-          </div>
-          <ul className="leftPanelElements">
-            {Object.keys(Elements).filter(element =>
+  const onRemoveElementClick = () => {
+    const leftPanelOpen = document.getElementsByClassName('left-panel-open')[0];
+    const leftPanelAddButton = document.getElementsByClassName('left-panel-add-button')[0];
+    leftPanelOpen.style.display = 'none';
+    leftPanelAddButton.style.display = 'block';
+  };
+
+  const renderElements = () => (
+    <div className="leftPanelChild">
+      <div className="leftPanelChildSpans">
+        <span onClick={onCategoryClick} name="header">Header</span>
+        <span onClick={onCategoryClick} name="content">Content</span>
+        <span onClick={onCategoryClick} name="footer">Footer</span>
+      </div>
+      <ul className="leftPanelElements">
+        {Object.keys(Elements).filter(element =>
      Elements[element].category === currentCategory).map(element =>
        <li
          key={element}
@@ -42,22 +49,21 @@ const ElementList = ({ addLayoutItem }) => {
        >
          {Elements[element].title}
        </li>)}
-          </ul>
-        </div>
-      );
-    }
-    return <></>;
-  };
+      </ul>
+    </div>
+  );
 
   return (
     <div className="elements panel-wrapper">
-      <div className="left-panel-add-button">
-        <button>Add Elements</button>
-        <i className="fa fa-plus" aria-hidden="true"/>
+      <div className="left-panel-add-button" style={{ display: 'block' }}>
+        <button className="add-element-button" onClick={onAddElementClick}>
+          Add Elements
+          <i className="fa fa-plus" aria-hidden="true"/>
+        </button>
       </div>
-      <div className="left-panel-open">
+      <div style={{ display: 'none' }} className="left-panel-open">
         <div className="leftPanelChild">
-          <span className="addElementSpan" onClick={onAddElementClick} ><div> Add Element </div><i className="fa fa-times" aria-hidden="true"/></span>
+          <span className="addElementSpan" ><div> Add Element </div><i onClick={onRemoveElementClick} className="fa fa-times" aria-hidden="true"/></span>
         </div>
         {renderElements()}
       </div>
