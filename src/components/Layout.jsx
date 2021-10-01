@@ -21,6 +21,13 @@ function Layout({
     deleteLayoutItem(foundDeletedIndex);
 };
 
+  const showSettings = () => {
+    const settingsButton = document.getElementsByClassName('right-panel-settings-button')[0];
+    const settingsSection = document.getElementsByClassName('settings-panel-open')[0];
+    settingsButton.style.display = 'none';
+    settingsSection.style.display = 'block';
+  };
+
   return (
     <div className="layout">
       <div className="webpage">
@@ -43,7 +50,7 @@ function Layout({
                 </button>
                 <button
                   className="settingsButton"
-                  onClick={removeSelectedItem}
+                  onClick={showSettings}
                 ><i className="fa fa-cog" aria-hidden="true"/>
                 </button>
               </div>
