@@ -32,14 +32,14 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
       <div className="source-handler">
         <div className="source-pop-up-header">
           <div>
-            <img src="" alt="placeHolder"/>
-            <span>Select from Table</span>
+            <i className="fa fa-table"/>
+            <span>Source from Table</span>
           </div>
-          <button onClick={() => { setIsOpen(!isOpen); setAutoSearchValue(''); }}>X</button>
+          <button onClick={() => { setIsOpen(!isOpen); setAutoSearchValue(''); }}><i className="fa fa-times" aria-hidden="true"/></button>
         </div>
         <div className="source-select-section">
-          <span>Select a Table</span>
-          <span>Choose which form you want to take action with the button</span>
+          <span className="text-bold">Select a Table</span>
+          <span className="text-desc">Choose which form you want to take action with the button</span>
           <AutoComplete
             value={autoSearchValue}
             onChange={setAutoSearchValue}

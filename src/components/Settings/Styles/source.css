@@ -1,13 +1,11 @@
 .settings .source-pop-up {
     display: flex;
-    
     /* Added for pop-up select  */
     position: fixed;
     top: 50%;
     left: 50%;
     height: 100%;
     width: 100%;
-
     transform: translate(-50%, -50%);
     background: rgba(0,0,0,0.5);
     z-index: 1002;                     /* This value was 1001 for main header */
@@ -24,7 +22,6 @@
     left: 50%;
     height: 50%;
     width: 50%;
-
     transform: translate(-50%, -50%);
 }
 
@@ -34,16 +31,107 @@
     border-bottom: 2px solid black;
 }
 
+.settings .source-pop-up-header div i {
+   padding: 6px;
+   color:green;
+   font-size: 1.5rem;
+   margin-left: 4px;
+}
+
+.settings .source-pop-up-header div span {
+   font-style: bold;
+}
+
+.settings .source-pop-up-header button i {
+    padding: 5px 7px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background-color:#8586A6;
+    border: none;
+    border-radius: 50px;
+    margin-right: 4px;
+}
+
 .settings .source-select-section {
     display: flex;
     flex-direction: column;
+    margin-left: 10px;
+}
+
+.settings .source-select-section .text-bold{
+    font-family: Circular Std;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    color: #141E46;
+    margin-top: 10px;
+}
+
+.settings .source-select-section .text-desc{
+    font-family: Circular Std;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    color: #8D8FA8;
+    margin-bottom: 10px;
+}
+
+
+.suggestions {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4px;
+}
+
+.suggestions button {
+    display: flex;
+    flex-direction: column;
+    background: #F7F7F8;
+    border: 1px solid #D7DAE9;
+    border-radius: 4px;
+    margin: 5px 0px;
+    font-family: Circular Std;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #2C3345;
+    padding:3px;
+}
+
+.suggestions button span {
+    font-family: Circular Std;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.02em;
+    color: #8D8EAA;
+    
 }
 
 .settings .source-select-buttons {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0;
-    background-color: aquamarine;
+    background: #FAFAFC;
+}
+
+.settings .source-select-buttons button {
+    width: 100px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #D4D6E1;
+    border-radius: 4px;
+    margin:3px 13px;
 }
 
 .settings .select-handler{
