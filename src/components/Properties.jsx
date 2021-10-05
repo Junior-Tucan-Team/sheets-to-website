@@ -7,22 +7,6 @@ const Properties = ({ selectedElement, layoutItems, updateField,
    updateStyle }) => {
   const foundedItem = layoutItems.find(item => selectedElement === item.id);
   const [tab, setTab] = useState('first');
-  if (!foundedItem) {
-    return (
-      <div className="settings panel-wrapper" >
-        <div className="right-panel-settings-button" style={{ display: 'block' }}>
-          <button className="add-element-button">
-            Settings
-            <i className="fas fa-sliders-h" aria-hidden="true"/>
-          </button>
-        </div>
-        <div className="settings-panel-open" style={{ display: 'none' }}/>
-        {/* general settings component */}
-      </div>);
-  }
-  const { type } = foundedItem;
-  const { settings } = Elements[type];
-  const { category } = Elements[type];
 
   const onShowSettingsClick = () => {
     const settingsButton = document.getElementsByClassName('right-panel-settings-button')[0];
@@ -41,6 +25,26 @@ const Properties = ({ selectedElement, layoutItems, updateField,
     settingsButton.style.display = 'block';
     settingsSection.style.display = 'none';
   };
+
+  if (!foundedItem) {
+    return (
+      <div className="settings panel-wrapper" >
+        <div className="right-panel-settings-button" style={{ display: 'block' }}>
+          <button className="add-element-button" onClick={onShowSettingsClick}>
+            Settings
+            <i className="fas fa-sliders-h" aria-hidden="true"/>
+          </button>
+        </div>
+        <div className="settings-panel-open" style={{ display: 'none' }}>
+          <button onClick={hideSettings}>X</button>
+          <h3>General Settings</h3>
+        </div>
+        {/* general settings component */}
+      </div>);
+  }
+  const { type } = foundedItem;
+  const { settings } = Elements[type];
+  const { category } = Elements[type];
 
   const renderSettingsTabs = () => {
     if (category === 'header') {
