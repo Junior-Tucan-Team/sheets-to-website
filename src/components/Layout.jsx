@@ -37,7 +37,7 @@ function Layout({
           const isSelected = selectedElement === layoutItem.id;
           if (isSelected) {
             return (
-              <div style={{ border: '10px solid black' }}>
+              <div className="webpage-each-div" style={{ border: '2px solid #13E17E' }}>
                 <ElementComponent
                   key={index.toString()}
                   item={layoutItem}
@@ -57,7 +57,7 @@ function Layout({
             );
           }
           return (
-            <div>
+            <div className="webpage-each-div">
               <ElementComponent
                 key={index.toString()}
                 item={layoutItem}

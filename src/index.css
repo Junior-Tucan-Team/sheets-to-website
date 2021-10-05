@@ -22,7 +22,7 @@ code {
 
 .editor {
   display: flex;
-  justify-content:space-around;
+  justify-content:space-between;
   width: 100%;
   height: calc(100% - 104px);
 }
@@ -53,40 +53,49 @@ code {
 }
 .elements .left-panel-add-button{
   position: absolute;
+  background: #FFFFFF;
+  margin-top: 15px;
   left: 0px;
-  height: 50px;
-  width: 70px;
-  /* z-index :30000; */
+  font-size: 1.2em;
+  height: 40px;
+  width: 130px;
+  white-space: nowrap;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+  
 }
 .settings .right-panel-settings-button{
   position: absolute;
+  background: #FFFFFF;
+  margin-top: 15px;
   right: 0px;
-  height: 50px;
-  width: 70px;
-  /* z-index :30000; */
+  font-size: 1.2em;
+  height: 40px;
+  width: 130px;
+  white-space: nowrap;
+  
 }
 
 .elements .left-panel-open{
-  width: 250px; 
-  background-color: #dddde2;
-  display: flex; 
+  display: flex;
   flex-direction: column;
   flex-shrink: 0;
   height: 100%;
+  width: 250px; 
+  background-color: #FFFFFF;
+
 }
 
 .settings .settings-panel-open{
- 
-  width: 250px; 
-  background-color: #dddde2;
-  display: flex; 
+  display: flex;
   flex-direction: column;
   flex-shrink: 0;
   height: 100%;
+  width: 250px; 
+  background-color: #FFFFFF;
 }
 
 /* Elements  START*/
-
 
 
 .leftPanelChild{
@@ -156,24 +165,32 @@ code {
 }
 
 /* Elements  END*/
-.webpage{
-  width: 1280px;
-}
 
 /* Layout  START*/
 .layout {
-  width: 1280px;
+  margin-top: 30px;
+  width: 1320px;
   padding: 10px 20px;
   flex-grow: 0;
+  border-top: 1px solid rgb(226, 11, 11);
   border-right: 1px solid rgb(226, 11, 11);
   border-left: 1px solid rgb(209, 16, 16);
   overflow: auto;
   background-color: #f0f5f5;
+  
+}
+
+.webpage{
+  width: 1280px;
 }
 
 .layout div{
   position: relative;
   padding-right: 20px;
+}
+
+.layout .webpage-each-div:hover{
+  border: 2px solid rgb(59, 173, 250);
 }
 
 .layout .deleteButton {
@@ -246,6 +263,12 @@ code {
   background-color: rgb(238, 241, 243);
   padding: 8px;
   font-size: 1.25rem;
+  display: flex;
+  justify-content:space-between;
+}
+
+.settings .settings-tabs-properties button{
+  margin-right: 5px;
 }
 
 .settings .settings-tabs-buttons{
