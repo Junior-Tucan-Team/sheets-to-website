@@ -4,14 +4,16 @@ import { v4 as uuidv4 } from 'uuid';
 import * as Elements from './Elements';
 
 
-const ElementList = ({ addLayoutItem }) => {
+const ElementList = ({ selectLayoutItem, addLayoutItem }) => {
   const [currentCategory, setCategory] = useState('header');
   const onElementClick = (e) => {
     const elementName = e.target.getAttribute('data-element-name');
     const element = Elements[elementName];
     const newElement = Object.keys(element.settings).reduce((acc, curr) =>
     ({ ...acc, [curr]: element.settings[curr].default }), {});
-    addLayoutItem({ ...newElement, type: elementName, id: uuidv4() });
+    const item = { ...newElement, type: elementName, id: uuidv4() };
+    addLayoutItem(item);
+    selectLayoutItem(item.id);
   };
 
   const onCategoryClick = (e) => {
@@ -23,6 +25,10 @@ const ElementList = ({ addLayoutItem }) => {
     const leftPanelAddButton = document.getElementsByClassName('left-panel-add-button')[0];
     leftPanelOpen.style.display = 'block';
     leftPanelAddButton.style.display = 'none';
+    const settingsButton = document.getElementsByClassName('right-panel-settings-button')[0];
+    const settingsSection = document.getElementsByClassName('settings-panel-open')[0];
+    settingsButton.style.display = 'block';
+    settingsSection.style.display = 'none';
   };
 
   const onRemoveElementClick = () => {
@@ -72,11 +78,13 @@ const ElementList = ({ addLayoutItem }) => {
 };
 
 ElementList.propTypes = {
-  addLayoutItem: func
+  addLayoutItem: func,
+  selectLayoutItem: func,
 };
 
 ElementList.defaultProps = {
-  addLayoutItem: () => {}
+  addLayoutItem: () => {},
+  selectLayoutItem: () => {}
 };
 
 export default ElementList;

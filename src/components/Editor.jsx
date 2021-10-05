@@ -33,7 +33,7 @@ const Editor = ({
     }, []);
     return (
       <div className="editor">
-        <ElementList layoutItems={layoutItems} addLayoutItem={addLayoutItem}/>
+        <ElementList selectLayoutItem={selectLayoutItem} addLayoutItem={addLayoutItem}/>
         <Layout
           layoutItems={layoutItems}
           selectLayoutItem={selectLayoutItem}
@@ -48,7 +48,6 @@ const Editor = ({
           layoutItems={layoutItems}
           updateField={updateField}
           updateStyle={updateStyle}
-          submissionsRequest={submissionsRequest}
         />
       </div>);
   };

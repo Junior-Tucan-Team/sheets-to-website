@@ -26,6 +26,10 @@ function Layout({
     const settingsSection = document.getElementsByClassName('settings-panel-open')[0];
     settingsButton.style.display = 'none';
     settingsSection.style.display = 'block';
+    const addElementButton = document.getElementsByClassName('left-panel-add-button')[0];
+    const addElementSection = document.getElementsByClassName('left-panel-open')[0];
+    addElementButton.style.display = 'block';
+    addElementSection.style.display = 'none';
   };
 
   return (
