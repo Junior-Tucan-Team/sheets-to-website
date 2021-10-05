@@ -22,41 +22,77 @@ code {
 
 .editor {
   display: flex;
-  justify-content:space-between;
+  justify-content:space-around;
   width: 100%;
   height: calc(100% - 104px);
 }
 
 /* Editor END*/
 .panel-wrapper{
-  width: 250px; 
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  height: 100%;
-}
-
-.settings {
+  /* height: 100%; */
   
-  /* position: sticky;
-  top: 0; */
-  /* align-self: flex-start;
-  overflow: auto; */
 }
-
-/* Elements  START*/
 
 .elements {
   /* position: sticky;
   top: 0; */
   /* align-self: flex-start;
   overflow: auto; */
+  
+  
 }
+.settings {
+  
+  /* position: sticky;
+  top: 0; */
+  /* align-self: flex-start;
+  overflow: auto; */
+  /* position: absolute;
+  right: 0; */
+  
+}
+.elements .left-panel-add-button{
+  position: absolute;
+  left: 0px;
+  height: 50px;
+  width: 70px;
+  /* z-index :30000; */
+}
+.settings .right-panel-settings-button{
+  position: absolute;
+  right: 0px;
+  height: 50px;
+  width: 70px;
+  /* z-index :30000; */
+}
+
+.elements .left-panel-open{
+  width: 250px; 
+  background-color: #dddde2;
+  display: flex; 
+  flex-direction: column;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+.settings .settings-panel-open{
+ 
+  width: 250px; 
+  background-color: #dddde2;
+  display: flex; 
+  flex-direction: column;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+/* Elements  START*/
+
 
 
 .leftPanelChild{
   display: flex;
   flex-direction: column;
+  white-space: nowrap;
 }
 
 .leftPanelChild .addElementSpan{
