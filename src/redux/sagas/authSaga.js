@@ -1,16 +1,18 @@
 import { takeEvery, call, put } from 'redux-saga/effects';
 import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from '../constants/actionTypes';
 import { login } from '../lib/api';
+import setApiKey from '../../utils/axios';
 
 function* loginRequest(action) {
   try {
-    const { email, password } = action.payload;
-    const userData = yield call(login, { email, password });
+    const { credentials } = action.payload;
+    const userData = yield call(login, credentials);
     if (userData.data.responseCode === 200) {
       yield put({
         type: LOGIN_SUCCESS,
         payload: userData.data.content
       });
+      setApiKey(userData.data.content.appKey);
     } else {
       yield put({ type: LOGIN_FAILURE });
     }
