@@ -24,20 +24,24 @@ function LoginPage() {
     return <Redirect to="/editor"/>;
   }
   return (
-    <form>
-      <label>Email</label>
-      <input
-        type="email"
-        onChange={(e) => setEmail(e.target.value)}
-        value={email}
-      />
-      <label>Password</label>
-      <input
-        type="password"
-        onChange={(e) => setPassword(e.target.value)}
-        value={password}
-      />
-      <button onClick={handleLogin}>Submit</button>
+    <form className="login-form">
+      <div>
+        <label>Email</label>
+        <input
+          type="email"
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
+        />
+      </div>
+      <div>
+        <label>Password</label>
+        <input
+          type="password"
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+        />
+      </div>
+      <button className="login-form-submit-button" onClick={handleLogin}>Submit</button>
     </form>
   );
 }

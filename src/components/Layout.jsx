@@ -50,7 +50,7 @@ function Layout({
                 <button
                   className="deleteButton"
                   onClick={removeSelectedItem}
-                ><i className="fa fa-trash-o" aria-hidden="true" />
+                ><i className="fas fa-trash-alt" />
                 </button>
                 <button
                   className="settingsButton"

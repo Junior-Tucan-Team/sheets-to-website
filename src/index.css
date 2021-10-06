@@ -58,7 +58,7 @@ code {
   left: 0px;
   font-size: 1.2em;
   height: 40px;
-  width: 130px;
+  width: 150px;
   white-space: nowrap;
   border-bottom-right-radius: 25px;
   border-top-right-radius: 25px;
@@ -67,13 +67,9 @@ code {
 .settings .right-panel-settings-button{
   position: absolute;
   background: #FFFFFF;
-  margin-top: 15px;
+  margin-top: 30px;
+  margin-right: 30px;
   right: 0px;
-  font-size: 1.2em;
-  height: 40px;
-  width: 130px;
-  white-space: nowrap;
-  
 }
 
 .elements .left-panel-open{
@@ -90,6 +86,14 @@ code {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
+  height: 100%;
+  width: 250px; 
+  background-color: #FFFFFF;
+}
+
+.general-settings-panel-open{
+  display: flex;
+  flex-direction: row;
   height: 100%;
   width: 250px; 
   background-color: #FFFFFF;
@@ -114,6 +118,7 @@ code {
   border-bottom-right-radius: 25px;
   border-top-right-radius: 25px;
 }
+
 /* TODO: CHANGE */
 .leftPanelChild .addElementSpan i {
   align-self:flex-end;
@@ -121,48 +126,49 @@ code {
   margin-bottom: 4px;
 }
 
-.leftPanelChild .addElementSpan:hover{
+.leftPanelChild .addElementSpan:hover {
   cursor: pointer;
   background-color: rgb(185, 197, 207);
   
 }
 
-.leftPanelChild .addElementSpan:focus{
-  box-shadow: none;
-  background-color: rgb(14, 40, 61);
-}
-
-.leftPanelChildSpans{
+.leftPanelChildSpans {
   display: flex;
   justify-content:space-around;
 }
 
-.leftPanelChildSpans span{
+.leftPanelChildSpans button {
   flex-grow: 1;
   text-align: center;
   cursor: pointer;
   background-color: rgb(185, 197, 207);
 }
 
-.leftPanelChildSpans span:hover{
+.leftPanelChildSpans button:hover {
   background-color: rgb(50, 142, 218);
 }
 
-.leftPanelChild .leftPanelElements{
+.leftPanelChildSpans button:focus {
+  border-bottom: 5px solid #0099FF;
+}
+
+.leftPanelChild .leftPanelElements {
   display: flex;
   flex-direction: column;
 }
 
-.leftPanelChild .leftPanelElements li{
+.leftPanelChild .leftPanelElements li {
   display: block;
   text-align: center;
   cursor: pointer;
   background-color: rgb(211, 229, 243);
 }
 
-.leftPanelChild .leftPanelElements li:hover{
+.leftPanelChild .leftPanelElements li:hover {
   background-color: rgb(138, 195, 238);
 }
+
+
 
 /* Elements  END*/
 
@@ -250,11 +256,19 @@ code {
 
 
 /* Settings  START*/
-
-
+/* style={{ fontSize: '20px', color: '#A6A6A6', background: 'white', transform: 'rotate(-45deg)' }} */
+.settings .right-panel-settings-button .add-element-button i {
+  font-size: 20px;
+  color: #f7e6e6;
+  background: rgb(156, 20, 20);
+  transform: rotate(-45deg);
+  padding: 9px 9px;
+  cursor: pointer;
+  border: none;
+  border-radius: 100px;
+}
 
 .settings .settings-tabs{
-  
   display: flex;
   flex-direction: column;
 }
@@ -311,3 +325,27 @@ input , select{
     border: 1px solid rgb(156, 139, 139);
     border-radius: 4px;
 }   
+
+
+
+
+
+.login-form{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
+
+.login-form-submit-button{
+  padding: 2px 7px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background-color:#1fda4e;
+  border: none;
+  border-radius: 5px;
+}

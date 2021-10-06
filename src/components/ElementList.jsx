@@ -41,9 +41,9 @@ const ElementList = ({ selectLayoutItem, addLayoutItem }) => {
   const renderElements = () => (
     <div className="leftPanelChild">
       <div className="leftPanelChildSpans">
-        <span onClick={onCategoryClick} name="header">Header</span>
-        <span onClick={onCategoryClick} name="content">Content</span>
-        <span onClick={onCategoryClick} name="footer">Footer</span>
+        <button onClick={onCategoryClick} name="header">Header</button>
+        <button onClick={onCategoryClick} name="content">Content</button>
+        <button onClick={onCategoryClick} name="footer">Footer</button>
       </div>
       <ul className="leftPanelElements">
         {Object.keys(Elements).filter(element =>
@@ -64,7 +64,7 @@ const ElementList = ({ selectLayoutItem, addLayoutItem }) => {
       <div className="left-panel-add-button" style={{ display: 'block' }}>
         <button className="add-element-button" onClick={onAddElementClick}>
           Add Elements
-          <i className="fa fa-plus" aria-hidden="true"/>
+          <i className="fa fa-plus" aria-hidden="true" style={{ marginLeft: '6px' }}/>
         </button>
       </div>
       <div style={{ display: 'none' }} className="left-panel-open">

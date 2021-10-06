@@ -31,13 +31,11 @@ const Properties = ({ selectedElement, layoutItems, updateField,
       <div className="settings panel-wrapper" >
         <div className="right-panel-settings-button" style={{ display: 'block' }}>
           <button className="add-element-button" onClick={onShowSettingsClick}>
-            Settings
-            <i className="fas fa-sliders-h" aria-hidden="true"/>
+            <i className="fas fa-paint-roller right-icon" />
           </button>
         </div>
-        <div className="settings-panel-open" style={{ display: 'none' }}>
-          <button onClick={hideSettings}>X</button>
-          <h3>General Settings</h3>
+        <div className="settings-panel-open" style={{ display: 'none', marginTop: '30px' }}>
+          <div>General Settings <button onClick={hideSettings} style={{ marginLeft: '6px' }}><i className="fa fa-times"/></button></div>
         </div>
         {/* general settings component */}
       </div>);
@@ -50,8 +48,7 @@ const Properties = ({ selectedElement, layoutItems, updateField,
     if (category === 'header') {
       return (
         <div className="settings-tabs">
-          <div className="settings-tabs-properties">Header Properties</div>
-          <button onClick={hideSettings}>X</button>
+          <div className="settings-tabs-properties">Header Properties <button onClick={hideSettings}><i className="fa fa-times"/></button></div>
           <div className="settings-tabs-buttons">
             <button onClick={() => { setTab('first'); }} name="0">Header</button>
             <button onClick={() => { setTab('second'); }} name="1">Background</button>
@@ -62,8 +59,7 @@ const Properties = ({ selectedElement, layoutItems, updateField,
     } else if (category === 'content') {
       return (
         <div className="settings-tabs">
-          <div className="settings-tabs-properties">Content Properties</div>
-          <button onClick={hideSettings}>X</button>
+          <div className="settings-tabs-properties">Content Properties<button onClick={hideSettings}><i className="fa fa-times"/></button></div>
           <div className="settings-tabs-buttons">
             <button onClick={() => { setTab('first'); }}>Content</button>
             <button onClick={() => { setTab('second'); }}>Style</button>
@@ -77,7 +73,7 @@ const Properties = ({ selectedElement, layoutItems, updateField,
       <div className="right-panel-settings-button" style={{ display: 'block' }}>
         <button className="add-element-button" onClick={onShowSettingsClick}>
           Settings
-          <i className="fas fa-sliders-h" aria-hidden="true"/>
+          <i className="fas fa-paint-roller right-icon" />
         </button>
       </div>
       <div className="settings-panel-open" style={{ display: 'none' }}>
