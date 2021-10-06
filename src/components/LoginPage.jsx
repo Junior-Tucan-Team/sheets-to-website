@@ -1,28 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import { shape } from 'prop-types';
 import { requestLogin } from '../redux/actions/authActions';
 
-function LoginPage() {
-  const [email, setEmail] = useState('xamatag258@rerunway.com');
-  const [password, setPassword] = useState('Me*45678');
+function LoginPage(props) {
+  const [email, setEmail] = useState('labil14832@busantei.com');
+  const [password, setPassword] = useState('bumbumMe*12');
   const dispatch = useDispatch();
 
   const handleLogin = (e) => {
     e.preventDefault();
+    const { history } = props;
     const formData = new FormData();
     formData.append('username', email);
     formData.append('password', password);
     formData.append('appName', 'sheets2website');
     formData.append('access', 'full');
-    dispatch(requestLogin(formData));
+    dispatch(requestLogin(formData, history));
   };
 
-  const userStatus = useSelector(state => state?.auth?.user?.status);
 
-  if (userStatus === 'ACTIVE') {
-    return <Redirect to="/editor"/>;
-  }
   return (
     <form className="login-form">
       <div>
@@ -45,5 +43,10 @@ function LoginPage() {
     </form>
   );
 }
+
+
+LoginPage.propTypes = {
+  history: shape().isRequired,
+};
 
 export default LoginPage;

@@ -1,8 +1,9 @@
 import { LOGIN_REQUEST } from '../constants/actionTypes';
 
-export const requestLogin = (credentials) => ({
+export const requestLogin = (credentials, history) => ({
   type: LOGIN_REQUEST,
   payload: {
-    credentials
+    credentials,
+    history
   }
 });

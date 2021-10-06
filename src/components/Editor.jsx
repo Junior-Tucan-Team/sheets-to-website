@@ -27,30 +27,29 @@ const Editor = ({
   updateStyle,
   requestGetForms,
   submissionsRequest
-}) => {
-    useEffect(() => {
-      requestGetForms();
-    }, []);
-    return (
-      <div className="editor">
-        <ElementList selectLayoutItem={selectLayoutItem} addLayoutItem={addLayoutItem}/>
-        <Layout
-          layoutItems={layoutItems}
-          selectLayoutItem={selectLayoutItem}
-          removeSelectedLayoutItem={removeSelectedLayoutItem}
-          selectedElement={selectedElement}
-          deleteLayoutItem={deleteLayoutItem}
-          updateField={updateField}
-          updateStyle={updateStyle}
-        />
-        <Properties
-          selectedElement={selectedElement}
-          layoutItems={layoutItems}
-          updateField={updateField}
-          updateStyle={updateStyle}
-        />
-      </div>);
-  };
+}) =>
+    // useEffect(() => {
+    //   requestGetForms();
+    // }, []);
+     (
+       <div className="editor">
+         <ElementList selectLayoutItem={selectLayoutItem} addLayoutItem={addLayoutItem}/>
+         <Layout
+           layoutItems={layoutItems}
+           selectLayoutItem={selectLayoutItem}
+           removeSelectedLayoutItem={removeSelectedLayoutItem}
+           selectedElement={selectedElement}
+           deleteLayoutItem={deleteLayoutItem}
+           updateField={updateField}
+           updateStyle={updateStyle}
+         />
+         <Properties
+           selectedElement={selectedElement}
+           layoutItems={layoutItems}
+           updateField={updateField}
+           updateStyle={updateStyle}
+         />
+       </div>);
 Editor.propTypes = {
   layoutItems: arrayOf(shape),
   addLayoutItem: func,

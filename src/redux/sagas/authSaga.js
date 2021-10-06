@@ -1,11 +1,12 @@
 import { takeEvery, call, put } from 'redux-saga/effects';
 import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from '../constants/actionTypes';
 import { login } from '../lib/api';
-import setApiKey from '../../utils/axios';
+import { setApiKey } from '../../utils/axios';
+import { requestGetForms } from '../actions/formActions';
 
 function* loginRequest(action) {
   try {
-    const { credentials } = action.payload;
+    const { credentials, history } = action.payload;
     const userData = yield call(login, credentials);
     if (userData.data.responseCode === 200) {
       yield put({
@@ -13,6 +14,8 @@ function* loginRequest(action) {
         payload: userData.data.content
       });
       setApiKey(userData.data.content.appKey);
+      history.push('/');
+      yield put(requestGetForms());
     } else {
       yield put({ type: LOGIN_FAILURE });
     }

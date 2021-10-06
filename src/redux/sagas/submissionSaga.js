@@ -6,7 +6,6 @@ function* getFormSubmissionsRequest(action) {
   try {
     const { formID } = action.payload;
     const formSubmissions = yield call(getFormSubmissions, formID);
-    // console.log(formSubmissions);
     yield put({
       type: SUBMISSION_SUCCESS,
       payload: {
