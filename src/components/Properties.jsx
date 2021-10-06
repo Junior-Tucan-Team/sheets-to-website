@@ -61,8 +61,8 @@ const Properties = ({ selectedElement, layoutItems, updateField,
         <div className="settings-tabs">
           <div className="settings-tabs-properties">Content Properties<button onClick={hideSettings}><i className="fa fa-times"/></button></div>
           <div className="settings-tabs-buttons">
-            <button onClick={() => { setTab('first'); }}>Content</button>
-            <button onClick={() => { setTab('second'); }}>Style</button>
+            <button onClick={() => { setTab('first'); }}>CONTENT</button>
+            <button onClick={() => { setTab('second'); }}>STYLE</button>
           </div>
         </div>);
     }

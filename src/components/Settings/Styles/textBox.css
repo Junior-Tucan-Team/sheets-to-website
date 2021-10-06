@@ -1,9 +1,16 @@
-.settings .heading-text{
+.settings .heading-text {
     display: flex;
     flex-direction: column;
+    padding: 24px 20px 0px 20px;
+    font-family: Circular Std;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #343C6A;
 }
 
-.settings .heading-text .fontManipulation{
+.settings .heading-text .fontManipulation {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -11,11 +18,20 @@
 }
 
 .settings .heading-text  label{
-    margin-top: 7px;
+    margin-bottom: 12px;
+}
+
+.settings .heading-text  input, .settings .heading-text select {
+    width: 320px;
+    height: 38px;
+    background: #FBFBFE;
+    border: 1px solid #C8CEED;
+    border-radius: 2px;
+    margin-bottom: 24px;
 }
 
 
-.settings .heading-text .fontManipulation .fontManipulation-Color{
+.settings .heading-text .fontManipulation .fontManipulation-Color {
     order:2;
     flex: 1px 1px 0px;
     flex-basis: 100%;
@@ -24,15 +40,20 @@
     margin-left: 15px;
 }
 
-.settings .heading-text .fontManipulation .fontManipulation-Size{
+.settings .heading-text .fontManipulation .fontManipulation-Color input {
+    width: 154px;
+    height: 38px;
+}
+
+.settings .heading-text .fontManipulation .fontManipulation-Size {
     order:1;
     flex: 1px 1px 0px;
     display: flex;
-    margin-left: 10px;
     flex-direction: column;
-    width: 125px;
 }
 
-.settings .heading-text .fontManipulation .fontManipulation-Color input{
-    width: 75px;
+.settings .heading-text .fontManipulation .fontManipulation-Size input {
+    height: 38px;
+    width: 154px;
+    margin-bottom: 25.5px;
 }

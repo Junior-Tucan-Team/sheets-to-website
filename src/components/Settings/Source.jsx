@@ -35,7 +35,7 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
             <i className="fa fa-table"/>
             <span>Source from Table</span>
           </div>
-          <button onClick={() => { setIsOpen(!isOpen); setAutoSearchValue(''); }}><i className="fa fa-times" aria-hidden="true"/></button>
+          <i className="fa fa-times" aria-hidden="true" onClick={() => { setIsOpen(!isOpen); setAutoSearchValue(''); }}/>
         </div>
         <div className="source-select-section">
           <span className="text-bold">Select a Table</span>
@@ -67,12 +67,18 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
   );
   return (
     <>
-      <label>
-        Content Source
-        <button onClick={() => setIsOpen(!isOpen)} style={{ border: '2px solid black', background: 'green', color: 'cornsilk' }}>
-          Select your table source
-        </button>
-      </label>
+      <div className="header-source-handler">
+        <div className="header-source">SOURCE</div>
+        <div className="desc-source">Select Source</div>
+        <div className="header-source-handler-buttons">
+          <button onClick={() => setIsOpen(!isOpen)}>
+            From Table
+          </button>
+          <button onClick={() => setIsOpen(!isOpen)}>
+            Manual
+          </button>
+        </div>
+      </div>
       {isOpen ? renderForms() : <></>}
       { foundItem.source.formID ? (
         <div className="select-handler">
