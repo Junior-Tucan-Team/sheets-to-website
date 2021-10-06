@@ -1,7 +1,9 @@
 import React from 'react';
+import { useDetectClickOutside } from 'react-detect-click-outside';
 import { arrayOf, func, shape } from 'prop-types';
 import * as Elements from './Elements';
 
+const outsideElementsClasses = ['settings-panel-open', 'left-panel-open', 'webpage', 'editor', 'layout'];
 function Layout({
    layoutItems,
    selectedElement,
@@ -20,6 +22,11 @@ function Layout({
     removeSelectedLayoutItem();
     deleteLayoutItem(foundDeletedIndex);
 };
+    const emptySelectedElement = (e) => {
+      if (outsideElementsClasses.includes(e.target.className)) {
+         selectLayoutItem('');
+      }
+    };
 
   const showSettings = () => {
     const settingsButton = document.getElementsByClassName('right-panel-settings-button')[0];
@@ -31,7 +38,10 @@ function Layout({
     addElementButton.style.display = 'block';
     addElementSection.style.display = 'none';
   };
-
+  const ref = useDetectClickOutside({
+    onTriggered: emptySelectedElement,
+    disableClick: false,
+  });
   return (
     <div className="layout">
       <div className="webpage">
@@ -41,7 +51,7 @@ function Layout({
           const isSelected = selectedElement === layoutItem.id;
           if (isSelected) {
             return (
-              <div className="webpage-each-div" style={{ border: '2px solid #13E17E' }}>
+              <div className="webpage-each-div" style={{ border: '2px solid #13E17E' }} ref={ref}>
                 <ElementComponent
                   key={index.toString()}
                   item={layoutItem}
