@@ -8,7 +8,8 @@ import {
 
 const INITIAL_STATE = {
     layoutItems: [],
-    selectedElement: null
+    selectedElement: null,
+    mode: 'editor'
 };
 
 const editorReducer = (state = INITIAL_STATE, { type, payload }) => {

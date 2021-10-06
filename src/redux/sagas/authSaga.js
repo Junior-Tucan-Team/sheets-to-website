@@ -15,7 +15,7 @@ function* loginRequest(action) {
       });
       setApiKey(userData.data.content.appKey);
       history.push('/');
-      yield put(requestGetForms());
+      // yield put(requestGetForms());
     } else {
       yield put({ type: LOGIN_FAILURE });
     }

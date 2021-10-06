@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { shape } from 'prop-types';
 import { requestLogin } from '../redux/actions/authActions';
 
 function LoginPage(props) {
-  const [email, setEmail] = useState('labil14832@busantei.com');
-  const [password, setPassword] = useState('bumbumMe*12');
+  const [email, setEmail] = useState('nojopaf707@btkylj.com');
+  const [password, setPassword] = useState('mE*2376gf');
   const dispatch = useDispatch();
 
   const handleLogin = (e) => {
@@ -19,7 +18,6 @@ function LoginPage(props) {
     formData.append('access', 'full');
     dispatch(requestLogin(formData, history));
   };
-
 
   return (
     <form className="login-form">
