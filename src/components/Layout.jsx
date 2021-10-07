@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDetectClickOutside } from 'react-detect-click-outside';
-import { arrayOf, func, shape } from 'prop-types';
+import { arrayOf, func, shape, string } from 'prop-types';
 import * as Elements from './Elements';
 
 const outsideElementsClasses = ['settings-panel-open', 'left-panel-open', 'webpage', 'editor', 'layout'];
@@ -10,11 +10,14 @@ function Layout({
    selectLayoutItem,
    removeSelectedLayoutItem,
    deleteLayoutItem,
-   updateField
+   updateField,
+   currentMode
   }) {
   const handleSelectItem = (e) => {
-    const selectedId = e.currentTarget.getAttribute('data-element-id');
-    selectLayoutItem(selectedId);
+    if (currentMode === 'editor') {
+      const selectedId = e.currentTarget.getAttribute('data-element-id');
+      selectLayoutItem(selectedId);
+    }
   };
 
   const removeSelectedItem = () => {
@@ -75,7 +78,7 @@ function Layout({
             );
           }
           return (
-            <div className="webpage-each-div">
+            <div className={currentMode === 'editor' ? 'webpage-each-div' : null}>
               <ElementComponent
                 key={index.toString()}
                 item={layoutItem}
@@ -96,6 +99,7 @@ Layout.propTypes = {
   selectLayoutItem: func.isRequired,
   removeSelectedLayoutItem: func.isRequired,
   deleteLayoutItem: func.isRequired,
-  updateField: func.isRequired
+  updateField: func.isRequired,
+  currentMode: string.isRequired
 };
 export default Layout;

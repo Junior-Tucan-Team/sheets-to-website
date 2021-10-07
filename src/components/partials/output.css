@@ -1485,6 +1485,11 @@
   background-color: #4AE7A8;
 }
 
+input:checked ~ .toggle-dot {
+  transform: translateX(100%);
+  background-color: #48bb78;
+}
+
 /* Secondary Header  END*/
 .fixedLastUpdatedIconSVG{ 
   width: 12px;

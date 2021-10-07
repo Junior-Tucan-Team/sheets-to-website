@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { shape, arrayOf, func, string } from 'prop-types';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import ElementList from './ElementList';
 import Layout from './Layout';
 import Properties from './Properties';
@@ -28,27 +28,38 @@ const Editor = ({
   requestGetForms,
   submissionsRequest
 }) => {
+    const currentMode = useSelector(state => state.editor.mode);
     useEffect(() => {
       requestGetForms();
     }, []);
     return (
       <div className="editor">
-        <ElementList selectLayoutItem={selectLayoutItem} addLayoutItem={addLayoutItem}/>
+        {
+          currentMode === 'editor'
+            ? <ElementList selectLayoutItem={selectLayoutItem} addLayoutItem={addLayoutItem}/>
+            : null
+        }
         <Layout
           layoutItems={layoutItems}
           selectLayoutItem={selectLayoutItem}
           removeSelectedLayoutItem={removeSelectedLayoutItem}
-          selectedElement={selectedElement}
+          selectedElement={currentMode === 'editor' ? selectedElement : ''}
           deleteLayoutItem={deleteLayoutItem}
           updateField={updateField}
           updateStyle={updateStyle}
+          currentMode={currentMode}
         />
-        <Properties
-          selectedElement={selectedElement}
-          layoutItems={layoutItems}
-          updateField={updateField}
-          updateStyle={updateStyle}
-        />
+        {
+          currentMode === 'editor'
+            ? <Properties
+                selectedElement={selectedElement}
+                layoutItems={layoutItems}
+                updateField={updateField}
+                updateStyle={updateStyle}
+                currentMode={currentMode}
+            />
+            : null
+        }
       </div>
     );
   };

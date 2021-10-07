@@ -3,7 +3,8 @@ import {
     REMOVE_SELECTED_ITEM, DELETE_ITEM_FAILURE,
     DELETE_ITEM_SUCCESS, ADD_ITEM_REQUEST, DELETE_ITEM_REQUEST,
     UPDATE_FIELD,
-    UPDATE_STYLE
+    UPDATE_STYLE,
+    CHANGE_MODE_REQUEST, CHANGE_MODE_SUCCESS
 } from '../constants/actionTypes';
 
 const INITIAL_STATE = {
@@ -25,6 +26,10 @@ const editorReducer = (state = INITIAL_STATE, { type, payload }) => {
         }
         case REMOVE_SELECTED_ITEM: {
             return { ...state, selectedElement: null };
+        }
+        case CHANGE_MODE_REQUEST:
+        case CHANGE_MODE_SUCCESS: {
+            return { ...state, mode: state.mode === 'editor' ? 'preview' : 'editor' };
         }
         case DELETE_ITEM_REQUEST:
         case DELETE_ITEM_SUCCESS: {

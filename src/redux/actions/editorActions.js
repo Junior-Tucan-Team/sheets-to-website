@@ -1,4 +1,4 @@
-import { ADD_ITEM_REQUEST, DELETE_ITEM_REQUEST, REMOVE_SELECTED_ITEM, SELECT_ITEM, UPDATE_FIELD, UPDATE_STYLE } from '../constants/actionTypes';
+import { ADD_ITEM_REQUEST, DELETE_ITEM_REQUEST, REMOVE_SELECTED_ITEM, SELECT_ITEM, UPDATE_FIELD, UPDATE_STYLE, CHANGE_MODE_REQUEST } from '../constants/actionTypes';
 
 export const addLayoutItem = (item) => ({
   type: ADD_ITEM_REQUEST,
@@ -27,5 +27,9 @@ export const updateField = (value, key) => ({
 export const updateStyle = (value, key, name) => ({
   type: UPDATE_STYLE,
   payload: { value, key, name }
+});
+
+export const changeMode = () => ({
+  type: CHANGE_MODE_REQUEST
 });
 
