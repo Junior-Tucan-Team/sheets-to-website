@@ -27,7 +27,7 @@ function Layout({
 };
     const emptySelectedElement = (e) => {
       if (outsideElementsClasses.includes(e.target.className)) {
-         selectLayoutItem('');
+        removeSelectedLayoutItem();
          const settingsButton = document.getElementsByClassName('right-panel-settings-button')[0];
          const settingsSection = document.getElementsByClassName('settings-panel-open')[0];
          settingsButton.style.display = 'block';
