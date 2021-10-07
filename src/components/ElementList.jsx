@@ -63,7 +63,7 @@ const ElementList = ({ selectLayoutItem, addLayoutItem }) => {
     <div className="elements panel-wrapper">
       <div className="left-panel-add-button" style={{ display: 'block' }}>
         <button className="add-element-button" onClick={onAddElementClick}>
-          Add Elements
+          <div>Add Elements</div>
           <i className="fa fa-plus" aria-hidden="true" style={{ marginLeft: '6px' }}/>
         </button>
       </div>

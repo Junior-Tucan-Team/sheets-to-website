@@ -178,9 +178,9 @@ const Header = () => {
         <button>BUILD</button>
         <button>SETTINGS</button>
         <button>PUBLISH</button>
-        <div className="flex items-center justify-end absolute mr-6 mt-1 right-0">
+        <div className="flex items-center justify-end absolute mr-6 mt-1 right-0 emre-update">
           <label htmlFor="toogleA" className="flex items-center">
-            <div className="text-gray-700 font-medium mr-4">
+            <div className="text-gray-700 font-medium mr-4 emre-update2" style={{ color: '#FFFFFF;' }}>
               Preview Form
             </div>
             <div className="relative cursor-pointer">

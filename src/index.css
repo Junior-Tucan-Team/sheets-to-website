@@ -28,7 +28,7 @@ code {
 }
 
 /* Editor END*/
-.panel-wrapper{
+.panel-wrapper {
   /* height: 100%; */
   
 }
@@ -51,38 +51,55 @@ code {
   right: 0; */
   
 }
-.elements .left-panel-add-button{
+.elements .left-panel-add-button {
   position: absolute;
   background: #FFFFFF;
-  margin-top: 15px;
+  margin-top: 36px;
   left: 0px;
-  font-size: 1.2em;
-  height: 40px;
-  width: 150px;
-  white-space: nowrap;
   border-bottom-right-radius: 25px;
   border-top-right-radius: 25px;
+  white-space: nowrap;
+  box-shadow: -1px -1px 3px 2px #c7c5c5;
   
 }
-.settings .right-panel-settings-button{
+
+.elements .left-panel-add-button .add-element-button {
+  width: 160px;
+  height: 54px;
+  white-space: nowrap;
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  text-align: center;
+  
+}
+
+.elements .left-panel-add-button .add-element-button div {
+  white-space: nowrap;
+  font-family: Circular Std;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 19px;
+  color: #343C6A;
+  margin-left:9px;
+}
+
+.elements .left-panel-add-button .add-element-button i {
+  width: 16px;
+  height: 16px;
+  color: #343C6A;
+  margin-right: 13px;
+}
+
+.settings .right-panel-settings-button {
   position: absolute;
-  background: #FFFFFF;
-  margin-top: 30px;
-  margin-right: 30px;
+  margin-top: 36px;
+  margin-right: 24px;
   right: 0px;
 }
 
-.elements .left-panel-open{
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  height: 100%;
-  width: 360px; 
-  background-color: #FFFFFF;
-
-}
-
-.settings .settings-panel-open{
+.elements .left-panel-open {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -91,7 +108,16 @@ code {
   background-color: #FFFFFF;
 }
 
-.general-settings-panel-open{
+.settings .settings-panel-open {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: 100%;
+  width: 360px; 
+  background-color: #FFFFFF;
+}
+
+.general-settings-panel-open {
   display: flex;
   flex-direction: row;
   height: 100%;
@@ -101,25 +127,20 @@ code {
 
 /* Elements  START*/
 
-
-.leftPanelChild{
+.leftPanelChild {
   display: flex;
   flex-direction: column;
   white-space: nowrap;
 }
 
-.leftPanelChild .addElementSpan{
+.leftPanelChild .addElementSpan {
   display: flex;
   height: 55px;
-  
   cursor: pointer;
   background: #FFFFFF;
- 
-  
-/* identical to box height */
-  
 }
-.leftPanelChild .addElementSpan div{
+
+.leftPanelChild .addElementSpan div {
   font-size: 1.25rem;
   font-family: Circular Std;
   font-style: normal;
@@ -130,7 +151,6 @@ code {
   color: #343C6A;
 }
 
-/* TODO: CHANGE */
 .leftPanelChild .addElementSpan i {
   margin-top: 19px;
   margin-left :195px;
@@ -155,7 +175,6 @@ code {
   flex-grow: 1;
   text-align: center;
   cursor: pointer;
-  
   background: #E3E5F5;
   font-family: Circular Std;
   font-style: normal;
@@ -164,7 +183,6 @@ code {
   line-height: 18px;
   text-align: center;
   color: #6F76A7;
-
 }
 
 .leftPanelChildSpans button:hover {
@@ -191,37 +209,33 @@ code {
 .leftPanelChild .leftPanelElements li:hover {
   background-color: rgb(138, 195, 238);
 }
-
-
-
 /* Elements  END*/
+
 
 /* Layout  START*/
 .layout {
-  /* margin-top: 30px; */   /* line 201 202 203 204 changed */ 
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  margin-top: 30px;
+  width: 1320px;
   padding: 10px 20px;
   flex-grow: 0;
   border-top: 1px solid rgb(226, 11, 11);
   border-right: 1px solid rgb(226, 11, 11);
   border-left: 1px solid rgb(209, 16, 16);
   overflow: auto;
-  background-color: #f0f5f5;
-  
 }
 
-.webpage{
+.webpage {
   width: 1280px;
+  padding: 0px;
+  overflow: auto;
 }
 
-.layout div{
+.layout div {
   position: relative;
   padding-right: 20px;
 }
 
-.layout .webpage-each-div:hover{
+.layout .webpage-each-div:hover {
   border: 2px solid rgb(59, 173, 250);
 }
 
@@ -277,29 +291,34 @@ code {
   transform: translateY(4px); 
 }
 
-
 /* Layout  END*/
 
-
 /* Settings  START*/
-/* style={{ fontSize: '20px', color: '#A6A6A6', background: 'white', transform: 'rotate(-45deg)' }} */
+
+.settings .right-panel-settings-button .add-element-button {
+  width: 54px;
+  height: 54px;
+  
+}
+
 .settings .right-panel-settings-button .add-element-button i {
-  font-size: 20px;
-  color: #f7e6e6;
-  background: rgb(156, 20, 20);
+  font-size: 23px;
+  color:#A6A6A6;
+  background: #FFFFFF;
   transform: rotate(-45deg);
-  padding: 9px 9px;
+  padding: 13.5px 13.5px;
   cursor: pointer;
   border: none;
   border-radius: 100px;
+  box-shadow: -1px -1px 3px 2px #c7c5c5;
 }
 
-.settings .settings-tabs{
+.settings .settings-tabs {
   display: flex;
   flex-direction: column;
 }
 
-.settings .settings-tabs-properties{
+.settings .settings-tabs-properties {
   background: #FFFFFF;
   border: 1px solid #E3E5F5;
   display: flex;
@@ -317,20 +336,20 @@ code {
   padding-bottom: 16px;
 }
 
-.settings .settings-tabs-properties button{
+.settings .settings-tabs-properties button {
   margin-right: 18px;
   width: 20px;
   height: 20px;
   color: #6F76A7;
 }
 
-.settings .settings-tabs-buttons{
+.settings .settings-tabs-buttons {
   display: flex;
   height: 55px;
   justify-content:space-around;
 }
 
-.settings .settings-tabs-buttons button{
+.settings .settings-tabs-buttons button {
   flex-grow: 1;
   cursor: pointer;
   background: #E3E5F5;
@@ -343,46 +362,39 @@ code {
   color: #6F76A7;
 }
 
-.settings .settings-tabs-buttons button:hover{
+.settings .settings-tabs-buttons button:hover {
   background-color: rgb(50, 142, 218);
 }
 
-.settings .settings-tabs-buttons button:focus{
+.settings .settings-tabs-buttons button:focus {
   color: #343C6A;
   border-bottom: 4px solid #0099FF;
 }
 
-/* .settings button{
-  cursor: pointer;
-  padding: 2px 12px;
-  background-color: rgb(185, 197, 207);
-} */
-
 hr { 
   display: block; 
-  /* margin: 12px 0px; */
   overflow: hidden;
   border-style: inset;
   border-width: 2px;
 }
+
 /* Settings  END*/
 
-
-input , select{
+input, select {
   background: #FBFBFE;
   border: 1px solid #C8CEED;
   border-radius: 2px;
 }   
 
 
-.login-form{
+.login-form {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items:center;
 }
 
-.login-form-submit-button{
+.login-form-submit-button { 
   padding: 2px 7px;
   font-size: 1.2rem;
   cursor: pointer;

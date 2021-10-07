@@ -8,7 +8,7 @@ import { setApiKey } from './utils/axios';
 
 
 const onBeforeLift = () => {
-  setApiKey(store.getState().auth.user.appKey);
+  setApiKey(store.getState().auth.user?.appKey);
 };
 
 ReactDOM.render(
