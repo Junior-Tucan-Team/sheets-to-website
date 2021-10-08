@@ -4,6 +4,7 @@ import { connect, useSelector } from 'react-redux';
 import ElementList from './ElementList';
 import Layout from './Layout';
 import Properties from './Properties';
+import LoginPage from './LoginPage';
 
 import {
    addLayoutItem as addLayoutItemAction,
@@ -26,11 +27,20 @@ const Editor = ({
   updateStyle,
   requestGetForms,
 }) => {
-    const currentMode = useSelector(state => state.editor.mode);
-    useEffect(() => {
-      requestGetForms();
-    }, []);
-    return (
+  const currentMode = useSelector(state => state.editor.mode);
+  const loggedIn = useSelector(state => state.auth?.user?.appKey);
+  useEffect(() => {
+    requestGetForms();
+  }, [loggedIn]);
+  return (
+    <>
+      {
+        loggedIn ?
+          <></> :
+          <div className="login-pop-up-background">
+            <LoginPage/>
+          </div>
+      }
       <div className="editor">
         {
           currentMode === 'editor'
@@ -60,8 +70,10 @@ const Editor = ({
             : null
         }
       </div>
+    </>
     );
-  };
+};
+
 Editor.propTypes = {
   layoutItems: arrayOf(shape),
   addLayoutItem: func,

@@ -388,13 +388,24 @@ input, select {
 
 
 .login-form {
-  margin-top: 20px;
   display: flex;
+  align-content: center;
+  position: absolute;
   flex-direction: column;
   align-items:center;
+  width: 355px;
+  height: 665px;
+  border-radius: 5px;
+  left: 50%;
+  margin-left: -180px;
+  top: 50%;
+  margin-top: -332px;
+  background-color: #FFFFFF;
 }
 
-.login-form-submit-button { 
+.login-form-submit-button {
+  height: 48px;
+  width: 320px;
   padding: 2px 7px;
   font-size: 1.2rem;
   cursor: pointer;
@@ -402,7 +413,94 @@ input, select {
   text-decoration: none;
   outline: none;
   color: rgb(255, 255, 255);
-  background-color:#1fda4e;
+  background-color:#7ABA25;
   border: none;
   border-radius: 5px;
+}
+
+.login-pop-up-background {
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.5);
+  z-index: 1002;     
+}
+
+.signed-up-button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 15px;
+  height: 48px;
+  width: 320px;
+  border-radius: 2px;
+
+  font-family: 'Circular Std';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFF;
+}
+
+.signed-up-button > img {
+  width: 22px;
+  height: 22px;
+  margin: 14px 14px 12px 17px;
+}
+
+.google-button {
+  background-color: #1374F0;
+}
+
+.facebook-button {
+  background-color: #4469B0;
+}
+
+.horizontal-line {
+  width: 130px;
+  height: 0px;
+  border: 1px solid #DEDEDE;
+}
+
+.change-signed-up {
+  color: blue;
+  margin-left: 4px;
+}
+
+.change-signed-up:hover {
+  text-decoration: underline;
+}
+
+.sign-up-wmail {
+  background-color: #FD6220;
+}
+
+.welcome-back {
+  height: 32px;
+  margin-top: 60px;
+  margin-bottom: 10px;
+  font-family: 'Circular Std';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  color: #0A1551;
+}
+
+.change-mod-text {
+  font-family: 'Circular Std';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  text-align: center;
+  color: #2B3345;
 }
