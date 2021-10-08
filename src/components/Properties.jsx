@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { shape, arrayOf, func } from 'prop-types';
 import * as settingsMap from './Settings';
+import WebsiteDesign from './Settings/WebsiteDesign';
 import * as Elements from './Elements';
 
 const Properties = ({ selectedElement, layoutItems, updateField,
-   updateStyle }) => {
+   updateStyle, selectLayoutItem }) => {
   const foundedItem = layoutItems.find(item => selectedElement === item.id);
   const [tab, setTab] = useState('first');
-
   const onShowSettingsClick = () => {
     const settingsButton = document.getElementsByClassName('right-panel-settings-button')[0];
     const settingsSection = document.getElementsByClassName('settings-panel-open')[0];
@@ -25,7 +25,6 @@ const Properties = ({ selectedElement, layoutItems, updateField,
     settingsButton.style.display = 'block';
     settingsSection.style.display = 'none';
   };
-
   if (!foundedItem) {
     return (
       <div className="settings panel-wrapper" >
@@ -35,9 +34,13 @@ const Properties = ({ selectedElement, layoutItems, updateField,
           </button>
         </div>
         <div className="settings-panel-open" style={{ display: 'none', marginTop: '30px' }}>
-          <div>General Settings <button onClick={hideSettings} style={{ marginLeft: '6px' }}><i className="fa fa-times"/></button></div>
+          <div className="settings-tabs-properties">Website Design Properties <button onClick={hideSettings} style={{ marginLeft: '6px' }}><i className="fa fa-times"/></button></div>
+          <WebsiteDesign
+            layoutItems={layoutItems}
+            updateStyle={updateStyle}
+            selectLayoutItem={selectLayoutItem}
+          />
         </div>
-        {/* general settings component */}
       </div>);
   }
   const { type } = foundedItem;
@@ -105,6 +108,7 @@ Properties.propTypes = {
   layoutItems: arrayOf(shape).isRequired,
   updateField: func.isRequired,
   updateStyle: func.isRequired,
+  selectLayoutItem: func.isRequired,
 };
 
 export default Properties;

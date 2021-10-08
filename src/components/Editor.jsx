@@ -55,6 +55,7 @@ const Editor = ({
                 updateField={updateField}
                 updateStyle={updateStyle}
                 currentMode={currentMode}
+                selectLayoutItem={selectLayoutItem}
             />
             : null
         }
