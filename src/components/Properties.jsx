@@ -72,7 +72,6 @@ const Properties = ({ selectedElement, layoutItems, updateField,
     <div className="settings panel-wrapper">
       <div className="right-panel-settings-button" style={{ display: 'block' }}>
         <button className="add-element-button" onClick={onShowSettingsClick}>
-          Settings
           <i className="fas fa-paint-roller right-icon" />
         </button>
       </div>
