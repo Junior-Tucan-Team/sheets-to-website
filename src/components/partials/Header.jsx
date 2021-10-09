@@ -4,17 +4,36 @@ import { changeMode } from '../../redux/actions/editorActions';
 import './output.css';
 
 const Header = () => {
-  // const [toggleValue, setToggleValue] = useState('off');
+  const [toggleValue, setToggleValue] = useState('off');
   const dispatch = useDispatch();
   const handleToggle = (e) => {
-    // const primary = document.getElementsByClassName('primaryHeader');    // Commented lines can
-    // if (toggleValue === 'on') {                                          // be used for hiding
-    //   primary[0].setAttribute('style', 'display: ;');                    // primary header
-    //   setToggleValue('off');
-    // } else {
-    //   primary[0].setAttribute('style', 'display: none;');
-    //   setToggleValue('on');
-    // }
+    const middleButtons = document.getElementsByClassName('secondaryHeaderButtons');
+    const primary = document.getElementsByClassName('primaryHeader');
+    const secondary = document.getElementsByClassName('secondaryHeader');
+    const previewButton = document.getElementsByClassName('emre-update');
+    const previewModeButtons = document.getElementsByClassName('preview-mode-buttons');
+    console.log(primary[0].style);
+    if (toggleValue === 'on') {
+      primary[0].style.display = '';
+      secondary[0].style.height = '45px';
+      middleButtons[0].style.opacity = 1;
+      middleButtons[0].style.pointerEvents = '';
+      previewButton[0].style.marginTop = '10px';
+      previewModeButtons[0].style.opacity = 0;
+      previewModeButtons[0].style.pointerEvents = 'none';
+      previewModeButtons[0].style.opacity = '45px';
+      setToggleValue('off');
+    } else {
+      primary[0].style.display = 'none';
+      secondary[0].style.height = '70px';
+      middleButtons[0].style.opacity = 0;
+      middleButtons[0].style.pointerEvents = 'none';
+      previewButton[0].style.marginTop = '25px';
+      previewModeButtons[0].style.opacity = 1;
+      previewModeButtons[0].style.pointerEvents = '';
+      previewModeButtons[0].style.height = '70px';
+      setToggleValue('on');
+    }
     dispatch(changeMode());
   };
   return (
@@ -173,15 +192,30 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div />
       <div className="secondaryHeader">
-        <button>BUILD</button>
-        <button>SETTINGS</button>
-        <button>PUBLISH</button>
-        <div className="flex items-center justify-end absolute mr-6 mt-1 right-0 emre-update">
+        <div className="secondaryHeaderButtons">
+          <button>BUILD</button>
+          <button>SETTINGS</button>
+          <button>PUBLISH</button>
+        </div>
+        <div className="preview-mode-buttons">
+          <button>
+            {/* <img src="" alt="phone img"/> */}
+            Phone
+          </button>
+          <button>
+            {/* <img src="" alt="tablet img"/> */}
+            Tablet
+          </button>
+          <button>
+            {/* <img src="" alt="desktop img"/> */}
+            Desktop
+          </button>
+        </div>
+        <div className="flex items-center justify-end absolute mr-6 right-0 emre-update">
           <label htmlFor="toogleA" className="flex items-center">
             <div className="text-gray-700 font-medium mr-4 emre-update2" style={{ color: '#FFFFFF;' }}>
-              Preview Form
+              Preview Website
             </div>
             <div className="relative cursor-pointer">
               <input id="toogleA" type="checkbox" className="sr-only" onChange={handleToggle}/>
