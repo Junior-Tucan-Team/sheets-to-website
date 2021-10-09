@@ -401,9 +401,13 @@ input, select {
   top: 50%;
   margin-top: -332px;
   background-color: #FFFFFF;
+  /* transition: height 0.5s, top 0.5s; */
 }
 
 .login-form-submit-button {
+  position: absolute;
+  top: 500px;
+  left: 16px;
   height: 48px;
   width: 320px;
   padding: 2px 7px;
@@ -431,14 +435,14 @@ input, select {
 }
 
 .signed-up-button {
+  position: absolute;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 15px;
+  padding: 10px;
   height: 48px;
   width: 320px;
   border-radius: 2px;
-
   font-family: 'Circular Std';
   font-style: normal;
   font-weight: bold;
@@ -450,25 +454,84 @@ input, select {
 .signed-up-button > img {
   width: 22px;
   height: 22px;
-  margin: 14px 14px 12px 17px;
+  margin-right: 10px;
 }
 
 .google-button {
   background-color: #1374F0;
+  top: 117px;
 }
 
 .facebook-button {
   background-color: #4469B0;
+  top: 180px;
+}
+
+.sign-up-wmail {
+  background-color: #FD6220;
+  top: 333px;
+  left: 16px;
 }
 
 .horizontal-line {
+  position: absolute;
+  top: 261px;
   width: 130px;
   height: 0px;
   border: 1px solid #DEDEDE;
 }
 
+.horizontal-line#left-line {
+  left: 19px;
+}
+
+.horizontal-line#right-line {
+  left: 209px;
+}
+
+.or-text {
+  position: absolute;
+  top: 251px;
+  left: 166px;
+  width: 23px;
+  height: 20px;
+  font-family: 'Circular Std';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  color: #A6A6A6;
+}
+
+.form-input-absolute {
+  position: absolute;
+  left: 17px;
+}
+
+#above-login-input {
+  top: 317px;
+  width: 323px;
+  height: 40px;
+}
+
+#bottom-login-input {
+  top: 403px;
+  width: 323px;
+  height: 40px;
+}
+
+#above-login-label {
+  top: 290px;
+}
+
+#bottom-login-label {
+  top: 376px;
+}
+
 .change-signed-up {
-  color: blue;
+  color: rgb(0, 119, 255);
   margin-left: 4px;
 }
 
@@ -476,13 +539,10 @@ input, select {
   text-decoration: underline;
 }
 
-.sign-up-wmail {
-  background-color: #FD6220;
-}
-
 .welcome-back {
+  position: absolute;
+  top: 60px;
   height: 32px;
-  margin-top: 60px;
   margin-bottom: 10px;
   font-family: 'Circular Std';
   font-style: normal;
@@ -495,6 +555,9 @@ input, select {
 }
 
 .change-mod-text {
+  position: absolute;
+  top: 588px;
+  left: 56px;
   font-family: 'Circular Std';
   font-style: normal;
   font-weight: 500;
@@ -503,4 +566,27 @@ input, select {
   display: flex;
   text-align: center;
   color: #2B3345;
+}
+
+.jotform-logo {
+  position: absolute;
+  width: 165px;
+  height: 30px;
+  left: 94px;
+  top: 60px;
+}
+
+.jotform-logo-header {
+  position: absolute;
+  height: 20px;
+  left: 36px;
+  top: 104px;
+  font-family: 'Circular Std';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  color: #0A1551;
 }
