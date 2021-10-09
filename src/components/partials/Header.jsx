@@ -12,7 +12,6 @@ const Header = () => {
     const secondary = document.getElementsByClassName('secondaryHeader');
     const previewButton = document.getElementsByClassName('emre-update');
     const previewModeButtons = document.getElementsByClassName('preview-mode-buttons');
-    console.log(primary[0].style);
     if (toggleValue === 'on') {
       primary[0].style.height = '70px';
       primary[0].style.bottom = '';

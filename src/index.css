@@ -30,7 +30,9 @@ code {
 /* Editor END*/
 .panel-wrapper {
   /* height: 100%; */
-  
+  opacity: 1;
+  pointer-events: '';
+  transition: opacity 0.75s;
 }
 
 .elements {

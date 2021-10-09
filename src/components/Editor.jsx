@@ -29,9 +29,23 @@ const Editor = ({
 }) => {
   const currentMode = useSelector(state => state.editor.mode);
   const loggedIn = useSelector(state => state.auth?.user?.appKey);
+
   useEffect(() => {
     requestGetForms();
   }, [loggedIn]);
+
+  useEffect(() => {
+    const panelWrapper = document.getElementsByClassName('panel-wrapper');
+    for (let i = 0; i < panelWrapper.length; i += 1) {
+      if (currentMode === 'editor') {
+        panelWrapper[i].style.opacity = 1;
+        panelWrapper[i].style.pointerEvents = '';
+      } else {
+        panelWrapper[i].style.opacity = 0;
+        panelWrapper[i].style.pointerEvents = 'none';
+      }
+    }
+  }, [currentMode]);
   return (
     <>
       {
@@ -42,11 +56,7 @@ const Editor = ({
           </div>
       }
       <div className="editor">
-        {
-          currentMode === 'editor'
-            ? <ElementList selectLayoutItem={selectLayoutItem} addLayoutItem={addLayoutItem}/>
-            : null
-        }
+        <ElementList selectLayoutItem={selectLayoutItem} addLayoutItem={addLayoutItem}/>
         <Layout
           layoutItems={layoutItems}
           selectLayoutItem={selectLayoutItem}
@@ -57,18 +67,13 @@ const Editor = ({
           updateStyle={updateStyle}
           currentMode={currentMode}
         />
-        {
-          currentMode === 'editor'
-            ? <Properties
-                selectedElement={selectedElement}
-                layoutItems={layoutItems}
-                updateField={updateField}
-                updateStyle={updateStyle}
-                currentMode={currentMode}
-                selectLayoutItem={selectLayoutItem}
-            />
-            : null
-        }
+        <Properties
+          selectedElement={selectedElement}
+          layoutItems={layoutItems}
+          updateField={updateField}
+          updateStyle={updateStyle}
+          selectLayoutItem={selectLayoutItem}
+        />
       </div>
     </>
     );
