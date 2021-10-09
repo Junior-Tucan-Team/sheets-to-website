@@ -14,7 +14,8 @@ const Header = () => {
     const previewModeButtons = document.getElementsByClassName('preview-mode-buttons');
     console.log(primary[0].style);
     if (toggleValue === 'on') {
-      primary[0].style.display = '';
+      primary[0].style.height = '70px';
+      primary[0].style.bottom = '';
       secondary[0].style.height = '45px';
       middleButtons[0].style.opacity = 1;
       middleButtons[0].style.pointerEvents = '';
@@ -24,7 +25,8 @@ const Header = () => {
       previewModeButtons[0].style.opacity = '45px';
       setToggleValue('off');
     } else {
-      primary[0].style.display = 'none';
+      primary[0].style.height = '0px';
+      primary[0].style.bottom = '70px';
       secondary[0].style.height = '70px';
       middleButtons[0].style.opacity = 0;
       middleButtons[0].style.pointerEvents = 'none';

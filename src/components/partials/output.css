@@ -1547,3 +1547,9 @@ input:checked ~ .toggle-dot {
   width: 20px;
 }
 
+.primaryHeader {
+  position: relative;
+  height: 70px;
+  bottom: 0;
+  transition: bottom 0.75s, height 0.75s;
+}
