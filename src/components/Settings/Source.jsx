@@ -104,14 +104,23 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
             </button>
           </div>)) : <></>);
       } else {
-        console.log('settings');
+        return (
+          <div>
+            {/* <button onClick={setEdit(false)}>Back</button> */}
+          </div>
+        );
       }
+    } else {
+      return (
+        <div>
+          <span className="source-settings-headers" style={{ marginLeft: '20px' }}>Content Source</span>
+          <button className="select-table-button source-settings-headers" onClick={setIsOpen}>
+            Select a Table
+          </button>
+          <div className="wide-horizontal-line" />
+        </div>
+      );
     }
-
-
-
-
-    return <></>;
   };
 
   const editSubmission = () => {
@@ -123,7 +132,7 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
         <div className="header-source">SOURCE</div>
         <div className="desc-source">Select Source</div>
         <div className="header-source-handler-buttons">
-          <button onClick={() => { setIsOpen(true); setManual(false); }}>
+          <button onClick={() => { setManual(false); }}>
             From Table
           </button>
           <button onClick={() => setManual(true)}>
@@ -134,7 +143,12 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
       {isOpen ? renderForms() : <></>}
       {!manual && foundItem.source.formID ? (
         <div className="select-handler">
-          <label htmlFor="select-image">IMAGE</label>
+          <div className="source-settings-headers" style={{ marginTop: '-20px' }}>Content Source</div>
+          <div className="table-name-info">
+            <i className="fa fa-table" style={{ marginLeft: '7px', marginRight: '12px', color: '#0D953B', borderRadius: '4px' }}/>
+            {forms.filter(form => form.id === foundItem.source.formID)[0].title}
+          </div>
+          <label className="source-headers" htmlFor="select-image">IMAGE</label>
           <select
             id="select-image"
             onChange={(e) => {
@@ -149,7 +163,7 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
               </option>))
     }
           </select>
-          <label htmlFor="select-header">HEADER</label>
+          <label className="source-headers" htmlFor="select-header">HEADER</label>
           <select
             id="select-header"
             onChange={(e) => {
@@ -164,7 +178,7 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
               </option>))
     }
           </select>
-          <label htmlFor="select-description">DESCRIPTION</label>
+          <label className="source-headers" htmlFor="select-description">DESCRIPTION</label>
           <select
             id="select-description"
             onChange={(e) => {
@@ -179,7 +193,7 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
               </option>))
     }
           </select>
-          <label htmlFor="select-description">PRICE</label>
+          <label className="source-headers" htmlFor="select-description">PRICE</label>
           <select
             id="select-description"
             onChange={(e) => {
