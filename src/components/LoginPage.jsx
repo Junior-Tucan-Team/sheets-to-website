@@ -75,24 +75,25 @@ function LoginPage(props) {
       {
         signedUp === 'log-in' ?
           <div>
-            <label className="form-input-absolute" id="above-login-label">Username or Email</label>
+            <label className="form-input-absolute login-labels" id="above-login-label">Username or Email</label>
             <br/>
             <input
-              className="form-input-absolute"
+              className="form-input-absolute color: #3C3C3C;"
               id="above-login-input"
               type="email"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
             />
-            <label className="form-input-absolute" id="bottom-login-label">Password</label>
+            <label className="form-input-absolute login-labels" id="bottom-login-label">Password</label>
             <br/>
             <input
-              className="form-input-absolute"
+              className="form-input-absolute color: #3C3C3C;"
               id="bottom-login-input"
               type="password"
               onChange={(e) => setPassword(e.target.value)}
               value={password}
             />
+            <span className="forgot-text">Forgot Password?</span>
           </div> :
         null
       }

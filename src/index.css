@@ -202,8 +202,8 @@ code {
 }
 
 .leftPanelChild .leftPanelElements li {
-  display: block;
-  text-align: center;
+  display: flex;
+  justify-content: center;
   cursor: pointer;
   background-color: rgb(211, 229, 243);
 }
@@ -386,7 +386,8 @@ input, select {
   background: #FBFBFE;
   border: 1px solid #C8CEED;
   border-radius: 2px;
-}   
+  padding: 10px;
+}
 
 
 .login-form {
@@ -395,7 +396,7 @@ input, select {
   position: absolute;
   flex-direction: column;
   align-items:center;
-  width: 355px;
+  width: 380px;
   height: 665px;
   border-radius: 5px;
   left: 50%;
@@ -409,7 +410,7 @@ input, select {
 .login-form-submit-button {
   position: absolute;
   top: 500px;
-  left: 16px;
+  left: 28px;
   height: 48px;
   width: 320px;
   padding: 2px 7px;
@@ -472,7 +473,7 @@ input, select {
 .sign-up-wmail {
   background-color: #FD6220;
   top: 333px;
-  left: 16px;
+  left: 28px;
 }
 
 .horizontal-line {
@@ -484,17 +485,17 @@ input, select {
 }
 
 .horizontal-line#left-line {
-  left: 19px;
+  left: 31px;
 }
 
 .horizontal-line#right-line {
-  left: 209px;
+  left: 221px;
 }
 
 .or-text {
   position: absolute;
   top: 251px;
-  left: 166px;
+  left: 178px;
   width: 23px;
   height: 20px;
   font-family: 'Circular Std';
@@ -509,7 +510,8 @@ input, select {
 
 .form-input-absolute {
   position: absolute;
-  left: 17px;
+  left: 29px;
+  font-family: 'Circular Std';
 }
 
 #above-login-input {
@@ -524,12 +526,33 @@ input, select {
   height: 40px;
 }
 
+.login-labels {
+  color: #2B3345;
+}
+
 #above-login-label {
   top: 290px;
 }
 
 #bottom-login-label {
   top: 376px;
+}
+
+.forgot-text {
+  position: absolute;
+  width: 107px;
+  height: 16px;
+  left: 245px;
+  top: 444px;
+  font-family: 'Circular Std';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #A6A6A6;
 }
 
 .change-signed-up {
@@ -559,7 +582,7 @@ input, select {
 .change-mod-text {
   position: absolute;
   top: 588px;
-  left: 56px;
+  left: 68px;
   font-family: 'Circular Std';
   font-style: normal;
   font-weight: 500;
@@ -574,14 +597,14 @@ input, select {
   position: absolute;
   width: 165px;
   height: 30px;
-  left: 94px;
+  left: 106px;
   top: 60px;
 }
 
 .jotform-logo-header {
   position: absolute;
   height: 20px;
-  left: 36px;
+  left: 48px;
   top: 104px;
   font-family: 'Circular Std';
   font-style: normal;
