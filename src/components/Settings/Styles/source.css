@@ -276,4 +276,65 @@
     margin-top: 12px;
 }
 
+.manuel-listing-cards {
+    display: flex;
+    margin: 20px;
+    width: 320px;
+    height: 74px;
+    background: #FFFFFF;
+    border: 1px solid #C8CEED;
+    border-radius: 5px;
+}
 
+.manuel-cards-image {
+    width: 60px;
+    height: 60px;
+    margin: 7px 10px 7px 10px;
+}
+
+.submission-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 23px;
+    background: #E1E3F1;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.manuel-listing-info {
+    padding: 10px;
+    width: 200px;
+}
+
+.manuel-info-text {
+    height: 20px;
+    font-family: 'Circular Std';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.manuel-info-header {
+    color: #3086C7;
+}
+
+.manuel-info-desc {
+    font-size: 14px;
+    color: #343C6A;
+}
+
+.blue-cog-back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0099FF;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    margin: auto 11px auto 10px;
+}
+
+.blue-cog {
+    color: #FFF;
+}

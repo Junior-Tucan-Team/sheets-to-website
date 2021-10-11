@@ -73,40 +73,45 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
   const renderManual = () => {
     if (manual) {
       if (!edit) {
-        return (typeof submissions !== 'undefined' ? submissions.map(submission => (
-          <div className="flex submissionss-center lg:w-3/5 mx-auto border-b pb-10 mb-10
-            border-gray-200 sm:flex-row flex-col"
-          >
-            <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex
-          submissionss-center justify-center
-          rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0"
-            >
-              { foundItem.source.image !== '' ? <img
-                className="h-40 rounded w-full
-            object-cover object-center mb-6"
-                src={submission.answers[foundItem.source.image].answer}
-                alt="content"
-              /> : <></>}
-            </div>
-            <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-              <h2 className="text-gray-900 text-lg title-font
-            font-medium mb-2"
-              >{foundItem.source.header !== '' ? submission.answers[foundItem.source.header].answer : ''}
-              </h2>
-              <p className="leading-relaxed text-base">
-                {foundItem.source.description !== '' ? submission.answers[foundItem.source.description].answer : ''}
-              </p>
-            </div>
-            <button
-              className="settingsButton"
-              onClick={() => { setEdit(true); setSubmissionID(submission.id); }}
-            ><i className="fa fa-cog" aria-hidden="true"/>
-            </button>
-          </div>)) : <></>);
+        return (
+          typeof submissions !== 'undefined' ? submissions.map(submission => (
+            <div className="manuel-listing-cards">
+              <div className="submission-number">0</div>
+              <div>
+                { foundItem.source.image !== '' ?
+                  <img
+                    className="manuel-cards-image"
+                    src={submission.answers[foundItem.source.image].answer}
+                    alt="content"
+                  /> :
+                  <></>
+              }
+              </div>
+              <div className="manuel-listing-info">
+                <h2 className="manuel-info-text manuel-info-header">
+                  {foundItem.source.header !== '' ? submission.answers[foundItem.source.header].answer : ''}
+                </h2>
+                <p className="manuel-info-text manuel-info-desc">
+                  Description
+                  {/* {foundItem.source.description !== '' ? submission.answer
+                s[foundItem.source.description].answer : ''} */}
+                </p>
+              </div>
+              <button
+                className="settingsButton"
+                onClick={() => { setEdit(true); setSubmissionID(submission.id); }}
+              >
+                <div className="blue-cog-back">
+                  <i className="fa fa-cog blue-cog" aria-hidden="true"/>
+                </div>
+              </button>
+            </div>)) : <>You did not select any forms.</>
+        );
       } else {
         return (
           <div>
             {/* <button onClick={setEdit(false)}>Back</button> */}
+            <div className="wide-horizontal-line"/>
           </div>
         );
       }
