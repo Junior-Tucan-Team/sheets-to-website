@@ -17,12 +17,17 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
     description: '',
     price: ''
   });
+  const [manual, setManual] = useState(false);
+  const [edit, setEdit] = useState(false);
+  const [submissionID, setSubmissionID] = useState('');
   const [formID, setFormID] = useState('');
   const foundItem = useSelector((state) =>
   state.editor.layoutItems.find((item) => item.id === state.editor.selectedElement));
   const forms = useSelector((state) => state.forms.forms);
   const questions = useSelector((state) =>
     state.questions.questions[foundItem.source.formID]);
+  const submissions = useSelector(state =>
+    state?.submissions?.submissions[foundItem.source.formID]);
   const dispatch = useDispatch();
   const searchFunction = search => forms.filter(item =>
     (item.title.toLowerCase()).startsWith(search.toLowerCase()));
@@ -65,22 +70,69 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
       </div>
     </div>
   );
+  const renderManual = () => {
+    if (manual) {
+      if (!edit) {
+        return (typeof submissions !== 'undefined' ? submissions.map(submission => (
+          <div className="flex submissionss-center lg:w-3/5 mx-auto border-b pb-10 mb-10
+            border-gray-200 sm:flex-row flex-col"
+          >
+            <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex
+          submissionss-center justify-center
+          rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0"
+            >
+              { foundItem.source.image !== '' ? <img
+                className="h-40 rounded w-full
+            object-cover object-center mb-6"
+                src={submission.answers[foundItem.source.image].answer}
+                alt="content"
+              /> : <></>}
+            </div>
+            <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+              <h2 className="text-gray-900 text-lg title-font
+            font-medium mb-2"
+              >{foundItem.source.header !== '' ? submission.answers[foundItem.source.header].answer : ''}
+              </h2>
+              <p className="leading-relaxed text-base">
+                {foundItem.source.description !== '' ? submission.answers[foundItem.source.description].answer : ''}
+              </p>
+            </div>
+            <button
+              className="settingsButton"
+              onClick={() => { setEdit(true); setSubmissionID(submission.id); }}
+            ><i className="fa fa-cog" aria-hidden="true"/>
+            </button>
+          </div>)) : <></>);
+      } else {
+        console.log('settings');
+      }
+    }
+
+
+
+
+    return <></>;
+  };
+
+  const editSubmission = () => {
+
+  };
   return (
     <>
       <div className="header-source-handler">
         <div className="header-source">SOURCE</div>
         <div className="desc-source">Select Source</div>
         <div className="header-source-handler-buttons">
-          <button onClick={() => setIsOpen(!isOpen)}>
+          <button onClick={() => { setIsOpen(true); setManual(false); }}>
             From Table
           </button>
-          <button onClick={() => setIsOpen(!isOpen)}>
+          <button onClick={() => setManual(true)}>
             Manual
           </button>
         </div>
       </div>
       {isOpen ? renderForms() : <></>}
-      { foundItem.source.formID ? (
+      {!manual && foundItem.source.formID ? (
         <div className="select-handler">
           <label htmlFor="select-image">IMAGE</label>
           <select
@@ -142,7 +194,11 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
               </option>))
     }
           </select>
-        </div>) : null}
+        </div>) :
+        <div className="manual">
+          {renderManual()}
+        </div>
+        }
     </>
   );
   };
