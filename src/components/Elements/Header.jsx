@@ -34,7 +34,26 @@ Component.propTypes = {
 const title = 'Header';
 const type = 'header';
 const category = 'header';
-
+const view =
+  <svg width="290" height="165" viewBox="0 0 290 165" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g filter="url(#filter0_d)">
+      <rect x="10" y="10" width="270" height="145" rx="10" fill="#F0F3FF"/>
+    </g>
+    <rect x="75" y="66" width="140" height="10" rx="5" fill="white"/>
+    <rect x="94" y="90" width="102" height="10" rx="5" fill="#DEDEDE"/>
+    <defs>
+      <filter id="filter0_d" x="0" y="0" width="290" height="165" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feOffset/>
+        <feGaussianBlur stdDeviation="5"/>
+        <feComposite in2="hardAlpha" operator="out"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0.695833 0 0 0 0 0.695833 0 0 0 0 0.695833 0 0 0 0.1 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+      </filter>
+    </defs>
+  </svg>;
 const settings = {
   title: {
     default: 'Heading Text',
@@ -67,5 +86,6 @@ export default {
   Component,
   settings,
   type,
-  category
+  category,
+  view
 };

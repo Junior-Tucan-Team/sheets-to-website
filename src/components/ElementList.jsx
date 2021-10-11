@@ -7,7 +7,11 @@ import * as Elements from './Elements';
 const ElementList = ({ selectLayoutItem, addLayoutItem }) => {
   const [currentCategory, setCategory] = useState('header');
   const onElementClick = (e) => {
-    const elementName = e.target.getAttribute('data-element-name');
+    let clickedElement = e.target;
+    while (clickedElement.getAttribute('data-element-name') === null) {
+      clickedElement = clickedElement.parentElement;
+    }
+    const elementName = clickedElement.getAttribute('data-element-name');
     const element = Elements[elementName];
     const newElement = Object.keys(element.settings).reduce((acc, curr) =>
     ({ ...acc, [curr]: element.settings[curr].default }), {});
@@ -37,7 +41,6 @@ const ElementList = ({ selectLayoutItem, addLayoutItem }) => {
     leftPanelOpen.style.display = 'none';
     leftPanelAddButton.style.display = 'block';
   };
-
   const renderElements = () => (
     <div className="leftPanelChild">
       <div className="leftPanelChildSpans">
@@ -53,7 +56,7 @@ const ElementList = ({ selectLayoutItem, addLayoutItem }) => {
          data-element-name={Elements[element].type}
          onClick={onElementClick}
        >
-         {Elements[element].title}
+         {Elements[element].view}
        </li>)}
       </ul>
     </div>

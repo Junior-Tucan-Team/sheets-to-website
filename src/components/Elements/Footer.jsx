@@ -60,6 +60,29 @@ Component.propTypes = {
 const title = 'Footer';
 const type = 'footer';
 const category = 'footer';
+const view =
+  <svg width="290" height="165" viewBox="0 0 290 165" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g filter="url(#filter0_d)">
+      <rect x="10" y="10" width="270" height="145" rx="10" fill="#FFFEFE"/>
+      <path d="M10 106H280V145C280 150.523 275.523 155 270 155H20C14.4771 155 10 150.523 10 145V106Z" fill="#F6F6F6"/>
+      <circle cx="35" cy="131" r="9" fill="#E1E7FF"/>
+      <path d="M51 131C51 128.791 52.7909 127 55 127H143C145.209 127 147 128.791 147 131C147 133.209 145.209 135 143 135H55C52.7909 135 51 133.209 51 131Z" fill="#C4C4C4"/>
+      <rect x="206" y="127" width="62" height="8" rx="4" fill="#C4C4C4"/>
+    </g>
+    <defs>
+      <filter id="filter0_d" x="0" y="0" width="290" height="165" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feOffset/>
+        <feGaussianBlur stdDeviation="5"/>
+        <feComposite in2="hardAlpha" operator="out"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+      </filter>
+    </defs>
+  </svg>;
+
 
 const settings = {
   title: {
@@ -106,5 +129,6 @@ export default {
   Component,
   settings,
   type,
-  category
+  category,
+  view
 };
