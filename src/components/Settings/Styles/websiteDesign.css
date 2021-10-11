@@ -1,0 +1,58 @@
+.website-design-property {
+    display: flex;
+}
+
+.website-basic-design {
+    height: 55px;
+    background: #E3E5F5;
+    font-family: Circular Std;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #6F76A7;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 55px;
+}
+
+.website-design-property {
+    font-family: Circular Std;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #343C6A;
+    justify-content: space-between;
+}
+
+.website-background-setting {
+    display: flex;
+    flex-direction: column;
+    width: 154px;
+    order:2;
+    margin-right: 21px;
+}
+
+.website-background-setting input {
+    margin-top: 12px ;
+    width: 154px;
+    height: 38px;
+}
+
+.website-background-image-handler {
+    width: 154px;
+    order:1;
+    margin-left: 21px;
+}
+
+.website-background-image-handler .image-handler .upload-type-box {
+    margin-left: 0px;
+}
+
+.website-background-image-handler .choose-a-file-button {
+    margin-top: 12px ;
+    width: 154px;
+    height: 38px;
+    margin-left: 0px;
+}
