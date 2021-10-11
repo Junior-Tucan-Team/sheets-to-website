@@ -1,26 +1,41 @@
 import React, { useState } from 'react';
-import { arrayOf, func, shape } from 'prop-types';
 import './Styles/textBox.css';
-import * as Elements from '../Elements';
 
-const WebsiteDesign = ({ layoutItems, updateStyle, selectLayoutItem }) => {
-  const [styleParameter, setStyleParameter] = useState('');
+
+const WebsiteDesign = () => {
+  const [currentTab, setTab] = useState('upload');
+  const [imageUrl, setUrl] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
   const layout = document.getElementsByClassName('layout')[0];
-  const handleTextStyle = (e) => {
-    layoutItems.map(item => {
-        selectLayoutItem(item.id);
-        const { settings } = Elements[item.type];
-        Object.keys(settings).map((key) => {
-            if (settings[key].type === 'textbox') {
-                updateStyle(styleParameter, key, e.target.name);
-            }
-            return <></>;
-        });
-        return <></>;
-    });
+  const handleImageInput = (url) => {
+    if (url !== '') {
+      layout.style.backgroundImage = `url(${url})`;
+    }
+};
+  const renderTabs = () => (
+    <div className="add-logo">
+      <button onClick={() => setTab('upload')}>Upload</button>
+      <button onClick={() => setTab('myImage')}>My Image</button>
+      <button onClick={() => setTab('url')}>Url</button>
+    </div>);
+  const renderImage = () => {
+      if (currentTab === 'upload') {
+          return (
+            <>
+              <label htmlFor="image" /><input type="file" accept="image/*" name="image" id="image" onChange={(e) => handleImageInput(URL.createObjectURL(e.target.files[0]))} />
+            </>
+          );
+      } else if (currentTab === 'myImage') {
+         return (<p>image</p>);
+      } else if (currentTab === 'url') {
+          return (<input type="text" onChange={(e) => setUrl(e.target.value)} placeholder="image url" onBlur={() => handleImageInput(imageUrl)} value={imageUrl} />);
+      }
+      return <></>;
   };
+
   return (
     <div>
+      <div className="logo-handler-source-type">WEBSITE BACKGROUND</div>
       <div className="website-background-setting">
         <label htmlFor="website-background-color">Website Background Color</label>
         <input
@@ -31,35 +46,21 @@ const WebsiteDesign = ({ layoutItems, updateStyle, selectLayoutItem }) => {
         }}
         />
       </div>
-      <div className="website-font-setting">
-        <label htmlFor="fontFamiliyID">Font Family</label>
-        <select id="fontFamiliyID" className="fontFamily" name="fntfmly" onChange={(e) => setStyleParameter(e.target.value)} value={styleParameter} onBlur={handleTextStyle}>
-          <option value="Sans">Sans</option>
-          <option value="Serif">Serif</option>
-          <option value="Roboto">Roboto</option>
-        </select>
-        <div className="fontManipulation">
-          <div className="fontManipulation-Color">
-            <label htmlFor="fontColor">Font Color</label>
-            <input id="fontColor" type="color" name="fntclr" onChange={(e) => setStyleParameter(e.target.value)} onBlur={handleTextStyle} />
-          </div>
-          <div className="fontManipulation-Size">
-            <label htmlFor="fontSize">Font Size</label>
-            <input id="fontSize" type="number" name="fntSz" onChange={(e) => setStyleParameter(e.target.value)} value={styleParameter} onBlur={handleTextStyle} />
-          </div>
-        </div>
+      <div className="image-handler">
+        <div>Background Image</div>
+        <button className="choose-a-file-button" onClick={() => setIsOpen(true)}>Choose a file</button>
+        {isOpen ?
+          <div className="image-handler">
+            <div className="upload-type-box">
+              {renderTabs()}
+              <div className="logo-box-upload" >{renderImage()}</div>
+            </div>
+          </div> : <></>}
       </div>
-
-
     </div>
 
       );
 };
 
-WebsiteDesign.propTypes = {
-    layoutItems: arrayOf(shape).isRequired,
-    updateStyle: func.isRequired,
-    selectLayoutItem: func.isRequired
-      };
 
 export default WebsiteDesign;
