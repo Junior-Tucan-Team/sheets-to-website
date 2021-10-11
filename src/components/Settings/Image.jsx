@@ -12,7 +12,7 @@ const Image = ({ name, updateField, settingsKey: key }) => {
       }
   };
   const renderTabs = () => (
-    <div className="image-upload">
+    <div className="add-logo">
       <button onClick={() => setTab('upload')}>Upload</button>
       <button onClick={() => setTab('myImage')}>My Image</button>
       <button onClick={() => setTab('url')}>Url</button>
@@ -35,12 +35,14 @@ const Image = ({ name, updateField, settingsKey: key }) => {
 
   return (
     <div className="image-handler">
-      <div>{name}</div>
-      <button onClick={() => setIsOpen(true)}>Choose a file</button>
+      <div className="logo-handler-source-type">{name}</div>
+      <button className="choose-a-file-button" onClick={() => setIsOpen(true)}>Choose a file</button>
       {isOpen ?
         <div className="image-handler">
-          {renderTabs()}
-          <div className="image-box-upload" >{renderImage()}</div>
+          <div className="upload-type-box">
+            {renderTabs()}
+            <div className="logo-box-upload" >{renderImage()}</div>
+          </div>
         </div> : <></>}
     </div>
   );

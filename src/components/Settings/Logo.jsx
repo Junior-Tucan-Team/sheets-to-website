@@ -36,7 +36,6 @@ const Logo = ({ name, updateField, updateStyle, settingsKey: key }) => {
       if (currentTab === 'upload') {
           return (
             <>
-              <label htmlFor="logo"> Upload Image</label>
               <input type="file" accept="image/*" name="logo" id="logo" onChange={(e) => handleLogoInput(URL.createObjectURL(e.target.files[0]))} />
             </>
           );
@@ -53,37 +52,39 @@ const Logo = ({ name, updateField, updateStyle, settingsKey: key }) => {
       <div className="logo-size-handler">
         <label>
           <input id="weight" type="number"/>
-          Width
+          <div>Width</div>
         </label>
-        <label htmlFor="weight">PX</label>
+        <label className="logo-size-handler-px" htmlFor="weight">PX</label>
         <button name="lock" onClick={() => setLockParameter(!lockParameter)}> - <i className="fa fa-lock" aria-hidden="true"/> -
         </button>
         <label>
           <input id="height" type="number"/>
-          Height
+          <div>Height</div>
         </label>
-        <label htmlFor="height">PX</label>
+        <label className="logo-size-handler-px" htmlFor="height">PX</label>
       </div>
     </div>);
   const renderAlignment = () => (
     <div className="logo-alignment">
       <div>Image Alignment</div>
       <div className="logo-alignment-buttons">
-        <button name="algnmnt" onClick={handleTextAlign} value="0">Left</button>
-        <button name="algnmnt" onClick={handleTextAlign} value="auto">Center</button>
-        <button name="algnmnt" onClick={handleTextAlign} value="auto 0 auto auto">Right</button>
+        <button name="algnmnt" onClick={handleTextAlign} value="0">LEFT</button>
+        <button name="algnmnt" onClick={handleTextAlign} value="auto">CENTER</button>
+        <button name="algnmnt" onClick={handleTextAlign} value="auto 0 auto auto">RIGHT</button>
       </div>
-      <div>Select how this logo is aligned horizontally</div>
+      <div className="logo-alignment-buttons-desc">Select how this logo is aligned horizontally</div>
     </div>
     );
   return (
     <div className="logo-handler">
-      <div>{name}</div>
-      <button onClick={() => setIsOpen(true)}>Choose a file</button>
+      <div className="logo-handler-source-type">{name}</div>
+      <button className="choose-a-file-button" onClick={() => setIsOpen(true)}>CHOOSE A FILE</button>
       {isOpen ?
         <div className="logo-handler">
-          {renderTabs()}
-          <div className="logo-box-upload" >{renderAddLogo()}</div>
+          <div className="upload-type-box">
+            {renderTabs()}
+            <div className="logo-box-upload" >{renderAddLogo()}</div>
+          </div>
           {renderSize()} {/* convert it to -> if there is an uploaded image */}
           {renderAlignment()} {/* convert it to -> if there is an uploaded image */}
         </div> : <></>}

@@ -8,71 +8,130 @@
     flex-direction: column;
 }
 
-.settings .logo-handler .add-logo{
+
+.add-logo{
     display: flex;
     justify-content:space-around;
+    font-family: Circular Std;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #343C6A;
 }
 
-.settings .logo-handler .add-logo button{
+
+.add-logo button{
     flex-grow: 1;
+    height: 43px;
     text-align: center;
-    cursor: pointer;background-color: rgb(224, 231, 236);
+    cursor: pointer;
+    background: #E3E5F5;
+    border-radius: 2px;
 }
 
-.settings .logo-handler .add-logo button:hover{
+
+.add-logo button:hover{
   background-color: rgb(50, 142, 218);
 }
 
-.settings .logo-handler .add-logo button:focus{
-  border-bottom: 5px solid #0099FF;
+
+.add-logo button:focus{
+  border-bottom: 4px solid #0099FF;
+  background: #FFFFFF;
 }
 
-.settings .logo-handler .logo-box-upload{
-    border: 5px solid red!;
+.logo-box-upload{
+    border: 4px solid red!;
 }
 
-.settings .logo-handler .logo-box-upload input{
+.logo-box-upload input{
     background: rgb(243, 238, 222);
     cursor:pointer;
     border: 3px solid #9fa6ca;
-    margin-left: 10px;
-    width: 230px;
+    width: 320px;
     height: 124px;
     text-align: center;
 }
 
 .settings .logo-handler .logo-size{
+    margin-top: 16px;
+    margin-left: 21px;
     display: flex;
     flex-direction: column;
+    font-family: Circular Std;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #343C6A;
 }
 
 .settings .logo-handler .logo-size .logo-size-handler {
+    margin-top: 12px;
+    width: 320px;
     display: flex; 
+    justify-content:space-between;
 }
 
-.settings .logo-handler .logo-size .logo-size-handler label{
+.settings .logo-handler .logo-size .logo-size-handler label div{
     display: flex;
     flex-direction: column;
+    font-size: 15px;
+    color: #B8B8B8;
+    margin-top: 5px;
+    margin-bottom:25px ;
+}
+
+.settings .logo-handler .logo-size .logo-size-handler-px {
+    font-size: 16px;
+    color: #343C6A;
+    margin-right: 5px;
+    margin-top: 7px;
 }
 
 .settings .logo-handler .logo-size .logo-size-handler input{
-    width: 70px;
+    width: 100px;
+    height: 38px;
 }
 
 .settings .logo-handler .logo-size .logo-size-handler button{
     padding: 5px;
     color:#C8CEED;
+    margin-bottom: 25px;
 }
 
 .settings .logo-handler .logo-alignment {
     display: flex;
     flex-direction: column;
+    width: 320px;
+    margin-left: 20px;
+    font-family: Circular Std;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #343C6A;
+}
+.settings .logo-handler .logo-alignment .logo-alignment-buttons-desc{
+    font-size: 15px;
+    line-height: 19px;
+    color: #B8B8B8;
+    margin-bottom: 25px;
 }
 
 .settings .logo-handler .logo-alignment .logo-alignment-buttons {
     display: flex;
     justify-content:space-around;
-    background-color: black;
+    background-color: black;  
+    height: 38px;
+    font-family: Circular Std;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 19px;
+    color: #343C6A;
+    margin-top: 11px;
+    margin-bottom: 5px;
 }
 
 .settings .logo-handler .logo-alignment .logo-alignment-buttons button {
@@ -83,9 +142,43 @@
 }
 
 .settings .logo-handler .logo-alignment .logo-alignment-buttons button:hover{
-  border-bottom: 5px solid #0099FF;
+    border-bottom: 5px solid #0099FF;
 }
 
 .settings .logo-handler .logo-alignment .logo-alignment-buttons button:focus{
-  background-color: rgb(50, 142, 218);
+    background-color: #0099FF;
+    color: #FFFFFF;
+}
+
+.upload-type-box{
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 19px;
+}
+
+.logo-handler-source-type{
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-family: Circular Std;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #343C6A;
+    margin-left: 19px;
+}
+
+.choose-a-file-button{
+    width: 154px;
+    height: 38px;
+    background: #C8CEED;
+    border-radius: 2px;
+    margin-left: 19px;
+    margin-bottom: 16px;
+    font-family: Circular Std;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    color: #FFFFFF;
 }
