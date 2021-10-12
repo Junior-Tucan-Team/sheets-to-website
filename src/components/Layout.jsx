@@ -53,7 +53,9 @@ function Layout({
     <div className="layout">
       <div className="webpage">
         {
-        layoutItems.map((layoutItem, index) => {
+        !layoutItems.length ?
+          <div className="webpage-each-div empty-page">Drag your first element here from left</div> :
+          layoutItems.map((layoutItem, index) => {
           const ElementComponent = Elements[layoutItem.type].Component;
           const isSelected = selectedElement === layoutItem.id;
           if (isSelected) {
@@ -77,6 +79,7 @@ function Layout({
               </div>
             );
           }
+
           return (
             <div className={currentMode === 'editor' ? 'webpage-each-div' : null}>
               <ElementComponent
