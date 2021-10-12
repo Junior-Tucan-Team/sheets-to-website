@@ -83,6 +83,7 @@ const Properties = ({ selectedElement, layoutItems, updateField,
             <div>
               <Component
                 name={settings[key].name}
+                value={settings[key].name}
                 updateField={updateField}
                 updateStyle={updateStyle}
                 key={key}

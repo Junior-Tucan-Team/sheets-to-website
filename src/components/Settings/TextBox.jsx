@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { arrayOf, func, string } from 'prop-types';
 import './Styles/textBox.css';
 
-const TextBox = ({ name, updateField, updateStyle, settingsKey: key }) => {
+const TextBox = ({ name, value, updateField, updateStyle, settingsKey: key }) => {
   const [headingText, setHeadingText] = useState('');
   const [styleParameter, setStyleParameter] = useState('');
   const handleInput = (e) => {
@@ -14,7 +14,7 @@ const TextBox = ({ name, updateField, updateStyle, settingsKey: key }) => {
   return (
     <div className="heading-text">
       <label htmlFor="headingTextID">{name}</label>
-      <input id="headingTextID" type="text" onChange={(e) => setHeadingText(e.target.value)} value={headingText} onBlur={handleInput}/>
+      <input id="headingTextID" type="text" onChange={(e) => setHeadingText(e.target.value)} defaultValue={value} onBlur={handleInput}/>
       <label htmlFor="fontFamiliyID">Font Family</label>
       <select id="fontFamiliyID" className="fontFamily" name="fntfmly" onChange={(e) => setStyleParameter(e.target.value)} value={styleParameter} onBlur={handleStyle}>
         <option value="Sans">Sans</option>
@@ -38,6 +38,7 @@ const TextBox = ({ name, updateField, updateStyle, settingsKey: key }) => {
 
 TextBox.propTypes = {
     name: string.isRequired,
+    value: string.isRequired,
     updateField: func.isRequired,
     updateStyle: func.isRequired,
     settingsKey: string.isRequired
