@@ -82,7 +82,6 @@ const Header = () => {
             <div>
               <h1
                 className="jSheetEditable jNewHeader-title iBlock"
-                contentEditable="false"
                 placeholder=""
               >
                 Menu Website
@@ -215,7 +214,7 @@ const Header = () => {
         </div>
         <div className="flex items-center justify-end absolute mr-6 right-0 emre-update">
           <label htmlFor="toogleA" className="flex items-center">
-            <div className="text-gray-700 font-medium mr-4 emre-update2" style={{ color: '#FFFFFF;' }}>
+            <div className="text-gray-700 font-medium mr-4 emre-update2" style={{ color: '#FFFFFF' }}>
               Preview Website
             </div>
             <div className="relative cursor-pointer">

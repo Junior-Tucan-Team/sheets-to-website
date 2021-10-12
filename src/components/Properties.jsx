@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { shape, arrayOf, func } from 'prop-types';
+import { shape, arrayOf, func, string } from 'prop-types';
 import * as settingsMap from './Settings';
 import WebsiteDesign from './Settings/WebsiteDesign';
 import * as Elements from './Elements';
@@ -104,11 +104,15 @@ const Properties = ({ selectedElement, layoutItems, updateField,
 };
 
 Properties.propTypes = {
-  selectedElement: arrayOf(shape).isRequired,
+  selectedElement: string,
   layoutItems: arrayOf(shape).isRequired,
   updateField: func.isRequired,
   updateStyle: func.isRequired,
   selectLayoutItem: func.isRequired,
+};
+
+Properties.defaultProps = {
+  selectedElement: ''
 };
 
 export default Properties;

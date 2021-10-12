@@ -94,12 +94,16 @@ function Layout({
 }
 
 Layout.propTypes = {
+  selectedElement: string,
   layoutItems: arrayOf(shape).isRequired,
-  selectedElement: arrayOf(shape).isRequired,
   selectLayoutItem: func.isRequired,
   removeSelectedLayoutItem: func.isRequired,
   deleteLayoutItem: func.isRequired,
   updateField: func.isRequired,
   currentMode: string.isRequired
+};
+
+Layout.defaultProps = {
+  selectedElement: ''
 };
 export default Layout;
