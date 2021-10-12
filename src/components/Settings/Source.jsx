@@ -29,8 +29,17 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
     state.questions.questions[foundItem.source.formID]);
   const submissions = useSelector(state =>
     state?.submissions?.submissions[foundItem.source.formID]);
+    const editScreen = () => {
+      const handler = document.getElementsByClassName('header-source-handler')[0];
+      if (!edit) {
+        handler.style.display = 'none';
+      } else {
+        handler.style.display = 'block';
+      }
+    };
   const changeEditMode = () => {
     setEdit(!edit);
+    editScreen();
   };
   const searchFunction = search => forms.filter(item =>
     (item.title.toLowerCase()).startsWith(search.toLowerCase()));
@@ -41,7 +50,6 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
     return file;
   };
   const dispatch = useDispatch();
-
   const renderForms = () => (
     <div className="source-pop-up">
       <div className="source-handler">
@@ -197,10 +205,6 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
         </div>
       );
     }
-  };
-
-  const editSubmission = () => {
-
   };
 
   return (
