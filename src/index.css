@@ -45,7 +45,6 @@ code {
   border-right: 1px solid #E3E5F5;
 }
 .settings {
-  
   /* position: sticky;
   top: 0; */
   /* align-self: flex-start;
@@ -100,7 +99,7 @@ code {
   margin-top: 36px;
   margin-right: 24px;
   right: 0px;
-  transform: translate(0px, 0px);
+  transform: translateX(0px);
   transition: transform 0.75s;
 }
 
@@ -122,7 +121,7 @@ code {
   height: 100%;
   width: 360px; 
   background-color: #FFFFFF;
-  transform: translate(360px, 0px);
+  transform: translateX(360px);
   transition: transform 0.75s;
 }
 

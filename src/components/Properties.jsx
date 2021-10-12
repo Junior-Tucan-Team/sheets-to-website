@@ -10,16 +10,16 @@ const Properties = ({ selectedElement, layoutItems, updateField,
   const [tab, setTab] = useState('first');
   const onShowSettingsClick = () => {
     const settingsSection = document.getElementsByClassName('settings-panel-open')[0];
-    settingsSection.style.transform = 'translate(0px, 0px)';
+    settingsSection.style.transform = 'translateX(0px)';
     const addElementButton = document.getElementsByClassName('left-panel-add-button')[0];
     const addElementSection = document.getElementsByClassName('left-panel-open')[0];
-    addElementButton.style.transform = 'translate(0px, 0px)';
-    addElementSection.style.transform = 'translate(-360px, 0px)';
+    addElementButton.style.transform = 'translateX(0px)';
+    addElementSection.style.transform = 'translateX(-360px)';
   };
 
   const hideSettings = () => {
     const settingsSection = document.getElementsByClassName('settings-panel-open')[0];
-    settingsSection.style.transform = 'translate(360px, 0px)';
+    settingsSection.style.transform = 'translateX(360px)';
   };
   if (!foundedItem) {
     return (

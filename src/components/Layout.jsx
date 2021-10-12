@@ -28,22 +28,18 @@ function Layout({
     const emptySelectedElement = (e) => {
       if (outsideElementsClasses.includes(e.target.className)) {
         removeSelectedLayoutItem();
-         const settingsButton = document.getElementsByClassName('right-panel-settings-button')[0];
          const settingsSection = document.getElementsByClassName('settings-panel-open')[0];
-         settingsButton.style.display = 'block';
-         settingsSection.style.display = 'none';
+         settingsSection.style.transform = 'translateX(360px)';
       }
     };
 
   const showSettings = () => {
-    const settingsButton = document.getElementsByClassName('right-panel-settings-button')[0];
     const settingsSection = document.getElementsByClassName('settings-panel-open')[0];
-    settingsButton.style.display = 'none';
-    settingsSection.style.display = 'block';
+    settingsSection.style.transform = 'translateX(0px)';
     const addElementButton = document.getElementsByClassName('left-panel-add-button')[0];
     const addElementSection = document.getElementsByClassName('left-panel-open')[0];
-    addElementButton.style.display = 'block';
-    addElementSection.style.display = 'none';
+    addElementButton.style.transform = 'translateX(160px)';
+    addElementSection.style.transform = 'translateX(-360px)';
   };
   const ref = useDetectClickOutside({
     onTriggered: emptySelectedElement,
