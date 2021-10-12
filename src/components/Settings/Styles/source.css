@@ -338,3 +338,20 @@
 .blue-cog {
     color: #FFF;
 }
+
+.manual-back-button {
+    background: #E1E3F1;
+    width: 70px;
+    height: 30px;
+    border-radius: 4px;
+    font-family: 'Circular Std';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-feature-settings: 'liga' off;
+    color: #343C6A;
+}

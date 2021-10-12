@@ -1,4 +1,4 @@
-import { SUBMISSION_FAILURE, SUBMISSION_SUCCESS, SUBMISSION_REQUEST } from '../constants/actionTypes';
+import { SUBMISSION_FAILURE, SUBMISSION_SUCCESS, SUBMISSION_REQUEST, UPDATE_SUBMISSION } from '../constants/actionTypes';
 
 const INITIAL_STATE = {
   isLoading: false,
@@ -8,6 +8,13 @@ const INITIAL_STATE = {
 
 const submissionsReducer = (state = INITIAL_STATE, { type, payload }) => {
   switch (type) {
+    case UPDATE_SUBMISSION: {
+      const { key, value, submissionID, formID } = payload;
+      const foundSubmission = state.submissions[formID]
+        .find(sub => sub.id === submissionID).answers[key];
+      console.log(foundSubmission);
+      return { ...state };
+    }
     case SUBMISSION_REQUEST: {
       return { ...state, isLoading: true };
   }

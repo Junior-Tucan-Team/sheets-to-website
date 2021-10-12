@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getQuestionsRequest, submissionsRequest } from '../../redux/actions';
 import { filterByQuestionType } from '../../utils/filterBy';
 import AutoComplete from '../../utils/AutoComplete';
+import { updateSubmissionsRequest } from '../../redux/actions/submissionActions';
 import './Styles/source.css';
 
 
@@ -28,9 +29,19 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
     state.questions.questions[foundItem.source.formID]);
   const submissions = useSelector(state =>
     state?.submissions?.submissions[foundItem.source.formID]);
-  const dispatch = useDispatch();
+  const changeEditMode = () => {
+    setEdit(!edit);
+  };
   const searchFunction = search => forms.filter(item =>
     (item.title.toLowerCase()).startsWith(search.toLowerCase()));
+  const urlToObject = async (image) => {
+    const response = await fetch(image);
+    const blob = await response.blob();
+    const file = new File([blob], 'image.jpg', { type: blob.type });
+    console.log(file);
+    return file;
+  };
+  const dispatch = useDispatch();
 
   const renderForms = () => (
     <div className="source-pop-up">
@@ -70,6 +81,17 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
       </div>
     </div>
   );
+
+  const modifySubmissions = (e) => {
+    const payload = {
+      key: e.target.name,
+      value: e.target.value,
+      submissionID,
+      formID
+    };
+    dispatch(updateSubmissionsRequest(payload));
+  };
+
   const renderManual = () => {
     if (manual) {
       if (!edit) {
@@ -99,7 +121,7 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
               </div>
               <button
                 className="settingsButton"
-                onClick={() => { setEdit(true); setSubmissionID(submission.id); }}
+                onClick={() => { changeEditMode(); setSubmissionID(submission.id); }}
               >
                 <div className="blue-cog-back">
                   <i className="fa fa-cog blue-cog" aria-hidden="true"/>
@@ -110,7 +132,57 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
       } else {
         return (
           <div>
-            {/* <button onClick={setEdit(false)}>Back</button> */}
+            <button onClick={changeEditMode} className="manual-back-button">
+              <i className="fa fa-angle-left"/>
+              Back
+            </button>
+            {submissionID}
+            <div className="manual-edit-submission">
+              <label htmlFor="manualImg">
+                Image
+                <input
+                  id="manualImg"
+                  type="file"
+                  accept="image/*"
+                  alt="image"
+                //   value={urlToObject(submissions.find(sub => sub.id === submissionID)
+                // .answers[foundItem.source.image].answer)}
+                />
+              </label>
+              <label htmlFor="manual-header">
+                Header
+                <input
+                  type="text"
+                  id="manual-header"
+                  name={foundItem.source.header}
+                  defaultValue={submissions.find(sub => sub.id === submissionID)
+                    .answers[foundItem.source.header].answer}
+                  onBlur={modifySubmissions}
+                />
+              </label>
+              <label htmlFor="manual-desc">
+                Description
+                <input
+                  type="text"
+                  id="manual-desc"
+                  name={foundItem.source.description}
+                  defaultValue={submissions.find(sub => sub.id === submissionID)
+                    .answers[foundItem.source.description].answer}
+                  onBlur={modifySubmissions}
+                />
+              </label>
+              <label htmlFor="manual-price">
+                Price
+                <input
+                  type="text"
+                  id="manual-price"
+                  name={foundItem.source.price}
+                  defaultValue={submissions.find(sub => sub.id === submissionID)
+                    .answers[foundItem.source.price].answer}
+                  onBlur={modifySubmissions}
+                />
+              </label>
+            </div>
             <div className="wide-horizontal-line"/>
           </div>
         );
@@ -131,6 +203,7 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
   const editSubmission = () => {
 
   };
+
   return (
     <>
       <div className="header-source-handler">

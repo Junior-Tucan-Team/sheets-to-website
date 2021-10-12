@@ -36,7 +36,7 @@ const Logo = ({ name, updateField, updateStyle, settingsKey: key }) => {
       if (currentTab === 'upload') {
           return (
             <>
-              <input type="file" accept="image/*" name="logo" id="logo" onChange={(e) => handleLogoInput(URL.createObjectURL(e.target.files[0]))} />
+              <input type="file" accept="image/*" name="logo" id="logo" onChange={(e) => { console.log(URL.createObjectURL(e.target.files[0])); handleLogoInput(URL.createObjectURL(e.target.files[0])); }} />
             </>
           );
       } else if (currentTab === 'myImage') {
