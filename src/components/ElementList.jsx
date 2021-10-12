@@ -42,9 +42,9 @@ const ElementList = ({ selectLayoutItem, addLayoutItem }) => {
   const renderElements = () => (
     <div className="leftPanelChild">
       <div className="leftPanelChildSpans">
-        <button onClick={onCategoryClick} name="header">Header</button>
-        <button onClick={onCategoryClick} name="content">Content</button>
-        <button onClick={onCategoryClick} name="footer">Footer</button>
+        <button onClick={onCategoryClick} name="header">HEADER</button>
+        <button onClick={onCategoryClick} name="content">CONTENT</button>
+        <button onClick={onCategoryClick} name="footer">FOOTER</button>
       </div>
       <ul className="leftPanelElements">
         {Object.keys(Elements).filter(element =>

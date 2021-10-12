@@ -36,7 +36,7 @@ const Image = ({ name, updateField, settingsKey: key }) => {
   return (
     <div className="image-handler">
       <div className="logo-handler-source-type">{name}</div>
-      <button className="choose-a-file-button" onClick={() => setIsOpen(true)}>Choose a file</button>
+      <button className="choose-a-file-button" onClick={() => setIsOpen(true)}>CHOOSE A FILE</button>
       {isOpen ?
         <div className="image-handler">
           <div className="upload-type-box">
