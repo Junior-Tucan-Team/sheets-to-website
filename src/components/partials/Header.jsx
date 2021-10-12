@@ -201,15 +201,32 @@ const Header = () => {
         <div className="preview-mode-buttons">
           <button>
             {/* <img src="" alt="phone img"/> */}
-            Phone
+            {/* <i className="fas fa-mobile fa-2x icon-preview" aria-hidden="true" /> */}
+            <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.5" y="0.500557" width="11" height="20.4286" rx="1.5" stroke="white"/>
+              <circle cx="6.00021" cy="18.8577" r="0.857143" fill="white"/>
+              <rect x="3.42871" y="2.57198" width="5.14286" height="0.857143" rx="0.428571" fill="white"/>
+            </svg>
+            <div>Phone</div>
           </button>
           <button>
             {/* <img src="" alt="tablet img"/> */}
-            Tablet
+            {/* <i className="fas fa-tablet fa-2x icon-preview" aria-hidden="true"/> */}
+            <svg width="18" height="26" viewBox="0 0 18 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9.0001" cy="22.4991" r="0.9" fill="white"/>
+              <path fillRule="evenodd" clipRule="evenodd" d="M2 2.69907C1.44772 2.69907 1 3.14679 1 3.69907V23.2C1 23.7523 1.44772 24.2 2 24.2H16C16.5523 24.2 17 23.7523 17 23.2V3.69907C17 3.14679 16.5523 2.69907 16 2.69907H2ZM0 2C0 0.895429 0.895431 0 2 0H16C17.1046 0 18 0.895431 18 2V23.2C18 24.3046 17.1046 25.2 16 25.2H2C0.89543 25.2 0 24.3046 0 23.2V2Z" fill="white"/>
+            </svg>
+
+            <div>Tablet</div>
           </button>
           <button>
             {/* <img src="" alt="desktop img"/> */}
-            Desktop
+            {/* <i className="fas fa-desktop fa-2x icon-preview" aria-hidden="true"/> */}
+            <svg width="34" height="25" viewBox="0 0 34 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fillRule="evenodd" clipRule="evenodd" d="M1 17.2904C1 17.8427 1.44772 18.2904 2 18.2904H32C32.5523 18.2904 33 17.8427 33 17.2904V1.99922C33 1.44694 32.5523 0.999222 32 0.999222H2C1.44772 0.999222 1 1.44694 1 1.99922V17.2904ZM2 20.3992C0.895431 20.3992 0 19.5038 0 18.3992V1.99922C0 0.894651 0.89543 -0.000778198 2 -0.000778198H32C33.1046 -0.000778198 34 0.89465 34 1.99922V18.3992C34 19.5038 33.1046 20.3992 32 20.3992H22.25C21.6977 20.3992 21.25 20.8469 21.25 21.3992V22.9055C21.25 23.4578 21.6977 23.9055 22.25 23.9055H25.9781C26.1835 23.9055 26.35 24.072 26.35 24.2773C26.35 24.4827 26.1835 24.6492 25.9781 24.6492H8.87187C8.66649 24.6492 8.5 24.4827 8.5 24.2773C8.5 24.072 8.66649 23.9055 8.87187 23.9055H12.6C13.1523 23.9055 13.6 23.4578 13.6 22.9055V21.3992C13.6 20.8469 13.1523 20.3992 12.6 20.3992H2Z" fill="white"/>
+            </svg>
+
+            <div>Desktop</div>
           </button>
         </div>
         <div className="flex items-center justify-end absolute mr-6 right-0 emre-update">

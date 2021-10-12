@@ -205,6 +205,8 @@ code {
 .leftPanelChild .leftPanelElements {
   display: flex;
   flex-direction: column;
+  height: 758px;
+  overflow: auto;
 }
 
 .leftPanelChild .leftPanelElements li {
@@ -232,6 +234,7 @@ code {
 .layout {
   /* margin-top: 30px; */
   width: 1480px;
+  /* min-width: 1480px; */
   padding: 10px 20px;
   flex-grow: 0;
   /* border-top: 1px solid rgb(226, 11, 11);
@@ -255,11 +258,25 @@ code {
   border: 2px solid rgb(59, 173, 250);
 }
 
+.layout .webpage .empty-page {
+  background: #F7F7F7;
+  border: 2px dashed #D2D2D2;
+  box-sizing: border-box;
+  border-radius: 15px;
+  width: 684px;
+  height: 231px;
+  margin-top: 232px;
+  margin-left:247px;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 89px;
+}
+
 .layout .deleteButton {
   position:absolute;
   right: 3px; 
   bottom:50%;
-  padding: 7px 16px;
+  padding: 7px 14px;
   font-size: 1.5rem;
   cursor: pointer;
   text-align: center;
@@ -269,6 +286,7 @@ code {
   background-color:#D5322F;
   border: none;
   border-radius: 50px;
+  margin-bottom: 4px;
 }
 
 .layout .deleteButton:hover {
@@ -282,10 +300,11 @@ code {
 }
 
 .layout .settingsButton {
+  margin-top: 4px;
   position:absolute;
   right: 3px;
   top: 50%;
-  padding: 7px 15.5px;
+  padding: 7px 14px;
   font-size: 1.5rem;
   cursor: pointer;
   text-align: center;

@@ -1522,7 +1522,6 @@ input:checked ~ .toggle-dot {
 
 .preview-mode-buttons {
   display: flex;
-  flex-direction: row;
   justify-self: space-between;
   border-left: 1px solid white;
   position: absolute;
@@ -1533,19 +1532,32 @@ input:checked ~ .toggle-dot {
   transition: opacity 0.75s, height 0.75s;
 }
 
-.preview-mode-buttons > button {
+.preview-mode-buttons button {
   display: flex;
+  flex-direction: column;
   justify-self: center;
   align-items: center;
+  
+  vertical-align: middle;
+  padding-top: 16px;
   height: 70px;
-  width: 65px;
+  width: 70px;
   font-size: 14px;
+  font-family: Circular Std;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 15px;
+  color: #FFFFFF;
+  background-color: linear-gradient(270deg, #0CDEAC 0%, #13E17E 80.7%);
 }
 
-.preview-mode-buttons > img {
-  height: 20px;
-  width: 20px;
+.preview-mode-buttons button div { 
+  margin-top:5px;
 }
+
+.preview-mode-buttons .icon-preview {
+  color:white ;
+} 
 
 .primaryHeader {
   position: relative;
