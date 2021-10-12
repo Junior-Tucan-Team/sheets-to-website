@@ -38,7 +38,6 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
     const response = await fetch(image);
     const blob = await response.blob();
     const file = new File([blob], 'image.jpg', { type: blob.type });
-    console.log(file);
     return file;
   };
   const dispatch = useDispatch();
