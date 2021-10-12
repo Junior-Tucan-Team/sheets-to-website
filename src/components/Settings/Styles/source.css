@@ -56,6 +56,12 @@
     background: #4277FF;
 }
 
+.settings .header-source-handler .header-source-handler-buttons button:focus{
+    border-radius: 4px;
+    color: #FFFFFF;
+    background: #4277FF;
+}
+
 .settings .source-pop-up {
     display: flex;
     position: fixed;
@@ -179,12 +185,11 @@
 
 .suggestions button {
     height: 74px;
-    background: #F7F7F8;
+    background-color: #F7F7F8;
     border: 1px solid #D7DAE9;
     border-radius: 4px;
-    margin: 16px 0px;
+    margin: 16px 0px 0px 0px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     font-family: Circular Std;
     font-style: normal;
@@ -192,11 +197,41 @@
     font-size: 16px;
     line-height: 20px;
     color: #2C3345;
-    
-    
 }
 
-.suggestions button span {
+.suggestions button:focus {
+    background: #E3EBFF;
+border: 2px solid #5081FF;
+box-sizing: border-box;
+border-radius: 4px;
+}
+
+.suggestions .suggestion-icon-first {
+    height: 24px;
+    width: 24px;
+    margin-left: 20px;
+    background-color: #0099FF
+}
+
+.suggestions .suggestion-title-div {
+    height: 74px;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    
+    margin-left: 13px;
+}
+
+.suggestions .suggestion-title-divf {
+    font-family: Circular Std;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 20px;
+margin-top: 16px;   
+}
+
+.suggestions button .suggestion-count-span {
     font-family: Circular Std;
     font-style: normal;
     font-weight: normal;

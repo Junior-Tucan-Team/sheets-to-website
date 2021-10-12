@@ -35,11 +35,13 @@ const AutoComplete = ({ value, onChange, search, setFormID }) => {
                     }
                   }
                 >
-                  {suggestion.title}
-                  <br/>
-                  <span>{suggestion.count} submissions. Modified on
-                    {splitDate(suggestion.updated_at)}
-                  </span>
+                  <i className="fa fa-table suggestion-icon-first" aria-hidden="true"/>
+                  <div className="suggestion-title-div">
+                    <div className="suggestion-title-divf">{suggestion.title}</div>
+                    <span className="suggestion-count-span">{suggestion.count} submissions. Modified on
+                      {splitDate(suggestion.updated_at)}
+                    </span>
+                  </div>
                 </button>
               );
             } else {
@@ -51,11 +53,13 @@ const AutoComplete = ({ value, onChange, search, setFormID }) => {
                   }
                 }
                 >
-                  {suggestion.title}
-                  <br/>
-                  <span>{suggestion.count} submissions. Modified on
-                    {splitDate(suggestion.updated_at)}
-                  </span>
+                  <i className="fa fa-table suggestion-icon-first" aria-hidden="true"/>
+                  <div className="suggestion-title-div">
+                    <div className="suggestion-title-divf">{suggestion.title}</div>
+                    <span className="suggestion-count-span">{suggestion.count} submissions. Modified on
+                      {splitDate(suggestion.updated_at)}
+                    </span>
+                  </div>
                 </button>
               );
             }
