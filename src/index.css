@@ -25,6 +25,7 @@ code {
   justify-content:space-between;
   width: 100%;
   height: calc(100% - 104px);
+  overflow-x: hidden;
 }
 
 /* Editor END*/
@@ -62,7 +63,8 @@ code {
   border-top-right-radius: 25px;
   white-space: nowrap;
   box-shadow: -1px -1px 3px 2px #c7c5c5;
-  
+  transform: translateX(0px);
+  transition: transform 0.75s;
 }
 
 .elements .left-panel-add-button .add-element-button {
@@ -73,7 +75,6 @@ code {
   justify-content:space-between;
   align-items:center;
   text-align: center;
-  
 }
 
 .elements .left-panel-add-button .add-element-button div {
@@ -99,6 +100,8 @@ code {
   margin-top: 36px;
   margin-right: 24px;
   right: 0px;
+  transform: translate(0px, 0px);
+  transition: transform 0.75s;
 }
 
 .elements .left-panel-open {
@@ -108,6 +111,8 @@ code {
   height: 100%;
   width: 360px; 
   background-color: #FFFFFF;
+  transform: translateX(-360px);
+  transition: transform 0.75s;
 }
 
 .settings .settings-panel-open {
@@ -117,6 +122,8 @@ code {
   height: 100%;
   width: 360px; 
   background-color: #FFFFFF;
+  transform: translate(360px, 0px);
+  transition: transform 0.75s;
 }
 
 .general-settings-panel-open {

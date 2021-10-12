@@ -9,31 +9,27 @@ const Properties = ({ selectedElement, layoutItems, updateField,
   const foundedItem = layoutItems.find(item => selectedElement === item.id);
   const [tab, setTab] = useState('first');
   const onShowSettingsClick = () => {
-    const settingsButton = document.getElementsByClassName('right-panel-settings-button')[0];
     const settingsSection = document.getElementsByClassName('settings-panel-open')[0];
-    settingsButton.style.display = 'none';
-    settingsSection.style.display = 'block';
+    settingsSection.style.transform = 'translate(0px, 0px)';
     const addElementButton = document.getElementsByClassName('left-panel-add-button')[0];
     const addElementSection = document.getElementsByClassName('left-panel-open')[0];
-    addElementButton.style.display = 'block';
-    addElementSection.style.display = 'none';
+    addElementButton.style.transform = 'translate(0px, 0px)';
+    addElementSection.style.transform = 'translate(-360px, 0px)';
   };
 
   const hideSettings = () => {
-    const settingsButton = document.getElementsByClassName('right-panel-settings-button')[0];
     const settingsSection = document.getElementsByClassName('settings-panel-open')[0];
-    settingsButton.style.display = 'block';
-    settingsSection.style.display = 'none';
+    settingsSection.style.transform = 'translate(360px, 0px)';
   };
   if (!foundedItem) {
     return (
       <div className="settings panel-wrapper" >
-        <div className="right-panel-settings-button" style={{ display: 'block' }}>
+        <div className="right-panel-settings-button">
           <button className="add-element-button" onClick={onShowSettingsClick}>
             <i className="fas fa-paint-roller right-icon" />
           </button>
         </div>
-        <div className="settings-panel-open" style={{ display: 'none', marginTop: '30px' }}>
+        <div className="settings-panel-open" style={{ marginTop: '30px' }}>
           <div className="settings-tabs-properties">Website Design Properties <button onClick={hideSettings} style={{ marginLeft: '6px' }}><i className="fa fa-times"/></button></div>
           <WebsiteDesign
             layoutItems={layoutItems}
@@ -73,12 +69,12 @@ const Properties = ({ selectedElement, layoutItems, updateField,
   };
   return (
     <div className="settings panel-wrapper">
-      <div className="right-panel-settings-button" style={{ display: 'block' }}>
+      <div className="right-panel-settings-button">
         <button className="add-element-button" onClick={onShowSettingsClick}>
           <i className="fas fa-paint-roller right-icon" />
         </button>
       </div>
-      <div className="settings-panel-open" style={{ display: 'none' }}>
+      <div className="settings-panel-open">
         {renderSettingsTabs()}
         {Object.keys(settings).map((key) => {
         if (settings[key].tab === tab) {

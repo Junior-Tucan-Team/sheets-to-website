@@ -27,19 +27,17 @@ const ElementList = ({ selectLayoutItem, addLayoutItem }) => {
   const onAddElementClick = () => {
     const leftPanelOpen = document.getElementsByClassName('left-panel-open')[0];
     const leftPanelAddButton = document.getElementsByClassName('left-panel-add-button')[0];
-    leftPanelOpen.style.display = 'block';
-    leftPanelAddButton.style.display = 'none';
-    const settingsButton = document.getElementsByClassName('right-panel-settings-button')[0];
+    leftPanelOpen.style.transform = 'translateX(0px)';
+    leftPanelAddButton.style.transform = 'translateX(-160px)';
     const settingsSection = document.getElementsByClassName('settings-panel-open')[0];
-    settingsButton.style.display = 'block';
-    settingsSection.style.display = 'none';
+    settingsSection.style.transform = 'translateX(360px)';
   };
 
   const onRemoveElementClick = () => {
     const leftPanelOpen = document.getElementsByClassName('left-panel-open')[0];
     const leftPanelAddButton = document.getElementsByClassName('left-panel-add-button')[0];
-    leftPanelOpen.style.display = 'none';
-    leftPanelAddButton.style.display = 'block';
+    leftPanelOpen.style.transform = 'translateX(-360px)';
+    leftPanelAddButton.style.transform = 'translateX(0px)';
   };
   const renderElements = () => (
     <div className="leftPanelChild">
@@ -64,13 +62,13 @@ const ElementList = ({ selectLayoutItem, addLayoutItem }) => {
 
   return (
     <div className="elements panel-wrapper">
-      <div className="left-panel-add-button" style={{ display: 'block' }}>
+      <div className="left-panel-add-button">
         <button className="add-element-button" onClick={onAddElementClick}>
           <div>Add Elements</div>
           <i className="fa fa-plus" aria-hidden="true" style={{ marginLeft: '6px' }}/>
         </button>
       </div>
-      <div style={{ display: 'none' }} className="left-panel-open">
+      <div className="left-panel-open">
         <div className="leftPanelChild">
           <span className="addElementSpan" ><div> Add Element </div><i onClick={onRemoveElementClick} className="fa fa-times" aria-hidden="true"/></span>
         </div>
