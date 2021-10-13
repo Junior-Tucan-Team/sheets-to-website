@@ -648,3 +648,8 @@ input, select {
   align-items: center;
   color: #0A1551;
 }
+
+.header-grid {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
