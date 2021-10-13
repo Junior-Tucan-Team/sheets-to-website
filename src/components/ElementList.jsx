@@ -27,17 +27,19 @@ const ElementList = ({ selectLayoutItem, addLayoutItem }) => {
   const onAddElementClick = () => {
     const leftPanelOpen = document.getElementsByClassName('left-panel-open')[0];
     const leftPanelAddButton = document.getElementsByClassName('left-panel-add-button')[0];
-    leftPanelOpen.style.transform = 'translateX(0px)';
-    leftPanelAddButton.style.transform = 'translateX(-160px)';
+    leftPanelOpen.style.display = 'flex';
+    leftPanelAddButton.style.display = 'none';
     const settingsSection = document.getElementsByClassName('settings-panel-open')[0];
-    settingsSection.style.transform = 'translateX(360px)';
+    const settingsButton = document.getElementsByClassName('right-panel-settings-button')[0];
+    settingsSection.style.display = 'none';
+    settingsButton.style.display = '';
   };
 
   const onRemoveElementClick = () => {
     const leftPanelOpen = document.getElementsByClassName('left-panel-open')[0];
     const leftPanelAddButton = document.getElementsByClassName('left-panel-add-button')[0];
-    leftPanelOpen.style.transform = 'translateX(-360px)';
-    leftPanelAddButton.style.transform = 'translateX(0px)';
+    leftPanelOpen.style.display = 'none';
+    leftPanelAddButton.style.display = '';
   };
   const renderElements = () => (
     <div className="leftPanelChild">
@@ -68,7 +70,7 @@ const ElementList = ({ selectLayoutItem, addLayoutItem }) => {
           <i className="fa fa-plus" aria-hidden="true" style={{ marginLeft: '6px' }}/>
         </button>
       </div>
-      <div className="left-panel-open">
+      <div className="left-panel-open" style={{ display: 'none' }}>
         <div className="leftPanelChild">
           <span className="addElementSpan" ><div> Add Element </div><i onClick={onRemoveElementClick} className="fa fa-times" aria-hidden="true"/></span>
         </div>

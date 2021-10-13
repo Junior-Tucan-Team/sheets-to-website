@@ -10,16 +10,20 @@ const Properties = ({ selectedElement, layoutItems, updateField,
   const [tab, setTab] = useState('first');
   const onShowSettingsClick = () => {
     const settingsSection = document.getElementsByClassName('settings-panel-open')[0];
-    settingsSection.style.transform = 'translateX(0px)';
+    const settingsButton = document.getElementsByClassName('right-panel-settings-button')[0];
+    settingsSection.style.display = 'flex';
+    settingsButton.style.display = 'none';
     const addElementButton = document.getElementsByClassName('left-panel-add-button')[0];
     const addElementSection = document.getElementsByClassName('left-panel-open')[0];
-    addElementButton.style.transform = 'translateX(0px)';
-    addElementSection.style.transform = 'translateX(-360px)';
+    addElementButton.style.display = '';
+    addElementSection.style.display = 'none';
   };
 
   const hideSettings = () => {
     const settingsSection = document.getElementsByClassName('settings-panel-open')[0];
-    settingsSection.style.transform = 'translateX(360px)';
+    const settingsButton = document.getElementsByClassName('right-panel-settings-button')[0];
+    settingsSection.style.display = 'none';
+    settingsButton.style.display = '';
   };
   if (!foundedItem) {
     return (
@@ -29,7 +33,7 @@ const Properties = ({ selectedElement, layoutItems, updateField,
             <i className="fas fa-paint-roller right-icon" />
           </button>
         </div>
-        <div className="settings-panel-open" style={{ marginTop: '30px' }}>
+        <div className="settings-panel-open" style={{ display: 'none', marginTop: '30px' }}>
           <div className="settings-tabs-properties">Website Design Properties <button onClick={hideSettings} style={{ marginLeft: '6px' }}><i className="fa fa-times"/></button></div>
           <WebsiteDesign
             layoutItems={layoutItems}
@@ -79,7 +83,7 @@ const Properties = ({ selectedElement, layoutItems, updateField,
           <i className="fas fa-paint-roller right-icon" />
         </button>
       </div>
-      <div className="settings-panel-open">
+      <div className="settings-panel-open" style={{ display: 'none' }}>
         {renderSettingsTabs()}
         {Object.keys(settings).map((key) => {
         if (settings[key].tab === tab) {

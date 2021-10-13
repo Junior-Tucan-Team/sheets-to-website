@@ -29,17 +29,17 @@ function Layout({
       if (outsideElementsClasses.includes(e.target.className)) {
         removeSelectedLayoutItem();
          const settingsSection = document.getElementsByClassName('settings-panel-open')[0];
-         settingsSection.style.transform = 'translateX(360px)';
+         settingsSection.style.display = 'none';
       }
     };
 
   const showSettings = () => {
     const settingsSection = document.getElementsByClassName('settings-panel-open')[0];
-    settingsSection.style.transform = 'translateX(0px)';
-    const addElementButton = document.getElementsByClassName('left-panel-add-button')[0];
+    const settingsButton = document.getElementsByClassName('right-panel-settings-button')[0];
+    settingsSection.style.display = 'flex';
+    settingsButton.style.display = 'none';
     const addElementSection = document.getElementsByClassName('left-panel-open')[0];
-    addElementButton.style.transform = 'translateX(160px)';
-    addElementSection.style.transform = 'translateX(-360px)';
+    addElementSection.style.display = 'none';
   };
   const ref = useDetectClickOutside({
     onTriggered: emptySelectedElement,
@@ -50,7 +50,7 @@ function Layout({
       <div className="webpage">
         {
         !layoutItems.length ?
-          <div className="webpage-each-div empty-page">Drag your first element here from left</div> :
+          <div className="webpage-each-div empty-page" style={{ textAlign: 'center' }}>Drag your first element here from left</div> :
           layoutItems.map((layoutItem, index) => {
           const ElementComponent = Elements[layoutItem.type].Component;
           const isSelected = selectedElement === layoutItem.id;
