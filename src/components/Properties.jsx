@@ -64,6 +64,11 @@ const Properties = ({ selectedElement, layoutItems, updateField,
             <button onClick={() => { setTab('second'); }}>STYLE</button>
           </div>
         </div>);
+    } else if (category === 'footer') {
+      return (
+        <div className="settings-tabs">
+          <div className="settings-tabs-properties">Footer Properties<button onClick={hideSettings}><i className="fa fa-times"/></button></div>
+        </div>);
     }
     return <></>;
   };
@@ -82,6 +87,7 @@ const Properties = ({ selectedElement, layoutItems, updateField,
           return (
             <div>
               <Component
+                category={category}
                 name={settings[key].name}
                 value={settings[key].name}
                 updateField={updateField}
