@@ -139,27 +139,35 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
       } else {
         return (
           <div>
-            <button onClick={changeEditMode} className="manual-back-button">
-              <i className="fa fa-angle-left"/>
-              Back
-            </button>
-            {submissionID}
+            {/* {submissionID} */}
             <div className="manual-edit-submission">
-              <label htmlFor="manualImg">
-                Image
-                <input
-                  id="manualImg"
-                  type="file"
-                  accept="image/*"
-                  alt="image"
-                //   value={urlToObject(submissions.find(sub => sub.id === submissionID)
-                // .answers[foundItem.source.image].answer)}
-                />
+              <button onClick={changeEditMode} className="manual-back-button">
+                <i className="fa fa-angle-left"/>
+                BACK
+              </button>
+              <label htmlFor="manualImg" className="font-header-class image-header-class">
+                IMAGE
+                <button className="choose-a-file-button">
+                  <label htmlFor="manualImg">CHOOSE A FILE</label>
+                  <input
+                    id="manualImg"
+                    type="file"
+                    accept="image/*"
+                    alt="image"
+                    className="manual-inputs"
+                    style={{ display: 'none' }}
+                  //   value={urlToObject(submissions.find(sub => sub.id === submissionID)
+                  // .answers[foundItem.source.image].answer)}
+                  />
+                </button>
               </label>
+              <div className="wide-horizontal-line" />
               <label htmlFor="manual-header">
-                Header
+                <div className="font-header-class">HEADER</div>
+                <div className="font-description-class">Heading Text</div>
                 <input
                   type="text"
+                  className="manual-inputs"
                   id="manual-header"
                   name={foundItem.source.header}
                   defaultValue={submissions.find(sub => sub.id === submissionID)
@@ -168,9 +176,11 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
                 />
               </label>
               <label htmlFor="manual-desc">
-                Description
+                <div className="font-header-class">DESCRIPTION</div>
+                <div className="font-description-class">Description Text</div>
                 <input
                   type="text"
+                  className="manual-inputs manual-inputs-desc"
                   id="manual-desc"
                   name={foundItem.source.description}
                   defaultValue={submissions.find(sub => sub.id === submissionID)
@@ -179,7 +189,8 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
                 />
               </label>
               <label htmlFor="manual-price">
-                Price
+                <div className="font-header-class">PRICE</div>
+                <div className="font-description-class">Price Text</div>
                 <input
                   type="text"
                   id="manual-price"
@@ -190,7 +201,7 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
                 />
               </label>
             </div>
-            <div className="wide-horizontal-line"/>
+            <div className="wide-horizontal-line" />
           </div>
         );
       }

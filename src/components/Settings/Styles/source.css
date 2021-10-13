@@ -201,9 +201,9 @@
 
 .suggestions button:focus {
     background: #E3EBFF;
-border: 2px solid #5081FF;
-box-sizing: border-box;
-border-radius: 4px;
+    border: 2px solid #5081FF;
+    box-sizing: border-box;
+    border-radius: 4px;
 }
 
 .suggestions .suggestion-icon-first {
@@ -389,4 +389,61 @@ margin-top: 16px;
     justify-content: center;
     font-feature-settings: 'liga' off;
     color: #343C6A;
+
+
+    position: absolute;
+    top:-20px;
+    right: 10px;
+    
+    
+}
+
+.manual {
+    margin-left: 21px;
+    padding-top: 21px;
+}
+
+.manual-edit-submission {
+    position: relative;
+}
+
+
+.font-header-class {
+    font-family: Circular Std;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #343C6A;
+    margin-top: 16px;
+    margin-bottom:12px;
+}
+
+.font-description-class {
+    font-family: Circular Std;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #343C6A;
+    margin-bottom:12px;
+}
+
+.image-header-class {
+    display: flex;
+    flex-direction: column;
+}
+
+.manual-inputs {
+    width: 320px;
+    height: 38px;
+}
+
+.manual-inputs-desc {
+    height: 150px;
+}
+.manual .manual-edit-submission .choose-a-file-button {
+    margin-top:16px;
+    margin-left: 0px;
+    margin-bottom: 0px;
 }
