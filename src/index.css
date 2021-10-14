@@ -658,14 +658,131 @@ input, select {
   color: #0A1551;
 }
 
-.header-grid {
-  grid-column-start: 1;
-  grid-column-end: 4;
-}
+
+
+
+
+
+
+
 
 
 
 /* some element css */
+
+.header-grid {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 75px;
+  /* identical to box height */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #616161;
+  margin:auto;
+  margin-top: 50px;
+  margin-bottom:75px;
+  
+}
+
+.container-god {
+  margin-left: 98px;
+  padding-right: 98px;
+}
+
+.container-each-card {
+  position: relative;
+  width: 340px;
+  height: 602px;
+  margin-bottom: 125px
+}
+
+.container-each-card .container-each-card-img-div {
+  height: 420px;
+  width: 340px;
+  object-fit: cover;
+}
+
+.container-each-card .container-each-card-img-div-img {
+  height: 420px;
+  width: 340px;
+  object-fit: cover;
+  
+  border-radius: 5px;
+  filter: drop-shadow(0px 4px 22px rgba(146, 146, 146, 0.25));
+}
+
+.container-each-card .container-each-card-text-div {
+
+}
+
+.container-each-card .container-each-card-text-div h2{
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 45px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #616161;
+  margin-top: 17px;
+}
+
+.container-each-card .container-each-card-text-div .container-each-card-text-div-p {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  color: #616161;
+  margin-top: 7px;
+
+  
+}
+
+.container-each-card-price {
+  position:absolute;
+  width: 103px;
+height: 52px;
+  background-color: fixed;
+
+
+  background-color: #616161;
+  border-radius: 5px;
+  right:0;
+  bottom:0px;
+  
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 45px;
+  text-align: center;
+color: #FFFFFF;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .header-element-div {
   position: relative;
