@@ -29,7 +29,7 @@ const Component = ({ item, onClick }) => {
               <p className="container-each-card-text-div-p">
                 {item.source.description !== '' ? submission.answers[item.source.description].answer : ''}
               </p>
-              {item.source.price !== '' ? <div className="container-each-card-price">{submission.answers[item.source.price].answer}</div> : ''}
+              {item.source.price !== '' ? <div className="container-each-card-price"><span>{submission.answers[item.source.price].answer}</span></div> : ''}
 
             </div>
           </div>)) : <></>}

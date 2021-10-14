@@ -238,7 +238,7 @@ code {
   /* margin-top: 30px; */
   width: 1480px;
   /* min-width: 1480px; */
-  padding: 10px 20px;
+  margin: 10px 20px;
   flex-grow: 0;
   /* border-top: 1px solid rgb(226, 11, 11);
   border-right: 1px solid rgb(226, 11, 11);
@@ -251,7 +251,7 @@ code {
 .webpage {
   width: 1440px;
   padding: 0px;
-  overflow: auto;
+  margin: auto;
 }
 
 .webpage-each-div {
@@ -751,20 +751,29 @@ input, select {
 
 .container-each-card-price {
   position:absolute;
+  right:0;
+  bottom:0px;
   width: 103px;
   height: 52px;
   background-color: fixed;
   background-color: #616161;
   border-radius: 5px;
-  right:0;
-  bottom:0px;
-  
+  line-height: 44px;
+  text-align: center;
+}
+
+.container-each-card-price span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  text-align: center;
+
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 900;
   font-size: 30px;
-  line-height: 45px;
-  text-align: center;
+  
+  
   color: #FFFFFF;
 }
 
