@@ -82,12 +82,6 @@ const settings = {
     name: 'Heading Text',
     tab: 'second'
   },
-  description: {
-    default: 'Description',
-    type: 'textbox',
-    name: 'Description',
-    tab: 'second'
-  },
   source: {
     default: {
       formID: '',

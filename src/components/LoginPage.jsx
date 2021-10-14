@@ -4,8 +4,8 @@ import { shape } from 'prop-types';
 import { requestLogin } from '../redux/actions/authActions';
 
 function LoginPage(props) {
-  const [email, setEmail] = useState('nojopaf707@btkylj.com');
-  const [password, setPassword] = useState('mE*2376gf');
+  const [email, setEmail] = useState('juniortucanteam@gmail.com');
+  const [password, setPassword] = useState('juniortucan1');
   const [signedUp, setSignedUp] = useState('log-in');
   const dispatch = useDispatch();
 
