@@ -673,7 +673,7 @@ input, select {
 .header-grid {
   grid-column-start: 1;
   grid-column-end: 4;
-  font-family: Poppins;
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
   font-size: 50px;
@@ -721,7 +721,7 @@ input, select {
 }
 
 .container-each-card .container-each-card-text-div h2{
-  font-family: Poppins;
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 500;
   font-size: 30px;
@@ -734,7 +734,7 @@ input, select {
 }
 
 .container-each-card .container-each-card-text-div .container-each-card-text-div-p {
-  font-family: Poppins;
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -759,7 +759,7 @@ height: 52px;
   right:0;
   bottom:0px;
   
-  font-family: Poppins;
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 500;
   font-size: 30px;
@@ -801,7 +801,7 @@ color: #FFFFFF;
 }
 
 .header-element-text-div h2 {
-  font-family: Poppins;
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: normal;
   font-size: 80px;
@@ -821,7 +821,7 @@ color: #FFFFFF;
 }
 
 .header-element-text-div p {
-  font-family: Poppins;
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: normal;
   font-size: 30px;
@@ -862,7 +862,7 @@ color: #FFFFFF;
 }
 
 .about-us-div-texts h1 {
-  font-family: Poppins;
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
   font-size: 50px;
@@ -874,7 +874,7 @@ color: #FFFFFF;
 }
 
 .about-us-div-texts p {
-  font-family: Poppins;
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: normal;
   font-size: 25px;
