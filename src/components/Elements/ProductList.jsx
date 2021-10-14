@@ -61,42 +61,32 @@ const type = 'productlist';
 const category = 'content';
 const view =
   <svg width="290" height="165" viewBox="0 0 290 165" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g filter="url(#filter0_d)">
+    <g filter="url(#filter0_d_173:443)">
       <rect x="10" y="10" width="270" height="145" rx="10" fill="#FFFEFE"/>
     </g>
-    <rect x="28" y="88" width="71" height="48" rx="5" fill="#F0F3FF"/>
-    <rect x="28" y="29" width="71" height="48" rx="5" fill="#F0F3FF"/>
-    <rect x="111" y="88" width="69" height="48" rx="5" fill="#F0F3FF"/>
-    <rect x="111" y="29" width="69" height="48" rx="5" fill="#F0F3FF"/>
-    <rect x="192" y="88" width="71" height="48" rx="5" fill="#F0F3FF"/>
-    <rect x="192" y="29" width="71" height="48" rx="5" fill="#F0F3FF"/>
-    <rect x="33" y="64" width="25" height="3" rx="1.5" fill="white"/>
-    <rect x="116" y="64" width="25" height="3" rx="1.5" fill="white"/>
-    <rect x="197" y="64" width="25" height="3" rx="1.5" fill="white"/>
-    <rect x="33" y="123" width="25" height="3" rx="1.5" fill="white"/>
-    <rect x="116" y="123" width="25" height="3" rx="1.5" fill="white"/>
-    <rect x="197" y="123" width="25" height="3" rx="1.5" fill="white"/>
-    <rect x="33" y="70" width="34" height="3" rx="1.5" fill="#DEDEDE"/>
-    <rect x="116" y="70" width="34" height="3" rx="1.5" fill="#DEDEDE"/>
-    <rect x="197" y="70" width="36" height="3" rx="1.5" fill="#DEDEDE"/>
-    <rect x="33" y="129" width="34" height="3" rx="1.5" fill="#DEDEDE"/>
-    <rect x="116" y="129" width="34" height="3" rx="1.5" fill="#DEDEDE"/>
-    <rect x="197" y="129" width="36" height="3" rx="1.5" fill="#DEDEDE"/>
+    <rect x="99" y="29" width="92" height="6.86552" rx="3.43276" fill="#C4C4C4"/>
+    <rect x="54" y="121" width="35" height="5.52632" rx="2.76316" fill="#C4C4C4"/>
+    <rect x="47" y="130.474" width="49" height="5.52632" rx="2.76316" fill="#DEDEDE"/>
+    <rect x="46" y="52" width="51" height="60" rx="5" fill="#F0F3FF"/>
+    <rect x="128" y="121" width="35" height="5.52632" rx="2.76316" fill="#C4C4C4"/>
+    <rect x="121" y="130.474" width="49" height="5.52632" rx="2.76316" fill="#DEDEDE"/>
+    <rect x="120" y="52" width="51" height="60" rx="5" fill="#F0F3FF"/>
+    <rect x="202" y="121" width="35" height="5.52632" rx="2.76316" fill="#C4C4C4"/>
+    <rect x="195" y="130.474" width="49" height="5.52632" rx="2.76316" fill="#DEDEDE"/>
+    <rect x="194" y="52" width="51" height="60" rx="5" fill="#F0F3FF"/>
     <defs>
-      <filter id="filter0_d" x="0" y="0" width="290" height="165" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+      <filter id="filter0_d_173:443" x="0" y="0" width="290" height="165" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
         <feFlood floodOpacity="0" result="BackgroundImageFix"/>
         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
         <feOffset/>
         <feGaussianBlur stdDeviation="5"/>
         <feComposite in2="hardAlpha" operator="out"/>
         <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/>
-        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
-        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_173:443"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_173:443" result="shape"/>
       </filter>
     </defs>
   </svg>;
-
-
 const settings = {
   title: {
     default: 'Heading Text',

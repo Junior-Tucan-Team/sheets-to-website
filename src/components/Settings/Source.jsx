@@ -43,12 +43,6 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
   };
   const searchFunction = search => forms.filter(item =>
     (item.title.toLowerCase()).startsWith(search.toLowerCase()));
-  const urlToObject = async (image) => {
-    const response = await fetch(image);
-    const blob = await response.blob();
-    const file = new File([blob], 'image.jpg', { type: blob.type });
-    return file;
-  };
   const dispatch = useDispatch();
   const renderForms = () => (
     <div className="source-pop-up">
@@ -98,14 +92,13 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
     };
     dispatch(updateSubmissionsRequest(payload));
   };
-
   const renderManual = () => {
     if (manual) {
       if (!edit) {
         return (
           typeof submissions !== 'undefined' ? submissions.map(submission => (
             <div className="manuel-listing-cards">
-              <div className="submission-number">0</div>
+              {/* <div className="submission-number">0</div> */}
               <div>
                 { foundItem.source.image !== '' ?
                   <img

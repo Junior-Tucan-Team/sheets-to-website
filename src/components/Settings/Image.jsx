@@ -21,12 +21,12 @@ const Image = ({ name, updateField, settingsKey: key }) => {
       if (currentTab === 'upload') {
           return (
             <>
-              <label htmlFor="image" /><input type="file" accept="image/*" name="image" id="image" onChange={(e) => handleImageInput(URL.createObjectURL(e.target.files[0]))} />
+              <label htmlFor="image" /><input type="file" name="image" id="image" onChange={(e) => handleImageInput(URL.createObjectURL(e.target.files[0]))} />
             </>
 
           );
       } else if (currentTab === 'myImage') {
-         return (<p>image</p>);
+         return (<></>);
       } else if (currentTab === 'url') {
           return (<input type="text" onChange={(e) => setUrl(e.target.value)} placeholder="image url" onBlur={() => handleImageInput(imageUrl)} value={imageUrl} />);
       }
