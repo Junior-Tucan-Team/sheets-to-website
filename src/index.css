@@ -192,11 +192,13 @@ code {
 }
 
 .leftPanelChildSpans button:hover {
-  background-color: rgb(50, 142, 218);
+  border-bottom: 4px solid #0099FF;
+  transition: border-bottom 0.2s;
 }
 
-.leftPanelChildSpans button:focus {
+.selected-tab {
   color: #343C6A;
+  font-size: 40px;
   border-bottom: 4px solid #0099FF;
 }
 

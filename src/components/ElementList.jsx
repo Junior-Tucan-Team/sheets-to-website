@@ -21,7 +21,13 @@ const ElementList = ({ selectLayoutItem, addLayoutItem }) => {
   };
 
   const onCategoryClick = (e) => {
+    let currentTab = document.getElementsByName(currentCategory);
+    currentTab[0].classList.remove('selected-tab');
+    currentTab[0].style.color = '#6F76A7';
     setCategory(e.target.getAttribute('name'));
+    currentTab = document.getElementsByName(e.target.name);
+    currentTab[0].classList.add('selected-tab');
+    currentTab[0].style.color = '#343C6A';
   };
 
   const onAddElementClick = () => {
@@ -44,9 +50,9 @@ const ElementList = ({ selectLayoutItem, addLayoutItem }) => {
   const renderElements = () => (
     <div className="leftPanelChild leftPanelSecChild">
       <div className="leftPanelChildSpans">
-        <button onClick={onCategoryClick} name="header">HEADER</button>
-        <button onClick={onCategoryClick} name="content">CONTENT</button>
-        <button onClick={onCategoryClick} name="footer">FOOTER</button>
+        <button className="selected-tab" onClick={onCategoryClick} name="header">HEADER</button>
+        <button className="" onClick={onCategoryClick} name="content">CONTENT</button>
+        <button className="" onClick={onCategoryClick} name="footer">FOOTER</button>
       </div>
       <ul className="leftPanelElements">
         {Object.keys(Elements).filter(element =>
