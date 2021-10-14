@@ -29,7 +29,9 @@ function Layout({
       if (outsideElementsClasses.includes(e.target.className)) {
         removeSelectedLayoutItem();
          const settingsSection = document.getElementsByClassName('settings-panel-open')[0];
+         const settingsButton = document.getElementsByClassName('right-panel-settings-button')[0];
          settingsSection.style.display = 'none';
+         settingsButton.style.display = '';
       }
     };
 
