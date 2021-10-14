@@ -71,7 +71,7 @@
     width: 100%;
     transform: translate(-50%, -50%);
     background: rgba(0,0,0,0.5);
-    z-index: 1002;                     /* This value was 1001 for main header */
+    z-index: 1002;                  /* This value was 1001 for main header */
 }
 
 .settings .source-handler {
@@ -84,8 +84,10 @@
     top: 50%;
     left: 50%;
     width: 860px;
-    height: 781px;
+    height: 770px;
     transform: translate(-50%, -50%);
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;   
 }
 
 .settings .source-pop-up-header {
@@ -165,14 +167,31 @@
     margin-bottom: 22px;
 }
 
+.table-icon-green {
+    margin-left: 20px;
+}
+
+.form-icon-blue {
+    margin-left: 23px;
+}
+
 .settings .autoComplete input {
-    width: 808px;
+    width: 795px;
     height: 46px;
     background: #FFFFFF;
     border: 1px solid #C3CAD8;
     box-sizing: border-box;
     border-radius: 4px;
     margin-bottom: 19px;
+}
+
+.auto-create-a-form i {
+    margin-left: 5px;
+}
+
+.blue-tick-icon {
+    position: absolute;
+    right: 65px; 
 }
 
 .suggestions {
@@ -255,6 +274,18 @@ margin-top: 16px;
     border: 1px solid #D4D6E1;
     border-radius: 4px;
     margin:3px 13px;
+
+    font-family: 'Circular Std';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 19px;
+    color: #8586A6;
+}
+
+.settings .source-select-buttons .source-next-button {
+    background: #497AFB;
+    color: #FFFFFF;
 }
 
 .settings .select-handler{
