@@ -27,6 +27,7 @@ code {
   height: calc(100% - 115px);
   overflow-x: hidden;
   background-color: #F3F3FE;
+  transition: height 0.75s;
 }
 
 /* Editor END*/
@@ -244,6 +245,7 @@ code {
   border-left: 1px solid rgb(209, 16, 16); */
   overflow: auto;
   background-color: #FFFFFF;
+  transition: width 0.75s;
 }
 
 .webpage {

@@ -12,6 +12,9 @@ const Header = () => {
     const secondary = document.getElementsByClassName('secondaryHeader');
     const previewButton = document.getElementsByClassName('emre-update');
     const previewModeButtons = document.getElementsByClassName('preview-mode-buttons');
+    const editor = document.getElementsByClassName('editor');
+    const layout = document.getElementsByClassName('layout');
+    const webpage = document.getElementsByClassName('webpage');
     if (toggleValue === 'on') {
       primary[0].style.height = '70px';
       primary[0].style.bottom = '';
@@ -22,6 +25,9 @@ const Header = () => {
       previewModeButtons[0].style.opacity = 0;
       previewModeButtons[0].style.pointerEvents = 'none';
       previewModeButtons[0].style.opacity = '45px';
+      editor[0].style.height = 'calc(100% - 115px)';
+      layout[0].style.width = '1480px';
+      setTimeout(() => { webpage[0].style.margin = ''; }, 750);
       setToggleValue('off');
     } else {
       primary[0].style.height = '0px';
@@ -33,6 +39,9 @@ const Header = () => {
       previewModeButtons[0].style.opacity = 1;
       previewModeButtons[0].style.pointerEvents = '';
       previewModeButtons[0].style.height = '70px';
+      editor[0].style.height = 'calc(100% - 70px)';
+      layout[0].style.width = '100%';
+      webpage[0].style.margin = 'auto';
       setToggleValue('on');
     }
     dispatch(changeMode());
