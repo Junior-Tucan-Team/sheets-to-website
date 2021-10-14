@@ -24,7 +24,7 @@ code {
   display: flex;
   justify-content:space-between;
   width: 100%;
-  height: calc(100% - 104px);
+      height: calc(100% - 115px);
   overflow-x: hidden;
 }
 
@@ -34,6 +34,7 @@ code {
   opacity: 1;
   pointer-events: '';
   transition: opacity 0.75s;
+  z-index: 2;
 }
 
 .elements {
@@ -164,6 +165,10 @@ code {
   cursor: pointer;
 }
 
+.leftPanelSecChild {
+  height: calc(100% - 55px);
+}
+
 .leftPanelChildSpans {
   display: flex;
   height: 55px;
@@ -197,8 +202,9 @@ code {
 .leftPanelChild .leftPanelElements {
   display: flex;
   flex-direction: column;
-  height: 758px;
+  height: calc(100% - 55px);
   overflow: auto;
+  padding: 20px;
 }
 
 .leftPanelChild .leftPanelElements li {
@@ -209,6 +215,7 @@ code {
   margin-top: 9px;
   cursor: pointer;
   background-color: #FFFFFF;
+  border: 2px solid transparent;
 }
 
 .leftPanelChild .leftPanelElements li:hover {
@@ -233,17 +240,18 @@ code {
   border-right: 1px solid rgb(226, 11, 11);
   border-left: 1px solid rgb(209, 16, 16); */
   overflow: auto;
+  background-color: #F3F3FE;
 }
 
 .webpage {
   width: 1440px;
   padding: 0px;
   overflow: auto;
+  background-color: #F3F3FE;
 }
 
-.layout div {
+.webpage-each-div {
   position: relative;
-  padding-right: 20px;
 }
 
 .layout .webpage-each-div:hover {
@@ -257,11 +265,12 @@ code {
   border-radius: 15px;
   width: 684px;
   height: 231px;
+  /* margin-left:378px;  */
+  margin: auto;
   margin-top: 232px;
-  margin-left:247px;
   text-align: center;
   vertical-align: middle;
-  padding-top: 89px;
+  padding-top: 93px;
 }
 
 .layout .deleteButton {
@@ -644,4 +653,53 @@ input, select {
 .header-grid {
   grid-column-start: 1;
   grid-column-end: 4;
+}
+
+
+
+/* some element css */
+
+.header-element-div {
+  position: relative;
+}
+
+.header-element-img  {
+  height: 958px;
+  width: 1440px;
+  object-fit: cover;
+}
+
+.header-element-text-div {
+  position: absolute;
+  left: 460px;
+  top: 340px;
+}
+
+.header-element-text-div h2 {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 80px;
+  line-height: 120px;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 29px;
+}
+
+.header-element-text-div hr {
+  width: 613.5px;
+  height: 2px;
+  color:  #FFFFFF;
+}
+
+.header-element-text-div p {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 45px;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
 }

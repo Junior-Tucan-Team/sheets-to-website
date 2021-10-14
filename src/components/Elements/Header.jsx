@@ -7,16 +7,13 @@ const Component = ({ item, onClick }) => (
     data-element-id={item.id}
     onClick={onClick}
   >
-    <div className="container px-5 py-24 mx-auto flex flex-wrap">
-      <div className="lg:w-2/3 mx-auto">
-        <div className="flex flex-wrap w-full bg-gray-100 py-32 px-10 relative mb-4">
-          <img alt="gallery" className="w-full object-cover h-full object-center block opacity-25 absolute inset-0" src={item.image}/>
-          { item.logo ? <img style={{ margin: item.algnmntlogo }} src={item.logo} alt="logo"/> : null}
-          <div className="text-center relative z-10 w-full">
-            <h2 style={{ color: item.fntclrtitle, fontSize: item.fntSztitle, fontFamily: item.fntfmlytitle }} className="text-2xl text-gray-900 font-medium title-font mb-2">{item.title}</h2>
-            <p style={{ color: item.fntclrdescription, fontSize: item.fntSzdescription, fontFamily: item.fntfmlydescription }} className="leading-relaxed">{item.description}</p>
-          </div>
-        </div>
+    <div className="header-element-div">
+      <img className="header-element-img" alt="gallery" src={item.image}/>
+      { item.logo ? <img style={{ margin: item.algnmntlogo }} src={item.logo} alt="logo"/> : null}
+      <div className="header-element-text-div">
+        <h2 style={{ color: item.fntclrtitle, fontSize: item.fntSztitle, fontFamily: item.fntfmlytitle }} className="text-2xl text-gray-900 font-medium title-font mb-2">{item.title}</h2>
+        <hr/>
+        <p style={{ color: item.fntclrdescription, fontSize: item.fntSzdescription, fontFamily: item.fntfmlydescription }} className="leading-relaxed">{item.description}</p>
       </div>
     </div>
   </section>

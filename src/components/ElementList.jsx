@@ -42,7 +42,7 @@ const ElementList = ({ selectLayoutItem, addLayoutItem }) => {
     leftPanelAddButton.style.display = '';
   };
   const renderElements = () => (
-    <div className="leftPanelChild">
+    <div className="leftPanelChild leftPanelSecChild">
       <div className="leftPanelChildSpans">
         <button onClick={onCategoryClick} name="header">HEADER</button>
         <button onClick={onCategoryClick} name="content">CONTENT</button>

@@ -313,7 +313,7 @@ margin-top: 16px;
 
 .manuel-listing-cards {
     display: flex;
-    margin: 20px;
+    margin: 20px 0px;
     width: 320px;
     height: 74px;
     background: #FFFFFF;
