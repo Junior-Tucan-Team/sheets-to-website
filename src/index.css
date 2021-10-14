@@ -24,8 +24,9 @@ code {
   display: flex;
   justify-content:space-between;
   width: 100%;
-      height: calc(100% - 115px);
+  height: calc(100% - 115px);
   overflow-x: hidden;
+  background-color: #F3F3FE;
 }
 
 /* Editor END*/
@@ -240,14 +241,13 @@ code {
   border-right: 1px solid rgb(226, 11, 11);
   border-left: 1px solid rgb(209, 16, 16); */
   overflow: auto;
-  background-color: #F3F3FE;
+  background-color: #FFFFFF;
 }
 
 .webpage {
   width: 1440px;
   padding: 0px;
   overflow: auto;
-  background-color: #F3F3FE;
 }
 
 .webpage-each-div {
@@ -270,7 +270,13 @@ code {
   margin-top: 232px;
   text-align: center;
   vertical-align: middle;
-  padding-top: 93px;
+  padding-top: 104px;
+  font-family: Circular Std;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 22px;
+  color: #ACACAC;
 }
 
 .layout .deleteButton {
@@ -671,7 +677,7 @@ input, select {
 
 .header-element-text-div {
   position: absolute;
-  left: 460px;
+  left: 420px;
   top: 340px;
 }
 
@@ -691,6 +697,8 @@ input, select {
   width: 613.5px;
   height: 2px;
   color:  #FFFFFF;
+  background-color: #FFFFFF;
+  
 }
 
 .header-element-text-div p {
@@ -702,4 +710,58 @@ input, select {
   align-items: center;
   text-align: center;
   color: #FFFFFF;
+  margin-top: 36px;
+}
+
+.about-us-div {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items:flex-start;
+  width: 1440px;
+  height: 860px;
+  background-color: #F9F9F9;
+}
+
+.about-us-div-img {
+  width: 520px;
+  height: 625px;
+  margin-left: 98px;
+  margin-top: 117px ;
+  
+}
+
+.about-us-div-img img {
+  height: 100%;
+  width: 100%;
+  /* box-shadow: -1px -1px 3px 2px #c7c5c5; */
+  filter: drop-shadow(0px 4px 22px rgba(146, 146, 146, 0.25));
+}
+
+.about-us-div-texts {
+  margin-left: 96px;
+  margin-top: 305px;
+}
+
+.about-us-div-texts h1 {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 75px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #616161;
+}
+
+.about-us-div-texts p {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 37px;
+  display: flex;
+  align-items: center;
+  color: #616161;
+  margin-top: 35px;
 }

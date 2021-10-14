@@ -52,7 +52,7 @@ function Layout({
       <div className="webpage">
         {
         !layoutItems.length ?
-          <div className="webpage-each-div empty-page" style={{ textAlign: 'center' }}>Drag your first element here from left</div> :
+          <div className="webpage-each-div empty-page" style={{ textAlign: 'center' }}>Drag your first element here from left.</div> :
           layoutItems.map((layoutItem, index) => {
           const ElementComponent = Elements[layoutItem.type].Component;
           const isSelected = selectedElement === layoutItem.id;
