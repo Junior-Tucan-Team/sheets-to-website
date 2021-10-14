@@ -15,7 +15,7 @@ const Properties = ({ selectedElement, layoutItems, updateField,
     settingsButton.style.display = 'none';
     const addElementButton = document.getElementsByClassName('left-panel-add-button')[0];
     const addElementSection = document.getElementsByClassName('left-panel-open')[0];
-    addElementButton.style.display = '';
+    addElementButton.style.display = 'flex';
     addElementSection.style.display = 'none';
   };
 
@@ -23,7 +23,7 @@ const Properties = ({ selectedElement, layoutItems, updateField,
     const settingsSection = document.getElementsByClassName('settings-panel-open')[0];
     const settingsButton = document.getElementsByClassName('right-panel-settings-button')[0];
     settingsSection.style.display = 'none';
-    settingsButton.style.display = '';
+    settingsButton.style.display = 'flex';
   };
   if (!foundedItem) {
     return (
@@ -33,7 +33,7 @@ const Properties = ({ selectedElement, layoutItems, updateField,
             <i className="fas fa-paint-roller right-icon" />
           </button>
         </div>
-        <div className="settings-panel-open" style={{ display: 'none', marginTop: '30px' }}>
+        <div className="settings-panel-open" style={{ display: 'none' }}>
           <div className="settings-tabs-properties">Website Design Properties <button onClick={hideSettings} style={{ marginLeft: '6px' }}><i className="fa fa-times"/></button></div>
           <WebsiteDesign
             layoutItems={layoutItems}

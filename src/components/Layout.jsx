@@ -39,7 +39,9 @@ function Layout({
     settingsSection.style.display = 'flex';
     settingsButton.style.display = 'none';
     const addElementSection = document.getElementsByClassName('left-panel-open')[0];
+    const addElementButton = document.getElementsByClassName('left-panel-add-button')[0];
     addElementSection.style.display = 'none';
+    addElementButton.style.display = 'flex';
   };
   const ref = useDetectClickOutside({
     onTriggered: emptySelectedElement,
