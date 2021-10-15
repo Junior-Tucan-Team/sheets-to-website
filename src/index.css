@@ -809,9 +809,14 @@ input, select {
 }
 
 .header-element-text-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  left: 420px;
-  top: 340px;
+  transform: translateY(-958px);
+  height: 958px;
+  width: 1440px;
 }
 
 .header-element-text-div h2 {

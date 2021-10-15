@@ -18,7 +18,7 @@ const Component = ({ item, onClick }) => (
       { item.logo ? <img style={{ margin: item.algnmntlogo }} src={item.logo} alt="logo"/> : null}
       <div className="header-element-text-div">
         <h2 style={{ color: item.fntclrtitle, fontSize: item.fntSztitle, fontFamily: item.fntfmlytitle }} className="text-2xl text-gray-900 font-medium title-font mb-2">{item.title}</h2>
-        <hr/>
+        <div className="wide-horizontal-line" style={{ borderColor: '#FFF', width: '50%' }}/>
         <p style={{ color: item.fntclrdescription, fontSize: item.fntSzdescription, fontFamily: item.fntfmlydescription }} className="leading-relaxed">{item.description}</p>
       </div>
     </div>
