@@ -19,6 +19,16 @@ const Properties = ({ selectedElement, layoutItems, updateField,
     addElementSection.style.display = 'none';
   };
 
+  const onTabClick = (e) => {
+    let currentTab = document.getElementsByName(tab);
+    currentTab[0].classList.remove('selected-tab');
+    currentTab[0].style.color = '#6F76A7';
+    setTab(e.target.getAttribute('name'));
+    currentTab = document.getElementsByName(e.target.name);
+    currentTab[0].classList.add('selected-tab');
+    currentTab[0].style.color = '#343C6A';
+  };
+
   const hideSettings = () => {
     const settingsSection = document.getElementsByClassName('settings-panel-open')[0];
     const settingsButton = document.getElementsByClassName('right-panel-settings-button')[0];
@@ -53,9 +63,9 @@ const Properties = ({ selectedElement, layoutItems, updateField,
         <div className="settings-tabs">
           <div className="settings-tabs-properties">Header Properties <button onClick={hideSettings}><i className="fa fa-times"/></button></div>
           <div className="settings-tabs-buttons">
-            <button onClick={() => { setTab('first'); }} name="0">HEADER</button>
-            <button onClick={() => { setTab('second'); }} name="1">BACKGROUND</button>
-            <button onClick={() => { setTab('third'); }} name="2">LOGO</button>
+            <button className="selected-tab" onClick={onTabClick} name="first">HEADER</button>
+            <button onClick={onTabClick} name="second">BACKGROUND</button>
+            <button onClick={onTabClick} name="third">LOGO</button>
           </div>
         </div>
       );
@@ -64,14 +74,19 @@ const Properties = ({ selectedElement, layoutItems, updateField,
         <div className="settings-tabs">
           <div className="settings-tabs-properties">Content Properties<button onClick={hideSettings}><i className="fa fa-times"/></button></div>
           <div className="settings-tabs-buttons">
-            <button onClick={() => { setTab('first'); }}>CONTENT</button>
-            <button onClick={() => { setTab('second'); }}>STYLE</button>
+            <button className="selected-tab" onClick={onTabClick} name="first">CONTENT</button>
+            <button onClick={onTabClick} name="second">STYLE</button>
           </div>
         </div>);
     } else if (category === 'footer') {
       return (
         <div className="settings-tabs">
-          <div className="settings-tabs-properties">Footer Properties<button onClick={hideSettings}><i className="fa fa-times"/></button></div>
+          <div className="settings-tabs-properties">
+            Footer Properties
+            <button onClick={hideSettings}>
+              <i className="fa fa-times"/>
+            </button>
+          </div>
         </div>);
     }
     return <></>;

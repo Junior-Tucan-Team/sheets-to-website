@@ -18,10 +18,6 @@
   background-color: rgb(50, 142, 218);
 }
 
-.settings .image-handler .image-upload button:focus{
-  border-bottom: 5px solid #0099FF;
-}
-
 
 /* style={{ border: 'solid 1px black', cursor: 'pointer', color: 'black', background: 'cornsilk' }}
 style={{ display: 'none' }} */

@@ -199,8 +199,12 @@ code {
 
 .selected-tab {
   color: #343C6A;
-  font-size: 40px;
   border-bottom: 4px solid #0099FF;
+}
+
+.selected-tab2 {
+  color: #FFF;
+  background: #4277FF;
 }
 
 .leftPanelChild .leftPanelElements {
@@ -244,6 +248,7 @@ code {
   border-right: 1px solid rgb(226, 11, 11);
   border-left: 1px solid rgb(209, 16, 16); */
   overflow: auto;
+  overflow-x: hidden;
   background-color: #FFFFFF;
   transition: width 0.75s;
 }
@@ -409,7 +414,8 @@ code {
 }
 
 .settings .settings-tabs-buttons button:hover {
-  background-color: rgb(50, 142, 218);
+  border-bottom: 4px solid #0099FF;
+  transition: border-bottom 0.2s;
 }
 
 .settings .settings-tabs-buttons button:focus {

@@ -3,7 +3,7 @@ import { func, string } from 'prop-types';
 import './Styles/logo.css';
 
 const Logo = ({ name, updateField, updateStyle, settingsKey: key }) => {
-  const [currentTab, setTab] = useState('upload');
+  const [tab, setTab] = useState('upload');
   const [imageUrl, setUrl] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [widthParameter, setWidthParameter] = useState('');
@@ -12,6 +12,17 @@ const Logo = ({ name, updateField, updateStyle, settingsKey: key }) => {
   const handleTextAlign = (e) => {
     updateStyle(e.target.value, key, e.target.name);
   };
+
+  const onTabClick = (e) => {
+    let currentTab = document.getElementsByName(tab);
+    currentTab[0].classList.remove('selected-tab');
+    currentTab[0].style.background = '#E3E5F5';
+    setTab(e.target.getAttribute('name'));
+    currentTab = document.getElementsByName(e.target.name);
+    currentTab[0].classList.add('selected-tab');
+    currentTab[0].style.background = '#FFF';
+  };
+
   const handleLogoInput = (url) => {
     const logoImage = new Image();
     logoImage.src = url;
@@ -26,14 +37,14 @@ const Logo = ({ name, updateField, updateStyle, settingsKey: key }) => {
 
   const renderTabs = () => (
     <div className="add-logo">
-      <button onClick={() => setTab('upload')}>Upload</button>
-      <button onClick={() => setTab('myImage')}>My Image</button>
-      <button onClick={() => setTab('url')}>Url</button>
+      <button className="selected-tab" onClick={onTabClick} name="upload" style={{ background: '#FFF' }}>Upload</button>
+      <button onClick={onTabClick} name="myImage">My Image</button>
+      <button onClick={onTabClick} name="url">Url</button>
     </div>
   );
 
   const renderAddLogo = () => {
-      if (currentTab === 'upload') {
+      if (tab === 'upload') {
           return (
             <label>
               <div className="upload-file-button">
@@ -47,9 +58,9 @@ const Logo = ({ name, updateField, updateStyle, settingsKey: key }) => {
               />
             </label>
           );
-      } else if (currentTab === 'myImage') {
+      } else if (tab === 'myImage') {
          return <p>image</p>;
-      } else if (currentTab === 'url') {
+      } else if (tab === 'url') {
         return (
           <input
             type="text"
@@ -71,7 +82,8 @@ const Logo = ({ name, updateField, updateStyle, settingsKey: key }) => {
           <div>Width</div>
         </label>
         <label className="logo-size-handler-px" htmlFor="weight">PX</label>
-        <button name="lock" onClick={() => setLockParameter(!lockParameter)}> - <i className="fa fa-lock" aria-hidden="true"/> -
+        <button name="lock" onClick={() => setLockParameter(!lockParameter)} style={{ marginBottom: '50px' }}>
+          - <i className="fa fa-lock" aria-hidden="true"/> -
         </button>
         <label>
           <input id="height" type="number"/>

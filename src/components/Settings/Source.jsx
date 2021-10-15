@@ -62,6 +62,21 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
     setEdit(!edit);
     editScreen();
   };
+
+  const onModeClick = (e) => {
+    let currentTab = document.getElementsByName(manual ? 'manual-table' : 'from-table');
+    currentTab[0].classList.remove('selected-tab2');
+    currentTab[0].style.color = '#343C6A';
+    if (e.target.getAttribute('name') === 'from-table') {
+      setManual(false);
+    } else {
+      setManual(true);
+    }
+    currentTab = document.getElementsByName(e.target.name);
+    currentTab[0].classList.add('selected-tab2');
+    currentTab[0].style.color = '#FFF';
+  };
+
   const searchFunction = search => forms.filter(item =>
     (item.title.toLowerCase()).startsWith(search.toLowerCase()));
   const dispatch = useDispatch();
@@ -223,11 +238,11 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
     } else {
       return (
         <div>
-          <span className="source-settings-headers" style={{ marginLeft: '20px' }}>Content Source</span>
+          <span className="source-settings-headers">Content Source</span>
           <button className="select-table-button source-settings-headers" onClick={setIsOpen}>
             Select a Table
           </button>
-          <div className="wide-horizontal-line" />
+          <div className="wide-horizontal-line"/>
         </div>
       );
     }
@@ -239,10 +254,10 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
         <div className="header-source">SOURCE</div>
         <div className="desc-source">Select Source</div>
         <div className="header-source-handler-buttons">
-          <button onClick={() => { setManual(false); }}>
+          <button className="selected-tab2" onClick={onModeClick} name="from-table" style={{ color: '#FFF' }}>
             From Table
           </button>
-          <button onClick={() => setManual(true)}>
+          <button onClick={onModeClick} name="manual-table">
             Manual
           </button>
         </div>
@@ -250,7 +265,7 @@ const Source = ({ updateField, settingsKey: key, selectedElement }) => {
       {isOpen ? renderForms() : <></>}
       {!manual && foundItem.source.formID ? (
         <div className="select-handler">
-          <div className="source-settings-headers" style={{ marginTop: '-20px' }}>Content Source</div>
+          <div className="source-settings-headers">Content Source</div>
           <div className="table-name-info">
             <i className="fa fa-table" style={{ marginLeft: '7px', marginRight: '12px', color: '#0D953B', borderRadius: '4px' }}/>
             {forms.filter(form => form.id === foundItem.source.formID)[0].title}

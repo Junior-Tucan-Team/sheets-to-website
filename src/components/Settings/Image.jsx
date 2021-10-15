@@ -3,7 +3,7 @@ import { func, string } from 'prop-types';
 import './Styles/image.css';
 
 const Image = ({ name, updateField, settingsKey: key }) => {
-  const [currentTab, setTab] = useState('upload');
+  const [tab, setTab] = useState('upload');
   const [imageUrl, setUrl] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const handleImageInput = (url) => {
@@ -11,11 +11,22 @@ const Image = ({ name, updateField, settingsKey: key }) => {
         updateField(url, key);
       }
   };
+
+  const onTabClick = (e) => {
+    let currentTab = document.getElementsByName(tab);
+    currentTab[0].classList.remove('selected-tab');
+    currentTab[0].style.background = '#E3E5F5';
+    setTab(e.target.getAttribute('name'));
+    currentTab = document.getElementsByName(e.target.name);
+    currentTab[0].classList.add('selected-tab');
+    currentTab[0].style.background = '#FFF';
+  };
+
   const renderTabs = () => (
     <div className="add-logo">
-      <button onClick={() => setTab('upload')}>Upload</button>
-      <button onClick={() => setTab('myImage')}>My Image</button>
-      <button onClick={() => setTab('url')}>Url</button>
+      <button className="selected-tab" onClick={onTabClick} name="upload" style={{ background: '#FFF  ' }}>Upload</button>
+      <button onClick={onTabClick} name="myImage">My Image</button>
+      <button onClick={onTabClick} name="url">Url</button>
     </div>);
 
   const uploadArrow = () => (
@@ -25,7 +36,7 @@ const Image = ({ name, updateField, settingsKey: key }) => {
   );
 
   const renderImage = () => {
-      if (currentTab === 'upload') {
+      if (tab === 'upload') {
           return (
             <label>
               <div className="upload-file-button">
@@ -39,9 +50,9 @@ const Image = ({ name, updateField, settingsKey: key }) => {
               />
             </label>
           );
-      } else if (currentTab === 'myImage') {
+      } else if (tab === 'myImage') {
          return <p>image</p>;
-      } else if (currentTab === 'url') {
+      } else if (tab === 'url') {
           return (
             <input
               type="text"
